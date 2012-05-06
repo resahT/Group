@@ -1,0 +1,239 @@
+BODY, p, td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #333333;
+	line-height: normal;
+} 
+.copyright {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.topbg {
+	background-image: url(images/top_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: right;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #14006D;
+}
+.top {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #14006D;
+}
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #373737;
+	line-height: normal;
+}
+.header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	line-height: normal;
+	color: #0000A4;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: 1px;
+
+
+
+
+
+}
+.boxtext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #14006D;
+}
+.headerproducts {
+	font-family: Tahoma, Verdana, "Verdana Ref";
+	font-size: small;
+	line-height: normal;
+	color: #003399;
+	font-weight: bolder;
+	font-variant: normal;
+	font-style: normal;
+
+
+}
+.boldsmallblue {
+	font-size: 12px;
+	font-style: normal;
+	line-height: 14px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000099;
+
+}
+.mediumblue {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #003399;
+}
+.medblackbold {
+	font-family: Tahoma, Verdana, "Verdana Ref";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: normal;
+	font-variant: normal;
+
+
+}
+.header2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	font-style: normal;
+	color: #000099;
+
+
+}
+.white-text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+.subheaders {
+	font-family: Tahoma, Verdana, "Verdana Ref";
+	font-size: 14px;
+	line-height: 14px;
+	color: #032line-height: 16px;
+	font-weight: bold;
+	color: #BF285A;
+}
+.largesalmon {
+
+
+	font-family: Tahoma, Verdana, "Verdana Ref";
+	font-size: 14pt;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: normal;
+	color: #BF285A;
+}
+.mediumblack {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+}
+.smalltext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	line-height: normal;
+	color: #14006D;
+	font-style: normal;
+	font-weight: normal;
+
+}
+.mediumsalmonBanner {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: bold;
+	color: #BF285A;
+	background-color: #E1DAE9;
+
+}
+.askkathytext {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #3300CC;
+	line-height: normal;
+}
+.headersection {
+	font-family: Tahoma, Verdana, "Verdana Ref", sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	color: #BF285A;
+	margin-top: 10px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 2px;
+	width: 90%;
+	border-top: 0px solid;
+	border-right: 0px solid;
+	border-bottom: 2px solid #6F4AA3;
+	border-left: 0px solid;
+	padding: 2px;
+
+
+
+}
+.largetext {
+
+
+
+	font-family: Tahoma, Verdana, "Verdana Ref";
+	font-size: 13pt;
+	font-style: normal;
+	line-height: 23px;
+	font-weight: normal;
+}
+.mediumsalmon {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: bold;
+	color: #CC3366;
+}
+.text-blue {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #039;
+	line-height: 16px;
+}
+.text2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.buttonlook {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	color: #FF0000;
+	background-color: #FFFFFF;
+	margin: 1px;
+	padding: 1px;
+	border-top-style: outset;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	border-left-style: outset;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+}
+.plain-text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+
+.mediumtxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}	
+.check {
+	list-style-image: url(images/checkmark.gif);
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 20px;
+}
