@@ -5,6 +5,7 @@ body{margin:0px; padding:0px; background:#414141}
          margin: 10px 10px 10px 10px;
          color:  white;
          text-align: center}
+#loginposition { position:absolute; visibility:show; left: 1100px; top: 20px; z-index:2; } 
 /*Top Panels*/
 #topContentWrap{
     width:100%; 
@@ -100,7 +101,7 @@ body{margin:0px; padding:0px; background:#414141}
 #iconLinks .blank{width:9px; height:101px; margin:0px; padding:0px; float:left}
 #iconLinks .signup{width:78px; height:51px; margin:0px; padding:50px 0 0 49px; float:left; font-family:Arial; font-size:10px; color:#a8a8a8; line-height:14px; text-decoration:none; background:url(images/paper.jpg) no-repeat -204px -392px}
 #iconLinks .blog{width:78px; height:51px; margin:0px; padding:50px 0 0 49px; float:left; font-family:Arial; font-size:10px; color:#a8a8a8; line-height:14px; text-decoration:none; background:url(images/paper.jpg) no-repeat -331px -392px}
-#middleWrap{width:100%; margin:0px; padding:0px; float:left; background:#e9e6c3 url(images/brick.jpg) repeat-x}
+#middleWrap{width:100%; margin:0px; padding:0px; float:left; background:#FFFFFF}
 #middlePanel{width:928px; margin:0 auto; padding:0px}
 #middlePanel .left{width:473px; margin:0px; padding:0 31px 34px 26px; float:left}
 #middlePanel .left h2{width:423px; height:38px; margin:24px 0 0 0; padding:0 0 0 50px; float:left; font-family:Arial; font-size:34px; color:#1d1d1d; line-height:38px; font-weight:normal; background:url(images/brick.jpg) no-repeat -474px -357px}
