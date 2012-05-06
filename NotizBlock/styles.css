@@ -1,6 +1,10 @@
 /*CSS Document*/
 body{margin:0px; padding:0px; background:#414141}
-
+#header{ width :100% ;
+         padding:10px 10px 10px 10px;
+         margin: 10px 10px 10px 10px;
+         color:  white;
+         text-align: center}
 /*Top Panels*/
 #topContentWrap{
     width:100%; 
@@ -26,8 +30,22 @@ body{margin:0px; padding:0px; background:#414141}
     text-indent:-9999px;
     background:url() no-repeat;
 }
-#logoPanel h1{width:75px; height:740px; margin:0px; padding:0px; float:left; text-indent:-9999px;}
-#aboutPanel{width:216px; height:715px; margin:0px; padding:0px; float:left; background:#cd4007 url(images/ls.jpg) no-repeat -77px -494px}
+#logoPanel h1{
+    width:75px;
+    height:740px; 
+    margin:0px; 
+    padding:0px;
+    float:left;
+    text-indent:-9999px;
+}
+#aboutPanel{
+    width:216px; 
+    height:715px;
+    margin:0px; 
+    padding:0px; 
+    float:left; 
+    background:#cd4007 url(images/ls.jpg) no-repeat -77px -494px}
+
 #home{width:47px; height:110px; margin:0px; padding:0 0 0 169px; float:left}
 #home a{width:47px; height:36px; margin:0px; padding:56px 0 0 0; float:left; font-family:Arial; font-size:12px; font-weight:bold; color:#646464; line-height:13px; text-align:center; text-decoration:none; background:url(images/homeBg.gif) no-repeat}
 #home a:hover{height:36px; padding:74px 0 0 0; background:url(images/homeBg.gif) no-repeat -48px 0}
