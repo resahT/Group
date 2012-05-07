@@ -12,7 +12,7 @@ class Api
             die('Could not connect: ' . mysql_error());
         }
         
-        mysql_select_db("db", $this->connection);
+        mysql_select_db("notizblock", $this->connection);
     }
     
     function __destruct()
@@ -24,9 +24,9 @@ class Api
     {
         $sql = "SELECT idnumber, userAccess FROM idpasswords WHERE idnumber='" .  mysql_real_escape_string($username) . "' and idpassword='" .  mysql_real_escape_string($password) . "'";
         
-        $r = mysql_query($sql);
+        $result = mysql_query($sql);
         
-        if(!$r)
+        if(!$result)
         {
             $err = mysql_error();
             print $err;
@@ -35,10 +35,10 @@ class Api
 
         $isAuthenticated = false;
 
-        while($row = mysql_fetch_array($r))
+        while($row = mysql_fetch_array($result))
         {
             //echo $row['username'];
-            $accessd = $row['userAccess'];
+            $access = $row['userAccess'];
             $isAuthenticated = true;
         }
 
@@ -57,9 +57,10 @@ class Api
         
     }
     
-    public function registerUser($firstName, $lastName)
+    public function registerUser($firstName, $lastName,$password,)
     {
         //add data to the database
+        
         
         //if successfully added, return the id
         
