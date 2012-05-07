@@ -1,25 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+    
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>NotizBlock</title>
-        <link href="styles.css" rel="stylesheet" type="text/css" />
-        <link rel="icon" href="images/icon.ico" />
+        <?php include 'htmlhead.php'; ?>
     </head>
-<!-- ToDod:  need to change the names of the div ids to correspond to the actual panels. -->
-<!-- ToDod:  need to tidy the css -->
+    <!-- ToDo:  need to change the names of the div ids to correspond to the actual panels. -->
+    <!-- ToDo:  need to tidy the css -->
+    
 
 <body>
         <div id="topContentWrap">
-                <div id="header"> 
-                    <div><h1 style="text-align: center">NOTIZ BLOCK</h1> 
-                        <a id="loginposition" href="" style="text-align:right"> Login  </a>
-                    </div>
-                <br/>
-                <img src="images/account_line.gif" alt=""/> 
-                </div>
-                
-
+            
+            <?php include 'header.php'; ?>
+            
             <div id="logoPanel"></div>
             <div id="topContent">
                 <div id="aboutPanel">
@@ -45,25 +38,9 @@
         <div id="middleWrap">
             <div id="middlePanel">
             </div>
-            <div id="footWrap">
-                <div id="footPanel">
-                    <div id="footNav">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><div class="blank">|</div></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><div class="blank">|</div></li>
-                            <li><a href="#">Living Spaces</a></li>
-                            <li><div class="blank">|</div></li>
-                            <li><a href="#">Books</a></li>
-                            <li><div class="blank">|</div></li>
-                            <li><a href="#">Vendors</a></li>
-                        </ul>
-                    </div>
-                    <div id="copyright">© Copyright Information Goes Here. All Rights Reserved. Notiz Block</div>
-                    
-                </div>
-            </div>
+            
+            <?php include 'footer.php'; ?>
+            
         </div>
     </body>
 </html>
