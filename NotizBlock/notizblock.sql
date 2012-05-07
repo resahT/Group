@@ -17,7 +17,7 @@ CREATE TABLE basicUser
  uimage			blob,
  PRIMARY KEY(bUserid));
  
-INSERT INTO basicUser VALUES ();
+INSERT INTO basicUser VALUES ('1', 'Tara', 'Brown', 'Tbee', 'resah', 'computer science', 'tarabrown@hotmail.com', '5557788', '2012/05/02', 'i am a girl', '' );
  
 
 CREATE TABLE item
