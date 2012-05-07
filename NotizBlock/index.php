@@ -15,7 +15,7 @@
             
             <div id="logoPanel"></div>
             <div id="topContent">
-                <div id="aboutPanel">
+                <div id="livingSpaces">
                     <div id="home"><a href="#">Housing</a></div>
                     <h2>Living Spaces</h2>
                     <h3>Off- campus housing in and around Mona!</h3>

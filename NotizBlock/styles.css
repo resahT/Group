@@ -39,7 +39,7 @@ body{margin:0px; padding:0px; background:#414141}
     float:left;
     text-indent:-9999px;
 }
-#aboutPanel{
+#livingSpaces{
     width:216px; 
     height:715px;
     margin:0px; 
@@ -52,14 +52,14 @@ body{margin:0px; padding:0px; background:#414141}
 #home a:hover{height:36px; padding:74px 0 0 0; background:url(images/homeBg.gif) no-repeat -48px 0}
 
 /*LS Panel*/
-#aboutPanel h2{width:170px; margin:199px 0 0 0; padding:0 0 0 24px; float:left; font-family:Arial; font-size:26px; color:#400505; line-height:30px; font-weight:normal}
-#aboutPanel h3{width:170px; margin:8px 0 0 0; padding:0 0 0 24px; float:left; font-family:Arial; font-size:12px; color:#ffe996; line-height:19px; font-weight:bold}
-#aboutPanel p{width:170px; margin:20px 0 0 0; padding:0 0 0 24px; float:left; font-family:Arial; font-size:12px; color:#f8d85e; line-height:19px}
-#aboutPanel p a{color:#f8d85e; background:#9f3105; text-decoration:none}
-#aboutPanel p a:hover{background:#812a08}
-#aboutPanel .read{width:62px; height:23px; margin:0px; padding:0 0 0 131px; float:left}
-#aboutPanel .read a{width:62px; height:23px; margin:0px; padding:0px; float:left; font-family:Arial; font-size:11px; color:#d9d9d9; line-height:20px; text-align:center; text-decoration:none; background:url(images/buttons.jpg) no-repeat}
-#aboutPanel .read a:hover{color:#cd4007}
+#livingSpaces h2{width:170px; margin:199px 0 0 0; padding:0 0 0 24px; float:left; font-family:Arial; font-size:26px; color:#400505; line-height:30px; font-weight:normal}
+#livingSpaces h3{width:170px; margin:8px 0 0 0; padding:0 0 0 24px; float:left; font-family:Arial; font-size:12px; color:#ffe996; line-height:19px; font-weight:bold}
+#livingSpaces p{width:170px; margin:20px 0 0 0; padding:0 0 0 24px; float:left; font-family:Arial; font-size:12px; color:#f8d85e; line-height:19px}
+#livingSpaces p a{color:#f8d85e; background:#9f3105; text-decoration:none}
+#livingSpaces p a:hover{background:#812a08}
+#livingSpaces .read{width:62px; height:23px; margin:0px; padding:0 0 0 131px; float:left}
+#livingSpaces .read a{width:62px; height:23px; margin:0px; padding:0px; float:left; font-family:Arial; font-size:11px; color:#d9d9d9; line-height:20px; text-align:center; text-decoration:none; background:url(images/buttons.jpg) no-repeat}
+#livingSpaces .read a:hover{color:#cd4007}
 #eventPanel{width:216px; height:715px; margin:0px; padding:0px; float:left; border-left:#f3f1d2 solid 1px; background:#f7a474 url(images/books.jpg) no-repeat -294px -494px}
 #about{width:47px; height:110px; margin:0px; padding:0 0 0 169px; float:left}
 #about a{width:47px; height:36px; margin:0px; padding:56px 0 0 0; float:left; font-family:Arial; font-size:12px; font-weight:bold; color:#646464; line-height:13px; text-align:center; text-decoration:none; background:url(images/bkButton.gif) no-repeat}
