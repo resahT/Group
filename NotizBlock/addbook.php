@@ -11,9 +11,9 @@
             <br/>
             <form id='Add Book' class="formbox" action='addbook.php' method='post' accept-charset='UTF-8'>
                 <fieldset>
-                    <legend ><h2>ADD BOOK</h2></legend><br/>
-                    <input type='hidden' name='submitted' id='submitted' value='1'/>
                     
+                    <legend ><h2 class="capital">A<span>dd </span> <span> a </span> B<span>ook</span></h2></legend><br/>
+                    <input type='hidden' name='submitted' id='submitted' value='1'/>
                     <label for='title'>Title*:</label>
                          <input type='text' name='title' id='title' class='need'  maxlength="90"/><br/><br/>
                          

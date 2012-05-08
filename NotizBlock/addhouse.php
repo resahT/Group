@@ -10,7 +10,7 @@
             <br/>
             <form id='addhouse' class="formbox"action='addhouse.php' method='post' accept-charset='UTF-8'>
                 <fieldset>
-                    <legend ><h2>ADD A LIVING SPACE</h2></legend><br/>
+                    <legend ><h2 class="capital">R<span>egister </span>L<span>iving</span>S<span>pace</span></h2></legend><br/>
                     <input type='hidden' name='submitted' id='submitted' value='1'/>
                     <label for='bedrooms'>bedrooms* : </label>
                         <input type='text' name='bedrooms' id='bedrooms' maxlength="3" class="need"/><br/><br/>

@@ -1,24 +1,35 @@
 label { 
     font-weight: bold; 
-    color:wheat;
+    color:bisque;
     padding-right:10px;
 }
 
-#formbox{
+.formbox{
     padding: 0px 150px 0px 150px;
     margin:0px 100px 0px 100px; 
 }
+ h2 {
+    color: #AEEF33;
+    font-family: Georgia;
+    font-weight: bold;
+    color: white
+}
+h2.capital { font-size: 50px; 
+          text-transform: uppercase;
+          letter-spacing: -8px; 
+}
+h2.capital span { font-size: 70%;
+               text-transform: lowercase;
+               letter-spacing: -1px;
+}
+
+
 
 fieldset{
     text-align:left;
 }
-h1, h2 {
-    font-weight: bold;
-    color: white
-}
-legend { 
-    color: white
-}
+
+
 .need{
         background-image:url('images/red-tick.gif');
         background-repeat:no-repeat;
