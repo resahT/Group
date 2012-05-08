@@ -39,13 +39,23 @@ body{margin:0px; padding:0px; background:#414141}
     float:left;
     text-indent:-9999px;
 }
+#registration{
+width: 400px;
+height:400px;
+margin:0px;
+padding:10px;
+float: left;
+background:#fa9d77 url(images/reg.png) no-repet -77px -494px
+}
+
 #livingSpaces{
     width:216px; 
     height:715px;
     margin:0px; 
     padding:0px; 
     float:left; 
-    background:#cd4007 url(images/ls.jpg) no-repeat -77px -494px}
+    background:#cd4007 url(images/ls.jpg) no-repeat -77px -494px
+}
 
 #house{
 	width:47px; 
@@ -136,6 +146,7 @@ body{margin:0px; padding:0px; background:#414141}
 	background:url(images/buttons.jpg) no-repeat
 }
 #livingSpaces .read a:hover{color:#cd4007}
+
 #bookPanel{
 	width:216px;
 	height:715px;

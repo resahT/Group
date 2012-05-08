@@ -29,7 +29,7 @@ CREATE TABLE item
  image			blob,
  PRIMARY KEY(itemid));
  
- INSERT INTO item VALUES ();
+
 
 CREATE TABLE book
 (itemid			int				NOT NULL AUTO_INCREMENT,
@@ -47,7 +47,7 @@ CREATE TABLE book
  FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
  FOREIGN KEY (bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
- INSERT INTO book VALUES ();
+
  
 
 CREATE TABLE house
@@ -63,6 +63,14 @@ description		varchar(30)		NOT NULL,
  FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
  FOREIGN KEY (bUSerid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
- INSERT INTO house VALUES ();
+
+ 
+ CREATE TABLE bids
+ (itemid		int				NOT NULL AUTO_INCREMENT,
+  bUserid		varchar(15)		NOT NULL,
+  numOfBids		int,
+  PRIMARY KEY(itemid, bUserid),
+  FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
 
  
