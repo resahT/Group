@@ -4,9 +4,17 @@ label {
     padding-right:10px;
 }
 
+#dimmer{
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    background-color:#ffffff;
+    opacity:0.2;
+    filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+
 .formbox{
     padding: 0px 150px 0px 150px;
-    margin:0px 100px 0px 100px; 
+    margin:0px 100px 0px 100px;
 }
  h2 {
     color: #AEEF33;
