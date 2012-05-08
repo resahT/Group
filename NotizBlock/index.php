@@ -3,10 +3,7 @@
     
     <head>
         <?php include 'htmlhead.php'; ?>
-    </head>
-    <!-- ToDo:  need to change the names of the div ids to correspond to the actual panels. -->
-    <!-- ToDo:  need to tidy the css -->
-    
+    </head>    
 
 <body>
         <div id="topContentWrap">

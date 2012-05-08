@@ -1,0 +1,27 @@
+label { 
+    font-weight: bold; 
+    color:wheat;
+    padding-right:10px;
+}
+
+#formbox{
+    padding: 0px 150px 0px 150px;
+    margin:0px 100px 0px 100px; 
+}
+
+fieldset{
+    text-align:left;
+}
+h1, h2 {
+    font-weight: bold;
+    color: white
+}
+legend { 
+    color: white
+}
+.need{
+        background-image:url('images/red-tick.gif');
+        background-repeat:no-repeat;
+        padding-left:20px;
+        background-size:20px;
+} 

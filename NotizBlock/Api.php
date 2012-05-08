@@ -98,12 +98,12 @@ class Api
         //if not successfully added return null
     }
     
-    public function listBooks($filter = array())
+    public function listBooks( )
     {
         $userid = $_SESSION['sessionId'];
         $sql2 = "SELECT itemid from book User where bUserid= '".$userid."' ";
         $userBooks = mysql_query($sql2);
-        if(userBooks==null){
+        if($userBooks==null){
             //user has no books
         }
         else{
@@ -119,6 +119,9 @@ class Api
     
     public function getBookDetails($bookId)
     {
+        $sql2 = "SELECT * from book User where bUserid= '".$bookId."' ";
+        $bookdetails=mysql_query($sql2);
+        return $bookdetails;
         
     }
     
