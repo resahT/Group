@@ -1,15 +1,12 @@
 <div id="header"> 
-    <div>
+    <div style=" border-bottom-style:groove; border-bottom-width:thick ">
         <a id="loginposition" href="" style="text-align:right">Login</a>
-    </div>
+        
+        <img  src="images/header1.JPG" alt=""  width="1000" height="150" style="filter:alpha(style=3, opacity=100)"/>
+        
+        <br />
+        <img src="images/account_line.gif" alt="" />
+     </div>
     
-    <br />
-
-		
-		
-    <img src="images/account_line.gif" alt="" /> 
-=======
     
-    <img src="images/header1.jpg" alt="" width="1000" /> 
-
 </div>
