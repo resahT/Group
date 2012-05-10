@@ -126,17 +126,17 @@ class Api
       $subjectarea = mysql_real_escape_string($subjectarea);
       $condition = mysql_real_escape_string($condition);
       $askingprice = mysql_real_escape_string($askingprice);
-      $description = mysql_real_escape_string ($description);
-      
-      $bUserId = mysql_real_escape_string($category);
+      $description = mysql_real_escape_string ($description); 
+      $bUserId = mysql_real_escape_string($bUserId);
       $category = mysql_real_escape_string($category);
-      $uploadtime = mysql_real_escape_string ($uploadtime);
+      $uploadtime = mysql_query(current_timestamp());
       $keyword = mysql_real_escape_string($keyword);
       $image = mysql_real_escape_string($image);
       
       $sql1 = "INSERT INTO item
                VALUES ('$bUserId','$category','$uploadtime','$saletype','$keyword','$image')";
       $result2 = mysql_query($sql1);
+      
       $itemid2 = "SELECT itemid 
                   FROM  item
                   WHERE uploadtime = '$uploadtime'";

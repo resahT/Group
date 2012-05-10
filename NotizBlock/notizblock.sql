@@ -50,7 +50,7 @@ CREATE TABLE item
  uploadTime		timestamp		NOT NULL,
  saleType		varchar(15)		NOT NULL,
  keyword		varchar(20)		NOT NULL,
- image			varchar(50), <!-- saving path name-->
+ image			varchar(50), /* use path to image than save the image */  
  PRIMARY KEY(itemid, bUserid),
  FOREIGN KEY(bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
