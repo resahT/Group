@@ -5,11 +5,10 @@ label {
 }
 
 #dimmer{
-    -moz-opacity:0.5;
-    -khtml-opacity: 0.5;
-    background-color:#ffffff;
-    opacity:0.2;
-    filter:alpha(opacity=60); /* For IE8 and earlier */
+    background:url(images/shadow1.png) no-repeat;  
+}
+#dimmerText{
+    padding: 20px 20px 20px 20px
 }
 
 .formbox{

@@ -5,13 +5,4 @@
         <br />
         <img src="images/account_line.gif" alt="" />
      </div>
-<<<<<<< HEAD
-    
-    <br />
-
-=======
-
-    <br />
-   
->>>>>>> a539403af43d5136c313a6662a8f4581f5f59125
 </div>
