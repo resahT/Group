@@ -1,8 +1,7 @@
 /*CSS Document*/
 body{margin:0px; padding:0px; background:#414141}
 #header{ width :100% ;
-         padding:10px 10px 10px 10px;
-         margin: 10px 10px 10px 10px;
+         
          color:  white;
          text-align: center}
 #loginposition { position:absolute; visibility:show; left: 1100px; top: 20px; z-index:2; } 
