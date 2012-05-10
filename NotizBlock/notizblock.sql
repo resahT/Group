@@ -49,7 +49,7 @@ CREATE TABLE item
  FOREIGN KEY(bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
 
-
+ 
 CREATE TABLE book
 (itemid			int				NOT NULL AUTO_INCREMENT,
  title			varchar(50)		NOT NULL,
