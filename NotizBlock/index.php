@@ -12,6 +12,7 @@
             
             <div id="logoPanel"></div>
             <div id="topContent">
+                
                 <div id="livingSpacesPanel">
                     <div id="house"><a href="#">Housing</a></div>
                     <h2>Living Spaces</h2>
