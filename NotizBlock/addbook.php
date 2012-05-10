@@ -17,48 +17,48 @@
                     <legend ><h2 class="capital">A<span>dd </span> <span> a </span> B<span>ook</span></h2></legend><br/>
                     
                         <input type='hidden' name='submitted' id='submitted' value='1'/>
-                        <label for='title'>Title*:</label>
-                        <input type='text' name='title' id='title' class='need'  maxlength="90"/><br/><br/>
+                        <label for='title' class='need'>Title*:</label>
+                        <input type='text' name='title' id='title' maxlength="90"/><br/><br/>
 
-                        <label for='author'>Author*:</label>
-                        <input type='text' name='author' id='author' class='need' maxlength="90"/><br/><br/>
+                        <label for='author' class='need'>Author*:</label>
+                        <input type='text' name='author' id='author' maxlength="90"/><br/><br/>
 
-                        <label for='edition'>Edition</label>
-                        <input type='text' name='edition' id='edition' class='need' maxlength="5"/><br/><br/>
+                        <label for='edition' class='need'>Edition</label>
+                        <input type='text' name='edition' id='edition' maxlength="5"/><br/><br/>
 
-                        <label for='publisher'>Publisher</label>
-                        <input type='text' name='publisher' id='pub' class='need' maxlength="90"/><br/><br/>
+                        <label for='publisher' class='need'>Publisher</label>
+                        <input type='text' name='publisher' id='pub' maxlength="90"/><br/><br/>
 
-                        <label>Bid/ Direct Sale*:</label>
+                        <label class='need'>Bid/ Direct Sale*:</label>
                         <select name="saleType" id="select_saleType">
-                            <option value="" class='need'>...</option>
+                            <option value="">...</option>
                             <option value="bid">Up for Bid!</option>
                             <option value="sale">Direct Sale</option>
                         </select><br/><br/>
-                        <label>Subject Area*:</label>
+                        <label class='need'>Subject Area*:</label>
                         <select name="subarea" id="select_subarea">
                             <option value="">...</option>
                             <option value="computers">Computer Science</option>
                             <option value="physics">Physics</option>
                         </select><br/><br/>
-                        <label>Condition*:</label>
+                        <label class='need'>Condition*:</label>
                         <select name="condtion" id="select_condition">
                             <option value="">...</option>
                             <option value="new">Mint!</option>
                             <option value="old">Used</option>
                             <option value="refurbished">Refurbised</option>
                         </select><br/><br/>
-                        <label>Asking Price*: $ </label>
+                        <label class='need'>Asking Price*: $ </label>
                         <input type='text' name='bk_price'/><br/><br/>
-                        <label for='description'>Description:</label><br/>
+                        <label for='description' class='need'>Description:</label><br/>
                         <textarea name='description' cols="32" rows="5" wrap="hard"></textarea><br/><br/>
-                        <label for='bkimg'>Upload a picture:</label>
+                        <label for='bkimg' class='need'>Upload a picture:</label>
                         <input name='MAX_FILE_SIZE' value='102400' type='hidden'/>
                         <input name='bkimage' accept='bkimage/jpeg' type='file'/><br/><br/>
                         <input type='submit' name='submit' value='submit'/>
                   </fieldset>
                 </form>
-                <div>
+                </div>
                 <div id="dimmer"> </div>
             
 

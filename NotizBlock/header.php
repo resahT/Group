@@ -4,12 +4,7 @@
     </div>
     
     <br />
-
-		
-		
-    <img src="images/account_line.gif" alt="" /> 
-=======
     
-    <img src="images/header1.jpg" alt="" width="1000" /> 
+    <img src="images/header1.jpg" alt="" width="1340" /> 
 
 </div>

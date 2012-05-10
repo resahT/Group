@@ -6,6 +6,7 @@ body{margin:0px; padding:0px; background:#414141}
          color:  white;
          text-align: center}
 #loginposition { position:absolute; visibility:show; left: 1100px; top: 20px; z-index:2; } 
+
 /*Top Panels*/
 #topContentWrap{
     width:100%; 
@@ -48,7 +49,7 @@ float: left;
 background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 
-#livingSpaces{
+#livingSpacesPanel{
     width:216px; 
     height:715px;
     margin:0px; 
@@ -86,7 +87,7 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 
 /*LS Panel*/
-#livingSpaces h2{
+#livingSpacesPanel h2{
 	width:170px;
 	margin:199px 0 0 0; 
 	padding:0 0 0 24px; 
@@ -97,7 +98,7 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	line-height:30px;
 	font-weight:normal
 }
-#livingSpaces h3{
+#livingSpacesPanel h3{
 	width:170px; 
 	margin:8px 0 0 0;
 	padding:0 0 0 24px;
@@ -108,7 +109,7 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	line-height:19px;
 	font-weight:bold
 }
-#livingSpaces p{
+#livingSpacesPanel p{
 	width:170px; 
 	margin:20px 0 0 0;
 	padding:0 0 0 24px;
@@ -118,20 +119,20 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	color:#f8d85e; 
 	line-height:19px
 }
-#livingSpaces p a{
+#livingSpacesPanel p a{
 	color:#f8d85e;
 	background:#9f3105;
 	text-decoration:none
 }
-#livingSpaces p a:hover{background:#812a08}
-#livingSpaces .read{
+#livingSpacesPanel p a:hover{background:#812a08}
+#livingSpacesPanel .read{
 	width:62px; 
 	height:23px; 
 	margin:0px;
 	padding:0 0 0 131px; 
 	float:left
 }
-#livingSpaces .read a{
+#livingSpacesPanel .read a{
 	width:62px; 
 	height:23px;
 	margin:0px;
@@ -145,7 +146,7 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	text-decoration:none;
 	background:url(images/buttons.jpg) no-repeat
 }
-#livingSpaces .read a:hover{color:#cd4007}
+#livingSpacesPanel .read a:hover{color:#cd4007}
 
 #bookPanel{
 	width:216px;

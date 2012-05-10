@@ -13,13 +13,13 @@
             <div id="logoPanel"></div>
             <div id="topContent">
                 <div id="livingSpacesPanel">
-                    <div id="home"><a href="#">Housing</a></div>
+                    <div id="house"><a href="#">Housing</a></div>
                     <h2>Living Spaces</h2>
-                    <h3>Off- campus housing in and around Mona!</h3>
+                    <h3>Off- campus housing conveniently located in and around Mona!</h3>
                     <div class="read"><a href="#">see more</a></div>
                 </div>
                 <div id="bookPanel">
-                    <div id="about"><a href="#">Books</a></div>
+                    <div id="book"><a href="#">Books</a></div>
                     <h2>Books</h2>
                     <h3>New & used text books for Computer Science and Physics students</h3>
                     <div class="read"><a href="#">see more</a></div>
