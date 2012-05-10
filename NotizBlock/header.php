@@ -8,12 +8,6 @@
         <img src="images/account_line.gif" alt="" />
      </div>
     
-<<<<<<< HEAD
     <br />
-    
-    <img src="images/header1.jpg" alt="" width="1340" /> 
 
-=======
-    
->>>>>>> 1733ab59d9de2362d0a8adcfcb932aa7bee9f9af
 </div>
