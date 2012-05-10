@@ -1,7 +1,6 @@
 /*CSS Document*/
 body{margin:0px; padding:0px; background:#414141}
 #header{ width :100% ;
-         
          color:  white;
          text-align: center}
 #loginposition { position:absolute; visibility:show; left: 1100px; top: 20px; z-index:2; } 
@@ -694,3 +693,4 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	background:#252525;
 	text-decoration:none
 }
+

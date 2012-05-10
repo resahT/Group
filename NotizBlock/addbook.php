@@ -9,58 +9,59 @@
         <div id ="topContentWrap">
             <?php include 'header.php'; ?>
             <br/>
-            <div id="formContainer">
             <form id='Add Book'  class="formbox" action='addbook.php' method='post' accept-charset='UTF-8'>
 
                 <fieldset>
 
                     <legend ><h2 class="capital">A<span>dd </span> <span> a </span> B<span>ook</span></h2></legend><br/>
-                    
-                        <input type='hidden' name='submitted' id='submitted' value='1'/>
-                        <label for='title' class='need'>Title*:</label>
-                        <input type='text' name='title' id='title' maxlength="90"/><br/><br/>
+                    <div id="dimmer">
+                        <div id="dimmerText">
+                            <input type='hidden' name='submitted' id='submitted' value='1'/>
+                            <label for='title' class='need'>Title*:</label>
+                            <input type='text' name='title' id='title' maxlength="90"/><br/><br/>
 
-                        <label for='author' class='need'>Author*:</label>
-                        <input type='text' name='author' id='author' maxlength="90"/><br/><br/>
+                            <label for='author' class='need'>Author*:</label>
+                            <input type='text' name='author' id='author' maxlength="90"/><br/><br/>
 
-                        <label for='edition' class='need'>Edition</label>
-                        <input type='text' name='edition' id='edition' maxlength="5"/><br/><br/>
+                            <label for='edition' class='need'>Edition</label>
+                            <input type='text' name='edition' id='edition' maxlength="5"/><br/><br/>
 
-                        <label for='publisher' class='need'>Publisher</label>
-                        <input type='text' name='publisher' id='pub' maxlength="90"/><br/><br/>
+                            <label for='publisher' class='need'>Publisher</label>
+                            <input type='text' name='publisher' id='pub' maxlength="90"/><br/><br/>
 
-                        <label class='need'>Bid/ Direct Sale*:</label>
-                        <select name="saleType" id="select_saleType">
-                            <option value="">...</option>
-                            <option value="bid">Up for Bid!</option>
-                            <option value="sale">Direct Sale</option>
-                        </select><br/><br/>
-                        <label class='need'>Subject Area*:</label>
-                        <select name="subarea" id="select_subarea">
-                            <option value="">...</option>
-                            <option value="computers">Computer Science</option>
-                            <option value="physics">Physics</option>
-                        </select><br/><br/>
-                        <label class='need'>Condition*:</label>
-                        <select name="condtion" id="select_condition">
-                            <option value="">...</option>
-                            <option value="new">Mint!</option>
-                            <option value="old">Used</option>
-                            <option value="refurbished">Refurbised</option>
-                        </select><br/><br/>
-                        <label class='need'>Asking Price*: $ </label>
-                        <input type='text' name='bk_price'/><br/><br/>
-                        <label for='description' class='need'>Description:</label><br/>
-                        <textarea name='description' cols="32" rows="5" wrap="hard"></textarea><br/><br/>
-                        <label for='bkimg' class='need'>Upload a picture:</label>
-                        <input name='MAX_FILE_SIZE' value='102400' type='hidden'/>
-                        <input name='bkimage' accept='bkimage/jpeg' type='file'/><br/><br/>
-                        <input type='submit' name='submit' value='submit'/>
-                  </fieldset>
-                </form>
-                </div>
-                <div id="dimmer"> </div>
-            
+                            <label class='need'>Bid/ Direct Sale*:</label>
+                            <select name="saleType" id="select_saleType">
+                                <option value="">...</option>
+                                <option value="bid">Up for Bid!</option>
+                                <option value="sale">Direct Sale</option>
+                            </select><br/><br/>
+                            <label class='need'>Subject Area*:</label>
+                            <select name="subarea" id="select_subarea">
+                                <option value="">...</option>
+                                <option value="computers">Computer Science</option>
+                                <option value="physics">Physics</option>
+                            </select><br/><br/>
+                            <label class='need'>Condition*:</label>
+                            <select name="condtion" id="select_condition">
+                                <option value="">...</option>
+                                <option value="new">Mint!</option>
+                                <option value="old">Used</option>
+                                <option value="refurbished">Refurbised</option>
+                            </select><br/><br/>
+                            <label class='need'>Asking Price*: $ </label>
+                            <input type='text' name='bk_price'/><br/><br/>
+                            <label for='description' class='need'>Description:</label><br/>
+                            <textarea name='description' cols="32" rows="5" wrap="hard"></textarea><br/><br/>
+                            <label for='bkimg' class='need'>Upload a picture:</label>
+                            <input name='MAX_FILE_SIZE' value='102400' type='hidden'/>
+                            <input name='bkimage' accept='bkimage/jpeg' type='file'/><br/><br/>
+                            <input type='submit' name='submit' value='submit'/>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+
 
 
             <?php include 'footer.php'; ?>
