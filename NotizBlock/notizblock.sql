@@ -50,7 +50,7 @@ CREATE TABLE item
  uploadTime		timestamp		NOT NULL,
  saleType		varchar(15)		NOT NULL,
  keyword		varchar(20)		NOT NULL,
- image			varchar(50), /* use path to image than save the image */  
+ image			varchar(50), /* use path to image rather than save the image */  
  PRIMARY KEY(itemid, bUserid),
  FOREIGN KEY(bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
@@ -65,7 +65,7 @@ CREATE TABLE book
  edition		varchar(20)		NOT NULL,
  subarea		varchar(15)		NOT NULL,
  cond			varchar(15)		NOT NULL,
- saleType               varchar(10)     NOT NULL,
+ saleType       varchar(10)     NOT NULL,
  price			decimal(10,2)	NOT NULL,
  description	varchar(30)		NOT NULL,
  PRIMARY KEY (itemid),
@@ -92,9 +92,9 @@ CREATE TABLE house
  CREATE TABLE bids
  (itemid		int				NOT NULL AUTO_INCREMENT,
   bUserid		varchar(15)		NOT NULL,
-  bidDate		date,
-  bidTime		timestamp,
-  bidAmount             int,
+  bidDate		date			NOT NULL,
+  bidTime		timestamp		NOT NULL,
+  bidAmount     int, /* <--- what's this storing?*/
   PRIMARY KEY(itemid, bUserid),
   FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
