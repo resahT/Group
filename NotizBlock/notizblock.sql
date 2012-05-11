@@ -57,7 +57,7 @@ CREATE TABLE item
 
  
 CREATE TABLE book
-(itemid			int				NOT NULL AUTO_INCREMENT,
+(itemid			int			NOT NULL,
  title			varchar(50)		NOT NULL,
  author			varchar(50)		NOT NULL,
  publisher		varchar(20),
