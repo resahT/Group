@@ -23,6 +23,9 @@ class Api
         edithouse()
         viewhouse()
         recommender()
+     *  removeitem()
+     *  removebook()
+     *  removehouse()
      * 
         
      
@@ -199,7 +202,7 @@ class Api
     public function getmaxbid ($itemid){
         //returns the max bid for an itel
          $itemid = mysql_real_escape_string( $itemid);
-        $sql="SELECT MAX(bidAmount)
+        $sql = "SELECT MAX(bidAmount)
              FROM bid 
              WHERE itemid= '$itemid'";
         $bidarray = mysql_fetch_array(mysql_query($sql));
@@ -207,5 +210,44 @@ class Api
         return $bid; 
     }
     
-    public function 
+    public function viewbidhistory($searchby,$value)
+    {
+        //search by will take as input:
+        //                               1 for search by userid;
+        //                               2 for search by itemid;
+        // need to check in html to ensure that search is being passed the right values
+        $search= "";
+        $a = "bUserid = '$value'";
+        $b = "itemid = '$value'";
+        $search = ($searchby==1)?$a:$b;
+        $value = mysql_real_escape_string( $value);
+        $sql = "SELECT *
+                FROM bid 
+                WHERE  . $search .";
+        $bidhistoryarray = mysql_fetch_array(mysql_query($sql));
+        $bidhistory =  $bidhistoryarray[0];
+        return $bidhistory;
+    }
+    public function editbook($itemid)
+    {
+        
+    }
+    public function addhouse(){
+        
+    }
+    public function edithouse(){
+        
+    }
+    public function viewhouse($itemid){
+        
+        $itemid = mysql_real_escape_string( $itemid);
+        $sql2 = "SELECT * from house 
+                 WHERE itemid = '$itemid'";
+        $housearray = mysql_fetch_array(mysql_query($sql2));
+        $house = $housearray[0];
+        return $house;  
+    }
+    public function recommender(){
+        
+    }
 }

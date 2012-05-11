@@ -18,3 +18,6 @@ var_dump($result2);
 
 $result3 = $api->getownerBooks('1');
 var_dump($result3);
+
+$result4 = $api->registerUser('Deon','Jones' , 'dd101', 'angelbaby@hotmail.com', 5644630, 'guh deh mi a hottaz');
+var_dump($result4);
