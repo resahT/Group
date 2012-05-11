@@ -5,11 +5,8 @@
         <br />
         <img src="images/account_line.gif" alt="" />
      </div>
-<<<<<<< HEAD
     
     <br />
     <br />
-  
-=======
->>>>>>> 0db5ae12edb1a839306bf45b9594c107fa43bfba
+ 
 </div>
