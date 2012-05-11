@@ -12,8 +12,9 @@ var_dump($result);
 $result1 = $api->login('Tbee2','resah');
 var_dump($result1);
 
-$result2 = $api->addBook('life', 'Dean','TaraPub','Direct','2/12/2012','1','computing','mint','10',
-        'computing book for sale','1','book','12:44:55','time,uu','path/to/image');
-addBook($title, $author,$publisher,$saletype,$published_date,$edition,
-            $subjectarea,$condition,$askingprice, $description,$bUserId, $category,$uploadtime,$keyword,$image)
+$result2 = $api->addBook('life', 'Dean','TaraPub','Direct','2009-01-03','1','computing','mint','10',
+        'computing book for sale','1','book',' 2009-01-03 11:48:50','time,uu','path/to/image');
 var_dump($result2);
+
+$result3 = $api->getownerBooks('1');
+var_dump($result3);

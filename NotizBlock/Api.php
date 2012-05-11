@@ -1,6 +1,34 @@
 <?php
 class Api
 {
+    /*
+    Functions in API:
+    
+    Have:   
+        login($username, $password)
+        logout()
+        registerUser($firstName, $lastName,$password,$email,$phone,$personalinfo)
+        listBooks($userid)
+        addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId,
+                            $category,$uploadtime,$keyword,$image)
+        getownerBooks($ownerid)
+        addBid($itemid, $buserid, $bidamount)
+        getmaxbid ($itemid)
+    
+    Need:
+     * 
+       viewbidhistory()
+        editbook()
+        addhouse()
+        edithouse()
+        viewhouse()
+        recommender()
+     * 
+        
+     
+    
+    */
+    
     private $connection = null;
     
     public function __construct()
@@ -99,69 +127,85 @@ class Api
         //if not successfully added return null
     }
     
-    public function listBooks( )
+    public function listBooks($userid)
     {
-        $userid = $_SESSION['sessionId'];
-        $sql2 = "SELECT itemid from book where bUserid= '".$userid."' ";
-        $userBooks = mysql_query($sql2);
-        if($userBooks==null){
-            //user has no books
-        }
-        else{
-            return userBooks;
-        }
-            
+        //list all books in database
+        $sql2 = "SELECT * from book";
+        $userBooks = mysql_fetch_array(mysql_query($sql2));
+        return Books;     
     }
     
     public function addBook($title, $author,$publisher,$saletype,$published_date,$edition,
-            $subjectarea,$condition,$askingprice, $description,$bUserId, $category,$uploadtime,$keyword,$image)
+                            $subjectarea,$condition,$askingprice, $description,$bUserId,
+                            $category,$uploadtime,$keyword,$image)
     {
         
       $title = mysql_real_escape_string($title);
       $author = mysql_real_escape_string ($author);
       $publisher = mysql_real_escape_string($publisher);
       $saletype = mysql_real_escape_string($saletype);
-      $published_date = mysql_real_escape_string($published_date);
+      $published_date =mysql_real_escape_string($published_date);
       $edition = mysql_real_escape_string($edition);
       $subjectarea = mysql_real_escape_string($subjectarea);
       $condition = mysql_real_escape_string($condition);
       $askingprice = mysql_real_escape_string($askingprice);
       $description = mysql_real_escape_string ($description); 
-      $bUserId = mysql_real_escape_string($bUserId);
+      $bUserId = '1';//mysql_real_escape_string($bUserId);
       $category = mysql_real_escape_string($category);
-      $uploadtime = mysql_query(current_timestamp());
+      $uploadtime = date('Y-m-d H:i:s');
       $keyword = mysql_real_escape_string($keyword);
       $image = mysql_real_escape_string($image);
       
       $sql1 = "INSERT INTO item
-               VALUES ('$bUserId','$category','$uploadtime','$saletype','$keyword','$image')";
-      $result2 = mysql_query($sql1);
+               VALUES (null,'$bUserId','$category','$uploadtime','$saletype','$keyword','$image')";
+      $result1=mysql_query($sql1);
       
-      $itemid2 = "SELECT itemid 
-                  FROM  item
-                  WHERE uploadtime = '$uploadtime'";
-      
+      $sql3 = "SELECT itemid 
+               FROM  item
+               WHERE uploadtime = '$uploadtime'";
+      $itemid2 = mysql_fetch_row(mysql_query($sql3));
+      $itemid2 = $itemid2[0];
       $sql2 = "INSERT INTO book 
-               VALUES ('$itemid2',$title','$author','$publisher',
+               VALUES ('$itemid2','$title','$author','$publisher',
                       '$published_date','$edition',
                       '$subjectarea','$condition',
                       '$saletype','$askingprice',
                       '$description')";
       $result = mysql_query($sql2);
-      return $sql2;
+      return $result;
     }
     
-    public function getBookDetails($bookId)
+    public function getownerBooks($ownerid)
     {
-        $sql2 = "SELECT * from book where bUserid= '".$bookId."' ";
-        $bookdetails = mysql_query($sql2);
+        $sql2 = "SELECT * from book JOIN item on book.itemid= item.itemid where bUserid= '".$ownerid."'";
+        $bookdetails =  mysql_fetch_array(mysql_query($sql2));
         return $bookdetails;
         
     }
     
-    public function addBid($bookId)
+    public function addBid($itemid, $buserid, $bidamount)
     {
-        
+       $itemid = mysql_real_escape_string( $itemid);
+       $buserid = mysql_real_escape_string( $buserid);
+       $biddate = date('Y-m-d');
+       $bidtime = time('H:i:s');
+       $bidamount = mysql_real_escape_string($bidamount);
+       $sql="INSERT INTO bid VALUES( $itemid, $buserid,$biddate, $bidtime, $bidamount)";
+       $result=mysql_query($sql);
+       return $result;
+       
     }
     
+    public function getmaxbid ($itemid){
+        //returns the max bid for an itel
+         $itemid = mysql_real_escape_string( $itemid);
+        $sql="SELECT MAX(bidAmount)
+             FROM bid 
+             WHERE itemid= '$itemid'";
+        $bidarray = mysql_fetch_array(mysql_query($sql));
+        $bid = $bidarray[0];
+        return $bid; 
+    }
+    
+    public function 
 }
