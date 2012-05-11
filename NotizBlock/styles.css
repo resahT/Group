@@ -2,8 +2,17 @@
 body{margin:0px; padding:0px; background:#414141}
 #header{ width :100% ;
          color:  white;
-         text-align: center}
-#loginposition { position:absolute; visibility:show; left: 1100px; top: 20px; z-index:2; } 
+         height: 19%;
+         text-align: center;
+         padding-bottom: 10px;
+}
+#loginposition { 
+    position:absolute;
+    visibility:show; 
+    left: 1000px; 
+    top: 20px;
+    z-index:2; 
+} 
 
 /*Top Panels*/
 #topContentWrap{
@@ -618,9 +627,8 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 #footWrap{
 	width:100%; 
 	margin:0px;
-	padding:0 0 23px 0;
+	padding:0 0 25px 0;
 	float:left;
-	background:url(images/footbg.jpg) repeat-x
 }
 #footPanel{
 	width:928px;
@@ -628,10 +636,11 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	padding:0px
 }
 #footNav{
-	width:928px; 
-	margin:25px 0 0 0;
+	width:1030px; 
+	margin:20px 0 0 0;
 	padding:0px;
-	float:left
+        float:left;
+        text-align:center
 }
 #footNav ul{
 	width:655px;
@@ -641,29 +650,30 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 #footNav ul li{
 	width:auto; 
-	margin:20px;
+	margin:12px;
 	padding:0px; 
-	float:left; 
-	display:block
+	float:left;
+        display:block
 }
+
 #footNav ul li .blank{
 	width:auto;
 	margin:3px 0 0 0; 
-	padding:0 7px 0 7px;
+	padding:0 5px 0 5px;
 	float:left; 
 	font-family:Arial;
 	font-size:11px; 
 	color:#d5d5d5;
-	line-height:15px
+	line-height:10px
 }
 #footNav ul li a{
 	font-family:Arial;
-	font-size:11px;
-	color:#d5d5d5;
+	font-size:14px;
+	color:#1d1d1d;
 	line-height:15px; 
 	text-decoration:none;
 	margin:0px;
-	padding:0px
+	padding:1px
 }
 #copyright{
 	width:928px;

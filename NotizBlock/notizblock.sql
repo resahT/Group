@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS book;
+DROP TABLE IF EXISTS house;
+DROP TABLE IF EXISTS bids;
+DROP TABLE IF EXISTS item;
+DROP TABLE IF EXISTS basicUser;
+
 CREATE TABLE basicUser
 (bUserid		varchar(15)		NOT NULL UNIQUE,
  fname			varchar(50)		NOT NULL,
@@ -38,13 +44,13 @@ INSERT INTO basicUser VALUES('23', 'Nicolette', 'Bisoon', 'Nickyboo', 'b1s00n', 
 
 
 CREATE TABLE item
-(itemid			int				NOT NULL AUTO_INCREMENT,
+(itemid			int			NOT NULL AUTO_INCREMENT,
  bUserid		varchar(15)		NOT NULL,
  category		varchar(15)		NOT NULL,
  uploadTime		timestamp		NOT NULL,
  saleType		varchar(15)		NOT NULL,
  keyword		varchar(20)		NOT NULL,
- image			blob,
+ image			varchar(50), /* use path to image than save the image */  
  PRIMARY KEY(itemid, bUserid),
  FOREIGN KEY(bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
@@ -59,6 +65,7 @@ CREATE TABLE book
  edition		varchar(20)		NOT NULL,
  subarea		varchar(15)		NOT NULL,
  cond			varchar(15)		NOT NULL,
+ saleType               varchar(10)     NOT NULL,
  price			decimal(10,2)	NOT NULL,
  description	varchar(30)		NOT NULL,
  PRIMARY KEY (itemid),
@@ -87,6 +94,7 @@ CREATE TABLE house
   bUserid		varchar(15)		NOT NULL,
   bidDate		date,
   bidTime		timestamp,
+  bidAmount             int,
   PRIMARY KEY(itemid, bUserid),
   FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
