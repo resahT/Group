@@ -5,19 +5,37 @@ $api = new Api();
 
 //Testing for login
 
+  echo '***********************************************';
+  echo '                     USER                       ';
+  echo "*********************************************** ";
+
 $result = $api->login('Tbee','resah');
-var_dump($result);
+echo var_dump($result)."Login working:";
+        
+$resultu1 = $api->login('Tbee2','resah');
+echo " Login not working : ". var_dump($resultu1);
+
+$resultu2 = $api->registerUser('Resah','Jones' , 'resss01', 'angelbaby@hotmail.com', 5334430, ' hottaz');
+echo " register: ". var_dump($resultu2);
 
 
-$result1 = $api->login('Tbee2','resah');
-var_dump($result1);
+  echo '***********************************************';
+  echo '                     Book                       ';
+  echo "***********************************************\n";
+  
+  
+//$resultb1 = $api->addBook('life', 'Dean','TaraPub','Direct','2009-01-03','1','computing','mint','10',
+ //       'computing book for sale','1','book',' 2009-01-03 11:48:50','time,uu','path/to/image');
+//var_dump($resultb1);
 
-$result2 = $api->addBook('life', 'Dean','TaraPub','Direct','2009-01-03','1','computing','mint','10',
-        'computing book for sale','1','book',' 2009-01-03 11:48:50','time,uu','path/to/image');
-var_dump($result2);
+$resultb2 = $api->getownerBooks('1');
+var_dump($resultb2);
 
-$result3 = $api->getownerBooks('1');
-var_dump($result3);
+//$resultb5 = $api->editbook($itemid, $title, $author, $publisher, $published_date, $edition, $subjectarea, $condition, $saletype, $askingprice, $description);
+//var_dump($resultb5;)
 
-$result4 = $api->registerUser('Deon','Jones' , 'dd101', 'angelbaby@hotmail.com', 5644630, 'guh deh mi a hottaz');
-var_dump($result4);
+$resultb3 = $api->rmbook('8');
+ var_dump($resultb3);
+
+
+
