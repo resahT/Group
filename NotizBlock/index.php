@@ -14,6 +14,7 @@
             <div id="topContent">
                 
                 <div id="livingSpacesPanel">
+                    NB: BOOK HAD SALE TYPE HOUSE DOESNT
                     <div id="house"><a href="#">Housing</a></div>
                     <h2>Living Spaces</h2>
                     <h3>Off- campus housing conveniently located in and around Mona!</h3>
