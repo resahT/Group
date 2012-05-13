@@ -10,7 +10,8 @@
             <br/>
             <form id='addhouse' class="formbox"action='addhouse.php' method='post' accept-charset='UTF-8'>
                 <fieldset>
-                    <legend ><h2 class="capital">R<span>egister </span>L<span>iving</span>S<span>pace</span></h2></legend>
+                    <!--<legend ><h2 class="capital">R<span>egister </span>L<span>iving</span>S<span>pace</span></h2></legend>-->
+					<legend><img src="images/adh.png" alt="Register LivingSpace"/></legend>
                     <div id="dimmer">
                         <div id="dimmerText">
                             <input type='hidden' name='submitted' id='submitted' value='1'/>

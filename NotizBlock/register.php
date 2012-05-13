@@ -10,7 +10,8 @@
             <br/>
             <form id='register' class="formbox"action='register.php' method='post' accept-charset='UTF-8'>
                 <fieldset >
-                    <legend ><h2 class="capital">A<span>dd </span> Y<span>uh </span> S<span>elf(lol)(smh @ tara) </span> </h2></legend><br/>
+                    <!--<legend ><h2 class="capital">A<span>dd </span> Y<span>uh </span> S<span>elf(lol)(smh @ tara) </span> </h2></legend><br/>-->
+					<legend><img src="images/register.png" alt="Register as a user"/></legend>
                     <div id="dimmer">
                         <div id="dimmerText">
                             <input type='hidden' name='submitted' id='submitted' value='1'/>

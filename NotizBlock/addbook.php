@@ -13,7 +13,8 @@
 
                 <fieldset>
 
-                    <legend ><h2 class="capital">A<span>dd </span> <span> a </span> B<span>ook</span></h2></legend><br/>
+                    <!--<legend ><h2 class="capital">A<span>dd </span> <span> a </span> B<span>ook</span></h2></legend><br/>-->
+					<legend><img src="images/bk.png" alt="add a book"/></legend>
                     <div id="dimmer">
                         <div id="dimmerText">
                             <input type='hidden' name='submitted' id='submitted' value='1'/>

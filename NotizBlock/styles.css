@@ -704,3 +704,77 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	text-decoration:none
 }
 
+/*user profile*/
+#userContentPanel{
+	border-style: solid;
+	border-width: 2px;
+	border-color:#fcf2e5;
+	padding:20px;
+}
+#userContentPanel h3{
+	font-weight: bold;
+	color: white;
+}
+#picContainer{
+	border-style: solid;
+	border-width: 2px;
+	border-color:#fcf2e5;
+	padding: 20px;
+}
+#picContainer h2{
+	font-weight: bold;
+	color: white;
+}
+#userInfoPanel h2{
+	border-style:solid;
+	border-width:2px;
+	border-color:#fcf2e5;
+	font-weight: bold;
+	color: white;
+	padding: 20px;
+}
+#infoSummary{
+	border-style:solid;
+	border-color:#fcfe25
+	font-weight: bold;
+	color: white;
+	padding: 20px;
+}
+#userAction h2{
+	border-style:solid;
+	border-color:#fcfe25;
+	font-weight: bold;
+	color: white;
+	padding: 20px;
+}
+#recommendPanel{
+	border-style:solid;
+	border-color:#fcfe25
+	font-weight: bold;
+	color: white;
+	padding: 20px;
+}
+#navPanel{
+	width:100%;
+	height:30px;
+}
+#navPanel ul{
+	margin:0px;
+	padding:0px;
+}
+#navPanel ul li{
+	display: inline;
+	height: 30px;
+	float: left;
+	list-style:none;
+	margin-left: 15px;
+}
+#navPanel li a{
+	color: bisque;
+	text-decoration: none;
+}
+#navPanel li a: hover{
+	color: bisque;
+	text-decoration: underline;
+}
+
