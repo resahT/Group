@@ -65,7 +65,6 @@ CREATE TABLE book
  edition		varchar(20)		NOT NULL,
  subarea		varchar(15)		NOT NULL,
  cond			varchar(15)		NOT NULL,
- saleType       varchar(10)     NOT NULL,
  price			decimal(10,2)	NOT NULL,
  description	varchar(30)		NOT NULL,
  PRIMARY KEY (itemid),

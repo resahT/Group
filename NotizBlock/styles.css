@@ -154,6 +154,11 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	background:url(images/buttons.jpg) no-repeat
 }
 #livingSpacesPanel .read a:hover{color:#cd4007}
+#livingSpacesExtend{
+	color:#cd4007;
+	height:120px;
+	display:none;
+}
 
 #bookPanel{
 	width:216px;

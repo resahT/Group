@@ -13,7 +13,7 @@
 							<div id="dimmerText">
 								<div id="navPanel">
 									<ul id="navlist">
-										<li><a href ="#">Homepage</a><br/><br/></li>
+										<li><a href ="index.php">Homepage</a><br/><br/></li>
 										<li><a href ="#">Books</a><br/><br/></li>
 										<li><a href ="#">Living Space</a></li>
 									</ul>

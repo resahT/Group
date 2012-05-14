@@ -16,9 +16,14 @@
             }
                
         ?>
-         <a href="addbook.php "  style="text-align:right;  right: 150px;   top: 20px;"> Add book  </a> <br/>
-         <a href="addhouse.php " style="text-align:right;  right: 450px;   top: 20px;"> Add House </a> <br/>
-         <a href="register.php " style="text-align:right;  right: 600px;   top: 20px;"> Register  </a> <br/>
+		 <div id="navPanel">
+		 <ul ="navlist">
+		 <li><a href="images/home.png" style="text-align:right; right; 600px; top: 20px;"> Notizblock </a>&nbsp;&nbsp;&nbsp;</li>
+         <li><a href="addbook.php "  style="text-align:right;  right: 150px;   top: 20px;"> Add book  </a>&nbsp;&nbsp;&nbsp;</li>
+         <li>&nbsp;&nbsp;<a href="addhouse.php " style="text-align:right;  right: 450px;   top: 20px;"> Add House </a>&nbsp;&nbsp;&nbsp;</li>
+         <li>&nbsp;&nbsp;&nbsp;<a href="register.php " style="text-align:right;  right: 600px;   top: 20px;"> Register  </a>&nbsp;&nbsp;&nbsp;</li> 
+		 </ul>
+		 </div>
          
         <img  src="images/header1.JPG" alt="" style="margin: 0 auto; border: none;width: 100%;height: 100px;" />      
         <br />

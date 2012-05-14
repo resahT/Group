@@ -13,13 +13,21 @@
             <div id="logoPanel"></div>
             <div id="topContent">
                 
+				<script type="text/javascript" src="jquery.js"></script>
+				<script type="text/javascript">
+					$(document).ready(function(){
+							$("livingSpacesPanel").click(function(){
+								$("livingSpacesExtend").slideToggle("slow");
+							});
+					});
+				</script>
                 <div id="livingSpacesPanel">
-                    NB: BOOK HAD SALE TYPE HOUSE DOESNT
                     <div id="house"><a href="#">Housing</a></div>
                     <h2>Living Spaces</h2>
                     <h3>Off- campus housing conveniently located in and around Mona!</h3>
                     <div class="read"><a href="#">see more</a></div>
                 </div>
+				<div id="livingSpacesExtend">talk that talk to me yeh</div>
                 <div id="bookPanel">
                     <div id="book"><a href="#">Books</a></div>
                     <h2>Books</h2>
