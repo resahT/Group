@@ -98,7 +98,11 @@ class Api
     {
        
         $sql2= "SELECT userid from basicUser where email= '".$email."' ";
-        $alreadyUser = mysql_query($sql2);
+        $alreadyUser = mysql_fetch_array(mysql_query($sql2));
+        var_dump($alreadyUser);
+        die();
+        $alreadyUser = $alreadyUser[0];
+        
         if ($alreadyUser == null){
             
             $sql = "INSERT INTO basicUser VALUES '". mysql_real_escape_string($firstName)."'
@@ -108,25 +112,13 @@ class Api
                         , '". mysql_real_escape_string($phone)."'
                         , '". mysql_real_escape_string($personalinfo)."'";
             
-                $result = mysql_query($sql);
-                
-                if(!$result)
-                {
-                    $err = mysql_error();
-                    print $err;
-                    exit();
-                }
-                
+            mysql_query($sql); 
+            return "Sucess User registered";
         }
         else{
           //give an error saying an account is already associated with this email  
+          return "failure: There is an account associated with this email";
         }
-        
-            
-            
-        //if successfully added, return the id
-        
-        //if not successfully added return null
     }
    
    
