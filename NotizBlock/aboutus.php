@@ -18,6 +18,7 @@ $.expander.defaults.slicePoint = 120;
 		<div id="contentWrap">
 			<div id="aboutheader">
 				<img src="images/aboutus.png" alt="notizblock" vspace="5" hspace="40"/>
+				<a href="index.php">Back to Home</a>
 			</div>
 			<div id="welcomePanel">
 					<div id="dimmer">
@@ -52,3 +53,24 @@ $.expander.defaults.slicePoint = 120;
 		</div>
 	</body>
 </html>
+<div id="steps">
+	<div .step1>
+		<h2>Step 1</h2>
+		<h4>If you haven't signed up yet...click the "Register Now" link
+		and register with your name, email, password, department and any
+		personal information you'd like to share with potential buyers.
+		You can even upload a picture!</h4>
+	</div>
+	<div .step2>
+		<h2>Step 2</h2>
+		<h4>To begin using the site - Login with the username and password
+		you had provided when registering. From there, you can either use 
+		the menu or the links on the homepage to select a category, whether
+		it be books or living spaces. Enter the necessary information and
+		press the submit button.</h4>
+	</div>
+	<div .step3>
+		<h2>Step 3</h2>
+		<h4>Feel free to view what is available on NotizBlock.</h4>
+	</div>
+</div>

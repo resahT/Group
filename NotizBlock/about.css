@@ -9,6 +9,21 @@ body{margin: 0px; padding: 0px; background: #cd0000}
     background:#fff url(images/abk.jpg) repeat-x;
 }
 
+#contentWrap a{
+	margin: 20px;
+	padding: 10px;
+	float: right;
+	float: right;
+	color: bisque;
+	text-decoration: none;
+}
+
+#contentWrap a:hover{
+	color: white;
+	text-decoration: underline;
+}
+
+
 #aboutheader{
 	width:100%;
 	margin: 0px;
