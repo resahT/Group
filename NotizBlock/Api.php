@@ -34,6 +34,17 @@ class Api
     
     private $connection = null;
     
+    //This is the api response structure. Every api call should return it with the relevant values
+    private $apiResponse = array(
+                                    'result'     => 'FAILURE', // set to either SUCCESS or FAILURE
+        
+                                    'messages'   => array(
+                                                            'Unknown error occurred.' // list the error messages or success messages here
+                                                        )
+        
+    );
+                        
+    
     public function __construct()
     {
         $this->connection = mysql_connect("localhost","root","");
@@ -94,30 +105,61 @@ class Api
     
     
     /*regstering a user. Checks to ensure user is not already registered via same email.*/
-    public function registerUser($firstName, $lastName,$password,$email,$phone,$personalinfo)
-    {
-       
-        $sql2= "SELECT userid from basicUser where email= '".$email."' ";
-        $alreadyUser = mysql_fetch_array(mysql_query($sql2));
-        var_dump($alreadyUser);
-        die();
-        $alreadyUser = $alreadyUser[0];
+    public function registerUser($fname, $lname, $username, $password, $dept, $email, $phone, $dateofRegistry, $personalinfo, $uimage)
+    {       
+        $fname              = mysql_real_escape_string($fname);
+        $lname              = mysql_real_escape_string($lname); 
+        $username           = mysql_real_escape_string($username); 
+        $password           = mysql_real_escape_string($password); 
+        $dept               = mysql_real_escape_string($dept); 
+        $email              = mysql_real_escape_string($email); 
+        $phone              = mysql_real_escape_string($phone); 
+        $dateofRegistry     = mysql_real_escape_string($dateofRegistry); 
+        $personalinfo       = mysql_real_escape_string($personalinfo); 
+        $uimage             = mysql_real_escape_string($uimage);
+                
+        $sql2 = "SELECT bUserid FROM basicuser WHERE email= '$email' ";
         
-        if ($alreadyUser == null){
-            
-            $sql = "INSERT INTO basicUser VALUES '". mysql_real_escape_string($firstName)."'
-                        , '".mysql_real_escape_string($lastName)."'
-                        , '".mysql_real_escape_string($password)."'
-                        , '".mysql_real_escape_string($email)."'
-                        , '". mysql_real_escape_string($phone)."'
-                        , '". mysql_real_escape_string($personalinfo)."'";
+        $alreadyUser = mysql_fetch_array(mysql_query($sql2));
+        
+        $response = $this->apiResponse;
+        
+        if ($alreadyUser === null || $alreadyUser === false){
+        
+            $sql = "INSERT INTO basicuser VALUES (null, '$fname', '$lname', '$username', '$password', '$dept', '$email', '$phone', '$dateofRegistry', '$personalinfo', '$uimage')";
             
             mysql_query($sql); 
-            return "Sucess User registered";
+            
+            $rowsAffected = mysql_affected_rows();
+            
+            if($rowsAffected == 1)
+            {
+                $response['result']   = 'SUCCESS';
+                $response['messages'] = array('The user was registered successfully',
+                                              'key = ' . mysql_insert_id());
+            }
+            elseif($rowsAffected == 0)
+            {
+                $response['result']    = 'FAILURE';
+                $response['messages']  = array('The user was not created.');
+            }
+            else
+            {
+                $response['result']    = 'FAILURE';
+                $response['messages']  = array('An unknown error has occurred.');
+            }
+            
+            return $response;
         }
-        else{
-          //give an error saying an account is already associated with this email  
-          return "failure: There is an account associated with this email";
+        else
+        {
+           
+          //give an error saying an account is already associated with this email          
+          
+          $response['result']   = 'FAILURE';
+          $response['messages'] = array('There is already an account associated with this email address.');
+          
+          return $response;
         }
     }
    
@@ -159,15 +201,16 @@ class Api
     /***********************************************/
     
     /*add a book to the database*/
-    public function addBook($title, $author,$publisher,$saletype,$published_date,$edition,
-                            $subjectarea,$condition,$askingprice, $description,$bUserId,$category,$uploadtime,$keyword,$image)
+    public function addBook($title, $author, $publisher, $saletype, $published_date, $edition,
+                            $subjectarea, $condition, $askingprice, $description, $bUserId, 
+                            $category, $uploadtime, $keyword, $image)
     {
         
       $title = mysql_real_escape_string($title);
       $author = mysql_real_escape_string ($author);
       $publisher = mysql_real_escape_string($publisher);
       $saletype = mysql_real_escape_string($saletype);
-      $published_date =mysql_real_escape_string($published_date);
+      $published_date = mysql_real_escape_string($published_date);
       $edition = mysql_real_escape_string($edition);
       $subjectarea = mysql_real_escape_string($subjectarea);
       $condition = mysql_real_escape_string($condition);
@@ -216,6 +259,7 @@ class Api
       $result = mysql_query($sql);
       return $result;
     }
+    
     /*remove book with a specific id*/
     public function  rmbook($itemid){
      
@@ -223,10 +267,8 @@ class Api
         $api->rmitem($itemid);
         $itemid = mysql_real_escape_string( $itemid);
         $sql = "delete FROM book where itemid='$itemid'";
-        mysql_query($sql);
-        
+        mysql_query($sql);        
     }
-    
     
     /*retrieve all books that a specific user uploaded*/
     public function getownerBooks($ownerid)

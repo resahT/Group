@@ -811,9 +811,9 @@ height:800px;
 
 div#uprofcol2{
 width:400px;
-//background-color: green;
+/*background-color: green;*/
 height:800px;
-//display:inline;
+/*display:inline;*/
 }
 
 div#utility{
@@ -825,4 +825,11 @@ background-color: rgba(254,151,5,0.3);
 height:100px;
 color:black;
 font-size:12pt;
+}
+
+.errorMessages
+{
+    color: red;
+    font-weight: bold;
+    list-style-type: none;
 }
