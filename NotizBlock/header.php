@@ -1,13 +1,17 @@
 <?php session_start() ?>
 
 <div id="header"> 
-    <div style=" border-bottom-style:groove; border-bottom-width:thick; left: 0px;z-index: 999;width: 100%;height: 100px;text-align: center;"">
+    <div style=" border-bottom-style:groove; border-bottom-width:thick; left: 0px; z-index: 999; width: 100%;height: 100px;text-align: center;"">
 <?php
             if (isset($_SESSION['user_info']) && !empty($_SESSION['user_info']))
             {
                 $userinfo = $_SESSION['user_info'];
+                
+                $currentUrl = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                
+                $logoutUrl  = 'logout.php?returnTo=' . urlencode($currentUrl);
 ?>        
-                <a id="loginposition" href=" " style="text-align:right"> <?php echo"You are logged in as: " . $userinfo['username'] ?></a>
+                <a id="loginposition" href="<?= $logoutUrl ?>" style="text-align: right"> <?php echo"You are logged in as: " . $userinfo['username'] ?></a>
 <?php
             }
             else

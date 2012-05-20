@@ -106,7 +106,7 @@ class Api
     
     public function logout()
     {
-        Session.RemoveAll (); //Removes all session variables
+        $_SESSION = array(); //Removes all session variables
     }
     
     /***********************************************/
