@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS book;
 DROP TABLE IF EXISTS house;
+DROP TABLE IF EXISTS upload;
 DROP TABLE IF EXISTS bids;
+DROP TABLE IF EXISTS buy;
 DROP TABLE IF EXISTS item;
 DROP TABLE IF EXISTS basicUser;
 
@@ -13,11 +15,11 @@ CREATE TABLE basicUser
  dept			varchar(50)		NOT NULL,
  email			varchar(30)		NOT NULL,
  phone			varchar(10)		NOT NULL,
- dateofRegistry	date			NOT NULL,
- personalinfo	varchar(50),
- uimage			blob,
+ dateofRegistry         date			NOT NULL,
+ personalinfo           varchar(50),
+ uimage			varchar(50),
  PRIMARY KEY(bUserid));
- 
+
 INSERT INTO basicUser VALUES ('1', 'Tara', 'Brown', 'Tbee', 'resah', 'computer science', 'tarabrown@hotmail.com', '5557788', '2012/05/02', 'i am a girl', '' );
 INSERT INTO basicUser VALUES ('2', 'Kevon', 'Campbell', 'vonex', 'bellev', 'physics', 'kev_bell@hotmail.com', '4448990', '2012/05/03', 'got more physics books than i can handle','');
 INSERT INTO basicUser VALUES ('3', 'Latoya', 'Johnson', 'toyaJay', 'lasohn', 'computer science', 'spence@gmail.com', '5660992', '2012/05/03', 'lots of links to homes around kng', '');
@@ -43,59 +45,78 @@ INSERT INTO basicUser VALUES('22', 'Roje', 'McPherson', 'rMac', 'steph89R', 'com
 INSERT INTO basicUser VALUES('23', 'Nicolette', 'Bisoon', 'Nickyboo', 'b1s00n', 'computer science', 'nicbsoon@gmail.com', '2903957' ,'2012/05/07' ,'hey guys!' , '');
 
 
-CREATE TABLE item
-(itemid			int			NOT NULL AUTO_INCREMENT,
- bUserid		varchar(15)		NOT NULL,
- category		varchar(15)		NOT NULL,
- uploadTime		timestamp		NOT NULL,
- saleType		varchar(15)		NOT NULL,
- keyword		varchar(20)		NOT NULL,
- image			varchar(50), /* use path to image rather than save the image */  
- PRIMARY KEY(itemid, bUserid),
- FOREIGN KEY(bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
- 
 
- 
+CREATE TABLE item
+(itemid			int			NOT NULL	AUTO_INCREMENT,
+ category		varchar(15)		NOT NULL,
+ keyword		varchar(30)		NOT NULL,
+ rating			int			NOT NULL,
+ image			varchar(50),  
+ PRIMARY KEY(itemid));
+
+
+  
 CREATE TABLE book
 (itemid			int			NOT NULL,
  title			varchar(50)		NOT NULL,
  author			varchar(50)		NOT NULL,
- publisher		varchar(20),
- pubDate		date,
+ publisher		varchar(50)		NOT NULL,
+ pubYear		int			NOT NULL,
  edition		varchar(20)		NOT NULL,
- subarea		varchar(15)		NOT NULL,
+ subarea		varchar(20)		NOT NULL,
  cond			varchar(15)		NOT NULL,
- price			decimal(10,2)	NOT NULL,
- description	varchar(30)		NOT NULL,
+ description            varchar(50)		NOT NULL,
  PRIMARY KEY (itemid),
  FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE);
 
- 
 
- 
 
 CREATE TABLE house
-(itemid			int				NOT NULL AUTO_INCREMENT,
- bedrooms		int,
- bathrooms		int,
- facilities 	varchar(15)		NOT NULL,
- price			decimal(10,2)	NOT NULL,
- locatedNear	varchar(20)		NOT NULL,
- description	varchar(30)		NOT NULL, 
+(itemid			int                     NOT NULL,
+ bedrooms		int                     NOT NULL,
+ bathrooms		int                     NOT NULL,
+ facilities             varchar(15)		NOT NULL,
+ locatedNear            varchar(20)		NOT NULL,
+    description        varchar(50), 
  PRIMARY KEY (itemid),
  FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE);
- 
- 
+
 
  
- CREATE TABLE bids
- (itemid		int				NOT NULL AUTO_INCREMENT,
+CREATE TABLE upload
+(itemid			int			NOT NULL,
+ bUserid		varchar(15)		NOT NULL,
+ saleType		varchar(15)		NOT NULL,
+ uploadDate		date			NOT NULL,
+ uploadTime		timestamp		NOT NULL,
+ PRIMARY KEY(itemid),
+ FOREIGN KEY(itemid) REFERENCES item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
+ FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
+ 
+ 
+ 
+CREATE TABLE bids
+ (bidno			int			NOT NULL AUTO_INCREMENT,
+  itemid		int			NOT NULL,
   bUserid		varchar(15)		NOT NULL,
   bidDate		date			NOT NULL,
   bidTime		timestamp		NOT NULL,
-  bidAmount     int, /* <--- what's this storing?*/
-  PRIMARY KEY(itemid, bUserid),
+  bidAmount     decimal(10,2)	NOT NULL, 
+  PRIMARY KEY(bidno),
   FOREIGN KEY (itemid) references item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (bUserid) references basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
 
+I
+
+  
+CREATE TABLE buy
+(purchaseid		int			NOT NULL 	AUTO_INCREMENT,
+ itemid			int			NOT NULL,
+ bUserid		varchar(15)		NOT NULL,
+ itemPrice		decimal(10,2)           NOT NULL,
+ buyDate		date			NOT NULL,
+ buyTime		timestamp		NOT NULL,
+ PRIMARY KEY(purchaseid),
+ FOREIGN KEY(itemid) REFERENCES item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
+ FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
