@@ -166,13 +166,16 @@ class Api
       $title = mysql_real_escape_string($title);
       $author = mysql_real_escape_string ($author);
       $publisher = mysql_real_escape_string($publisher);
-      $saletype = mysql_real_escape_string($saletype);
       $published_date =mysql_real_escape_string($published_date);
       $edition = mysql_real_escape_string($edition);
       $subjectarea = mysql_real_escape_string($subjectarea);
       $condition = mysql_real_escape_string($condition);
-      $askingprice = mysql_real_escape_string($askingprice);
       $description = mysql_real_escape_string ($description); 
+      
+      
+      $saletype = mysql_real_escape_string($saletype);
+      $askingprice = mysql_real_escape_string($askingprice);
+      
       $bUserId =  mysql_real_escape_string($bUserId);//mysql_real_escape_string($bUserId);
       $category = mysql_real_escape_string($category);
       $uploadtime = date('Y-m-d H:i:s');
