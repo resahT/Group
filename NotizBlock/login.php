@@ -4,6 +4,10 @@ session_start();
 
 require_once('Api.php');
 
+$username   = '';
+$password   = '';
+$errors     = array();
+
 if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 {
     $username = $_REQUEST['username'];
@@ -13,15 +17,14 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 
     $result = $api->login($username, $password);
 
-    if($result != false)
+    if($result['result'] == 'SUCCESS')
     {
-        //if a string is returned (admin/basic) then set the session
-        $_SESSION['userType'] = $result;
         header("Location: index.php");
     }
     else
     {    
-        //header("Location: login.php"); 
+        //continue to redisplay login page
+        $errors = $result['messages'];
     }
 }
 
@@ -69,6 +72,19 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 
                 <!--  start loginbox ................................................................................. -->
                 <div id="loginbox">
+                    
+                    
+                    
+                    <ul class="errorMessages">
+<?php
+                    foreach($errors as $error)
+                    {
+?>
+                        <li><?= $error; ?></li>
+<?php
+                    }
+?>
+                    </ul>    
                 
                 <!--form for submission to php-->
                 <form method="post">
@@ -77,7 +93,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
                             <table border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                     <th>Username</th>
-                                    <td><input type="text" name="username" class="login-inp" /></td>
+                                    <td><input type="text" name="username" class="login-inp" value="<?= $username ?>" /></td>
                             </tr>
                             <tr>
                                     <th>Password</th>

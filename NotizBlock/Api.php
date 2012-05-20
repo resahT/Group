@@ -76,22 +76,32 @@ class Api
         $result_row=  mysql_fetch_array($result);
         $isAuthenticated = false;
 
-        if ($result_row!=null)
-        {
-            //echo $row['username'];
-            $access = "user";
-            $_SESSION['user_info']=$result_row;
+        if ($result_row != null)
+        {            
             $isAuthenticated = true;
         }
-
+        
+        $response = $this->apiResponse;
+        
         if($isAuthenticated)
         {
-            return $access;
+            $_SESSION['user_info']  = $result_row;            
+            $_SESSION['userType']   = 'user';
+            
+            $response['result']     = 'SUCCESS';
+            $response['messages']   = array('User was successfully logged in.');
+            $response['access']     = 'user';
         }
         else
         {
-            return "guest";
+            $_SESSION['user_info']  = array();            
+            $_SESSION['userType']   = 'guest';
+            
+            $response['result']     = 'FAILURE';
+            $response['messages']   = array('User was NOT successfully logged in. Check the username and password that were supplied.');            
         }
+        
+        return $response;
     }
     
     public function logout()
@@ -152,14 +162,12 @@ class Api
             return $response;
         }
         else
-        {
-           
-          //give an error saying an account is already associated with this email          
-          
-          $response['result']   = 'FAILURE';
-          $response['messages'] = array('There is already an account associated with this email address.');
-          
-          return $response;
+        {           
+            //give an error saying an account is already associated with this email
+            $response['result']   = 'FAILURE';
+            $response['messages'] = array('There is already an account associated with this email address.');
+
+            return $response;
         }
     }
    
