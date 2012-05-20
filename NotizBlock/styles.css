@@ -833,3 +833,29 @@ font-size:12pt;
     font-weight: bold;
     list-style-type: none;
 }
+
+.bookList
+{
+    border-collapse: collapse;
+}
+
+.bookList td
+{
+    padding: 10px;
+}
+
+.bookList thead
+{
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.bookList .even
+{
+    background-color: #c9c9c9;
+}
+
+.bookList .odd
+{
+    background-color: #a9a9a9;
+}

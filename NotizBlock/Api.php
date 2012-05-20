@@ -8,7 +8,7 @@ class Api
         login($username, $password)
         logout()
         registerUser($firstName, $lastName,$password,$email,$phone,$personalinfo)
-        listBooks($userid)
+        listBooks()
         addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId,
                             $category,$uploadtime,$keyword,$image)
         getownerBooks($ownerid)
@@ -73,7 +73,7 @@ class Api
                 AND `password` = '$password'";
         
         $result = mysql_query($sql);
-        $result_row=  mysql_fetch_array($result);
+        $result_row = mysql_fetch_array($result);
         $isAuthenticated = false;
 
         if ($result_row != null)
@@ -90,7 +90,6 @@ class Api
             
             $response['result']     = 'SUCCESS';
             $response['messages']   = array('User was successfully logged in.');
-            $response['access']     = 'user';
         }
         else
         {
@@ -290,9 +289,33 @@ class Api
      public function listBooks()
     {
         //list all books in database
-        $sql2 = "SELECT * from book";
-        $userBooks = mysql_fetch_array(mysql_query($sql2));
-        return $userBooks;     
+        $sql2 = "SELECT * FROM book";
+        
+        $result = mysql_query($sql2);
+        
+        $data = array();
+        
+        while ($row = mysql_fetch_assoc($result))
+        {
+            $data[] = $row;
+        }
+        
+        $response = $this->apiResponse;
+        
+        if(!empty($data))
+        {
+            $response['result']     = 'SUCCESS';
+            $response['messages']   = array('Data was retrieved successfully.');
+            $response['data']       = $data;
+        }
+        else
+        {
+            $response['result']     = 'SUCCESS';
+            $response['messages']   = array('There is no data to be displayed.');
+            $response['data']       = $data;
+        }
+        
+        return $response;
     }
     
     /***********************************************/
