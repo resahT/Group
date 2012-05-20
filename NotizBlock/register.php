@@ -23,8 +23,6 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
     
     $result = $api->registerUser($fname, $lname, $username, $password, $dept, $email, $phone, $dateofRegistry, $personalinfo, $uimage);
     
-    
-    
     if($result['result'] == 'SUCCESS')
     {
         //redirect to index        
