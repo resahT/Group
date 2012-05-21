@@ -859,3 +859,8 @@ font-size:12pt;
 {
     background-color: #a9a9a9;
 }
+
+.viewDetails .heading
+{
+    font-weight: bold;
+}

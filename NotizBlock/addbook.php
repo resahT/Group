@@ -1,3 +1,32 @@
+<?php
+
+session_start();
+
+require_once('Api.php');
+
+if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
+{
+    $username = $_REQUEST['username'];
+    $password = $_REQUEST['password'];
+
+    $api = new Api();
+
+    $result = $api->login($username, $password);
+
+    if($result != false)
+    {
+        //if a string is returned (admin/basic) then set the session
+        $_SESSION['userType'] = $result;
+        header("Location: index.php");
+    }
+    else
+    {    
+        //header("Location: login.php"); 
+    }
+}
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
