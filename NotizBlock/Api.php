@@ -343,8 +343,8 @@ class Api
     {
         $itemid     = mysql_real_escape_string($itemid);
         $buserid    = mysql_real_escape_string($buserid);
-        $biddate    = date('Y-m-d');
-        $bidtime    = time('H:i:s');
+        $biddate    = date('Y-m-d 00:00:00');
+        $bidtime    = time( '0000-00-00 H:i:s' );
         $bidamount  = mysql_real_escape_string($bidamount);
 
         $sql = "INSERT INTO bids VALUES(null, $itemid, $buserid, '$biddate', '$bidtime', $bidamount)";
@@ -574,12 +574,12 @@ class Api
     public function getCurrentUserInfo()
     {
         $response = $this->apiResponse;
-
-        if (isset($_SESSION['user_info']))
+        
+        if (isset($_SESSION['user_info']) && !empty($_SESSION['user_info']))
         {
             $response['result'] = 'SUCCESS';
 
-            $response['data'] = $_SESSION['user_info'];
+            $response['data']   = $_SESSION['user_info'];
 
             $response['messages'] = array('Data was retrieved successfully.');
         }

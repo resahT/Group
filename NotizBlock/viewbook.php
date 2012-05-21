@@ -17,7 +17,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
     if($result['result'] == 'SUCCESS')
     {
         $newBidAmount   = $_REQUEST['newBidAmount'];
-        
+        var_dump($result);die();
         $bUserid        = $result['data']['bUserid'];
         
         $response       = $api->addBid($bookId, $bUserid, $newBidAmount);
