@@ -783,3 +783,79 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	text-decoration: underline;
 }
 
+
+div.uprofbackground{
+
+width : 800px;
+margin: auto;
+height:800px;
+background-color: rgba(0,0,0,0.5);
+border: 0px solid red;
+border-radius: 15px;
+
+-webkit-column-count:2; /* Safari and Chrome */
+column-count:2;
+padding:50px;
+color:white;
+font-size:16pt;
+
+}
+
+div#uprofcol1{
+width:400px;
+//background-color: red;
+height:800px;
+//display:inline;
+}
+
+
+div#uprofcol2{
+width:400px;
+/*background-color: green;*/
+height:800px;
+/*display:inline;*/
+}
+
+div#utility{
+width:375px;
+margin:auto;
+border: 0px solid red;
+border-radius: 9px;
+background-color: rgba(254,151,5,0.3);
+height:100px;
+color:black;
+font-size:12pt;
+}
+
+.errorMessages
+{
+    color: red;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.bookList
+{
+    border-collapse: collapse;
+}
+
+.bookList td
+{
+    padding: 10px;
+}
+
+.bookList thead
+{
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.bookList .even
+{
+    background-color: #c9c9c9;
+}
+
+.bookList .odd
+{
+    background-color: #a9a9a9;
+}

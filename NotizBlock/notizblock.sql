@@ -7,9 +7,8 @@ DROP TABLE IF EXISTS buy;
 DROP TABLE IF EXISTS item;
 DROP TABLE IF EXISTS basicUser;
 
-
 CREATE TABLE basicUser
-(bUserid		int     		NOT NULL UNIQUE,
+(bUserid		int         NOT NULL    AUTO_INCREMENT,
  fname			varchar(50)		NOT NULL,
  lname			varchar(50)		NOT NULL,
  username		varchar(50)		NOT NULL,

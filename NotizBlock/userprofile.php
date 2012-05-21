@@ -7,7 +7,44 @@
 			<div id="topContentWrap">
 				<?php include 'header.php'; ?>
 				<br/>
-				<div class="row">
+				
+				
+				<div class="uprofbackground">
+				<div id="uprofcol1">
+				
+				
+				<img src=images/paint.png alt= profile_picture />
+				<br><br>
+				 
+				
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				
+				<br>
+				<br>
+			
+				<div id=utility>
+				
+				
+				</div>
+				
+				
+				</div>
+				<div id="uprofcol2">
+				<div id=utility>
+				
+				
+				</div>
+				
+				</div>
+				
+				</div>
+				
+				
+				<!--div class="row">
 					<div class="column">
 						<div id="dimmer">
 							<div id="dimmerText">
@@ -68,7 +105,7 @@
 						</div>
 						</div>
 				</div>
-			</div>
+			</div-->
 			<?php include 'footer.php';?>
 		</body>
 </html>
