@@ -15,7 +15,10 @@ class Api
       addBid($itemid, $buserid, $bidamount)
       getCurrentUserInfo()
 
-      addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId,
+      addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId)
+      addItem($category, $keyword, $image)
+      addUpload($itemId, $bUserId, $saletype, $uploaddate, $uploadtime)
+     
       $category,$uploadtime,$keyword,$image)
       getownerBooks($ownerid)
       
