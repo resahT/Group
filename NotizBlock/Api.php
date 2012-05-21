@@ -672,7 +672,7 @@ class Api
         if($item=='book'||$item=='house'){
             
             //list all books in database
-            $sql2 = "SELECT * FROM item JOIN $item";
+            $sql2 = "SELECT * FROM item JOIN $item ON item.itemid = $item.itemid";
 
             $result = mysql_query($sql2);
                       
