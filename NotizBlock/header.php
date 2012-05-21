@@ -23,10 +23,10 @@
 ?>
         <div id="navPanel">
             <ul id="navlist" class="navlist">
-                <li><a href="index.php" style="text-align:right; right; 50px; top: 20px;"> Notizblock </a>&nbsp;&nbsp;&nbsp;</li>
-                <li>&nbsp;&nbsp;<a href="addbook.php "  style="text-align:right;  right: 150px;   top: 20px;"> Add book  </a>&nbsp;&nbsp;&nbsp;</li>
-                <li>&nbsp;&nbsp;<a href="addhouse.php " style="text-align:right;  right: 450px;   top: 20px;"> Add House </a>&nbsp;&nbsp;&nbsp;</li>
-                <li>&nbsp;&nbsp;<a href="register.php " style="text-align:right;  right: 600px;   top: 20px;"> Register  </a>&nbsp;&nbsp;&nbsp;</li> 
+                <li><a href="index.php" style="text-align:right; right; 50px; top: 20px;"> NotizBlock </a>&nbsp;&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;<a href="listbooks.php"  style="text-align:right;  right: 150px;   top: 20px;"> Books  </a>&nbsp;&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;<a href="listhouses.php" style="text-align:right;  right: 450px;   top: 20px;"> Houses </a>&nbsp;&nbsp;&nbsp;</li>
+                <li>&nbsp;&nbsp;<a href="register.php" style="text-align:right;  right: 600px;   top: 20px;"> Register </a>&nbsp;&nbsp;&nbsp;</li> 
                 <li>&nbsp;&nbsp;<a href="aboutus.php" style="text-align:right; right: 850; top: 20px;"> About Us </a></li>
             </ul>
         </div>

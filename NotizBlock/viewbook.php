@@ -20,14 +20,12 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
         
         $bUserid        = $result['data']['bUserid'];
         
-        $response       = $api->addBid($bookId, $bUserid, $newBidAmount);
-        
+        $response       = $api->addBid($bookId, $bUserid, $newBidAmount);        
     }
     else
     {
         $errors[] = 'Unable to add bid because you are not logged in.';
     }
-    
 }
 else
 {
