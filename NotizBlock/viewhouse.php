@@ -4,7 +4,7 @@ session_start();
 
 require_once('Api.php');
 
-$bookId   = $_REQUEST['bookId'];
+$houseId   = $_REQUEST['houseId'];
 
 $api      = new Api();
 
@@ -20,7 +20,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
         
         $bUserid        = $result['data']['bUserid'];
         
-        $response       = $api->addBid($bookId, $bUserid, $newBidAmount);        
+        $response       = $api->addBid($houseId, $bUserid, $newBidAmount);        
     }
     else
     {
@@ -32,17 +32,17 @@ else
     //nothing to do here
 }
 
-$books          = array();
+$houses          = array();
 
-$response       = $api->getItem($bookId,'book');
+$response       = $api->getItem($houseId,'house');
 
-$bidResponse    = $api->viewBidHistory(2, $bookId);
+$bidResponse    = $api->viewBidHistory(2, $houseId);
 
-$maxBidResponse = $api->getMaxBidAmount($bookId);
+$maxBidResponse = $api->getMaxBidAmount($houseId);
 
 $maxBidAmount   = $maxBidResponse['data']['maxBidAmount'];
 
-$book           = $response['data'];
+$house           = $response['data'];
 
 ?>
 
@@ -76,14 +76,12 @@ $book           = $response['data'];
                         <td>
                             <table class="viewDetails">
 
-                                <tr><td class="heading">Title: </td><td><?= $book['title'] ?></td></tr>
-                                <tr><td class="heading">Author: </td><td><?= $book['author'] ?></td></tr>
-                                <tr><td class="heading">Publisher: </td><td><?= $book['publisher'] ?></td></tr>
-                                <tr><td class="heading">Year: </td><td><?= $book['pubYear'] ?></td></tr>
-                                <tr><td class="heading">Edition: </td><td><?= $book['edition'] ?></td></tr>
-                                <tr><td class="heading">Subject Area: </td><td><?= $book['subarea'] ?></td></tr>
-                                <tr><td class="heading">Condition: </td><td><?= $book['cond'] ?></td></tr>
-                                <tr><td class="heading">Description: </td><td><?= $book['description'] ?></td></tr>
+                                <tr><td class="heading">Image:       </td><td><?= $house['image'] ?></td></tr>
+                                <tr><td class="heading">Bedroom:     </td><td><?= $house['bedrooms'] ?></td></tr>
+                                <tr><td class="heading">Bathroom:    </td><td><?= $house['bathrooms'] ?></td></tr>
+                                <tr><td class="heading">Facilities:  </td><td><?= $house['facilities'] ?></td></tr>
+                                <tr><td class="heading">Location:    </td><td><?= $house['locatedNear'] ?></td></tr>
+                                <tr><td class="heading">Description: </td><td><?= $house['description'] ?></td></tr>
 
                             </table>
                         </td>

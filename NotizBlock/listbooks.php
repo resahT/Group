@@ -14,7 +14,7 @@ else
 {
     $api = new Api();
     
-    $response = $api->listBooks();
+    $response = $api->listItem('book');
     
     $books    = $response['data'];
 }
