@@ -216,12 +216,10 @@ class Api
       $title = mysql_real_escape_string($title);
       $author = mysql_real_escape_string ($author);
       $publisher = mysql_real_escape_string($publisher);
-<<<<<<< HEAD
-      $published_date =mysql_real_escape_string($published_date);
-=======
+
       $saletype = mysql_real_escape_string($saletype);
       $published_date = mysql_real_escape_string($published_date);
->>>>>>> 7b52758a715d00b934d39ef84856bafcd1b71a27
+
       $edition = mysql_real_escape_string($edition);
       $subjectarea = mysql_real_escape_string($subjectarea);
       $condition = mysql_real_escape_string($condition);
@@ -444,3 +442,4 @@ class Api
         
     }
 }
+
