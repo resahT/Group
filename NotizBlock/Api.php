@@ -667,8 +667,9 @@ class Api
 
     public function listItem($item)
     {
-        $item= strtolower($item);
-        $item=mysql_real_escape_string($item);
+        $item = strtolower($item);
+        $item = mysql_real_escape_string($item);
+        
         if($item=='book'||$item=='house'){
             
             //list all books in database
