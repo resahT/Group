@@ -1,0 +1,57 @@
+#navbar {
+    float: left;
+    height: 21px;
+    margin: 20px 0 0 24px;
+    width: 680px;
+}
+#navbar #nav {
+    background: url("../images/nav.png") no-repeat scroll 0 0 transparent;
+    border: 0 solid red;
+    height: 21px;
+    position: relative;
+    width: 591px;
+}
+#navbar #nav span {
+    display: block;
+    text-indent: -9999px;
+}
+#navbar #nav li, #nav a {
+    display: block;
+    height: 36px;
+    outline: medium none;
+}
+#navbar #nav li {
+    float: left;
+    list-style: none outside none;
+    outline: medium none;
+}
+#navbar #nav-1 {
+    width: 63px;
+}
+#navbar #nav-2 {
+    width: 108px;
+}
+#navbar #nav-3 {
+    width: 132px;
+}
+#navbar #nav-4 {
+    width: 152px;
+}
+#navbar #nav-5 {
+    width: 136px;
+}
+#navbar #nav-1 #nav-1-line, #nav-1-noline a:hover {
+    background: url("../images/nav.png") no-repeat scroll 0 -21px transparent;
+}
+#navbar #nav-2 #nav-2-line, #nav-2-noline a:hover {
+    background: url("../images/nav.png") no-repeat scroll -63px -21px transparent;
+}
+#navbar #nav-3 #nav-3-line, #nav-3-noline a:hover {
+    background: url("../images/nav.png") no-repeat scroll -171px -21px transparent;
+}
+#navbar #nav-4 #nav-4-line, #nav-4-noline a:hover {
+    background: url("../images/nav.png") no-repeat scroll -303px -21px transparent;
+}
+#navbar #nav-5 #nav-5-line, #nav-5-noline a:hover {
+    background: url("../images/nav.png") no-repeat scroll -455px -21px transparent;
+}
