@@ -12,11 +12,13 @@ class Api
       listBooks()
       viewBidHistory()
       getMaxBid()
+      addBid($itemid, $buserid, $bidamount)
+      getCurrentUserInfo()
 
       addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId,
       $category,$uploadtime,$keyword,$image)
       getownerBooks($ownerid)
-      addBid($itemid, $buserid, $bidamount)
+      
 
       Need:
      * 
@@ -180,18 +182,42 @@ class Api
 
 
     /* adds an item to the database an item need to be added b4 a book or house can be made */
-    public function additem($bUserId, $category, $uploadtime, $keyword, $image, $saletype)
+    public function addItem($category, $keyword, $image)
     {
 
-        $bUserId = mysql_real_escape_string($bUserId); //mysql_real_escape_string($bUserId);
-        $category = mysql_real_escape_string($category);
-        $uploadtime = date('Y-m-d H:i:s');
-        $keyword = mysql_real_escape_string($keyword);
-        $saletype = mysql_real_escape_string($saletype);
-        $image = mysql_real_escape_string($image);
-        $sql1 = "INSERT INTO item
-               VALUES (null,'$bUserId','$category','$uploadtime','$saletype','$keyword','$image')";
-        mysql_query($sql1);
+        $category   = mysql_real_escape_string($category);
+        $keyword    = mysql_real_escape_string($keyword);
+        $image      = mysql_real_escape_string($image);
+        
+        $sql       = " INSERT INTO item
+                        VALUES (null, '$category', '$keyword', '$image')";
+        
+        mysql_query($sql);
+        
+        $rowsAffected = mysql_affected_rows();
+
+        if ($rowsAffected == 1)
+        {
+            $response['result'] = 'SUCCESS';
+            $response['messages'] = array('The item was created successfully',
+                'key = ' . mysql_insert_id());
+
+            $response['data']['itemid'] = mysql_insert_id();
+        }
+        elseif ($rowsAffected == 0)
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('The item was not created.');
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('An unknown error has occurred.');
+        }
+
+        return $response;
+                
+        
     }
 
     public function edititem()
@@ -214,15 +240,14 @@ class Api
     /*     * ******************************************** */
 
     /* add a book to the database */
-    public function addBook($title, $author, $publisher, $saletype, $published_date, $edition, $subjectarea, $condition, $askingprice, $description, $bUserId, $category, $uploadtime, $keyword, $image)
+    public function addBook($title, $author, $publisher, $saletype, $publishedDate, $edition, $subjectarea, $condition, $askingprice, $description, $bUserId, $category, $uploadtime, $keyword, $image)
     {
-
         $title = mysql_real_escape_string($title);
         $author = mysql_real_escape_string($author);
         $publisher = mysql_real_escape_string($publisher);
 
         $saletype = mysql_real_escape_string($saletype);
-        $published_date = mysql_real_escape_string($published_date);
+        $publishedDate = mysql_real_escape_string($publishedDate);
 
         $edition = mysql_real_escape_string($edition);
         $subjectarea = mysql_real_escape_string($subjectarea);
@@ -235,30 +260,58 @@ class Api
 
         $bUserId = mysql_real_escape_string($bUserId); //mysql_real_escape_string($bUserId);
         $category = mysql_real_escape_string($category);
+        $uploaddate = date('Y-m-d');
         $uploadtime = date('Y-m-d H:i:s');
         $keyword = mysql_real_escape_string($keyword);
         $image = mysql_real_escape_string($image);
 
         $api = new Api;
-        $api->additem($bUserId, $category, $uploadtime, $keyword, $image, $saletype);
+        
+        $addItemResult = $api->addItem($category, $keyword, $image);
+        
+        if($addItemResult['result'] == 'SUCCESS')
+        {
+            $itemId = $addItemResult['data']['itemid'];
+            
+            $addUploadResult = $api->addUpload($itemId, $bUserId, $saletype, $uploaddate, $uploadtime); //assume the upload was added successfully, temporarily
+            
+            $sql = "   INSERT INTO book 
+                       VALUES  ('$itemId','$title','$author','$publisher',
+                                '$publishedDate','$edition',
+                                '$subjectarea','$condition',
+                                '$description')";
+            
+            mysql_query($sql);
+            
+            $rowsAffected = mysql_affected_rows();
+        
+            $response = $this->apiResponse;
 
-        $sql3 = "SELECT itemid 
-               FROM  item
-               WHERE uploadtime = '$uploadtime'";
-        $itemid2 = mysql_fetch_row(mysql_query($sql3));
-        $itemid2 = $itemid2[0];
-        $sql2 = "INSERT INTO book 
-               VALUES ('$itemid2','$title','$author','$publisher',
-                      '$published_date','$edition',
-                      '$subjectarea','$condition',
-                      '$saletype','$askingprice',
-                      '$description')";
-        $result = mysql_query($sql2);
-        return $result;
+            if ($rowsAffected == 1)
+            {
+                $response['result']     = 'SUCCESS';
+                $response['messages']   = array('Book was added successfully.');
+            }
+            else
+            {
+                $response['result']     = 'FAILURE';
+                $response['messages']   = array('The book could not be added');
+            }
+
+            return $response;
+        }
+        else
+        {
+            $response = $this->apiResponse;
+            
+            $response['result']     = 'FAILURE';
+            $response['messages']   = array('The item could not be added.');
+        }
+        
+        return $response;
     }
 
     /* update book information */
-
     public function editbook($itemid, $title, $author, $publisher, $published_date, $edition, $subjectarea, $condition, $saletype, $askingprice, $description)
     {
         $itemid = mysql_real_escape_string($itemid);
@@ -477,7 +530,8 @@ class Api
         $description = mysql_real_escape_string($description);
 
         $api = new Api();
-        $api->additem($bUserId, $category, $saletype, $uploadtime, $keyword, $image);
+        $api->addItem($category, $keyword, $image);
+        
         $sql = "INSERT INTO house VALUES( $itemid, $bedrooms, $bathrooms, $facilities, $price, $locatedNear, $description)";
         $result = mysql_query($sql);
         return $result;
@@ -593,6 +647,43 @@ class Api
         }
 
         return $response;
+    }
+    
+    public function addUpload($itemId, $bUserId, $saletype, $uploaddate, $uploadtime)
+    {        
+        $itemId         = mysql_real_escape_string($itemId);
+        $bUserId        = mysql_real_escape_string($bUserId);
+        $saletype       = mysql_real_escape_string($saletype);
+        $uploaddate     = mysql_real_escape_string($uploaddate);
+        $uploadtime     = mysql_real_escape_string($uploadtime);
+        
+        $sql       = " INSERT INTO upload
+                        VALUES ('$itemId', '$bUserId', '$saletype', '$uploaddate', '$uploadtime')";
+        
+        mysql_query($sql);
+        
+        $rowsAffected = mysql_affected_rows();
+
+        if ($rowsAffected == 1)
+        {
+            $response['result'] = 'SUCCESS';
+            $response['messages'] = array('The upload was created successfully',
+                'key = ' . mysql_insert_id());
+
+            $response['data']['itemid'] = mysql_insert_id();
+        }
+        elseif ($rowsAffected == 0)
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('The upload was not created.');
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('An unknown error has occurred.');
+        }
+        
+        return $response;        
     }
 
 }
