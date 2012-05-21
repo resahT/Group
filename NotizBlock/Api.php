@@ -15,7 +15,10 @@ class Api
       addBid($itemid, $buserid, $bidamount)
       getCurrentUserInfo()
 
-      addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId,
+      addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId)
+      addItem($category, $keyword, $image)
+      addUpload($itemId, $bUserId, $saletype, $uploaddate, $uploadtime)
+     
       $category,$uploadtime,$keyword,$image)
       getownerBooks($ownerid)
       
@@ -172,6 +175,31 @@ class Api
 
             return $response;
         }
+    }
+    
+    
+    public function getCurrentUserInfo()
+    {
+        $response = $this->apiResponse;
+        
+        if (isset($_SESSION['user_info']) && !empty($_SESSION['user_info']))
+        {
+            $response['result']     = 'SUCCESS';
+
+            $response['data']       = $_SESSION['user_info'];
+
+            $response['messages']   = array('Data was retrieved successfully.');
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+
+            $response['data'] = array();
+
+            $response['messages'] = array('No user is logged in.');
+        }
+
+        return $response;
     }
 
     /*     * ******************************************** */
@@ -352,20 +380,24 @@ class Api
         return $bookdetails;
     }
 
-    /* selects all books in the database */
-
-    public function listBooks()
+    
+    
+        public function getItem($itemId, $itemtable)
     {
-        //list all books in database
-        $sql2 = "SELECT * FROM book";
-
+        $itemId = mysql_real_escape_string(strtolower($itemId));
+        $itemtable = mysql_real_escape_string(strtolower($itemtable));
+        
+        /*get an item with an id form a table*/
+        $sql2 = "SELECT * FROM item JOIN $itemtable on item.itemid= $itemtable.itemid WHERE item.itemid = $itemId ";
         $result = mysql_query($sql2);
-
+        
         $data = array();
 
         while ($row = mysql_fetch_assoc($result))
         {
-            $data[] = $row;
+            $data = $row;
+
+            break;
         }
 
         $response = $this->apiResponse;
@@ -385,7 +417,6 @@ class Api
 
         return $response;
     }
-
     /*     * ******************************************** */
 
     //                      BID
@@ -577,7 +608,7 @@ class Api
         $house = $housearray[0];
         return $house;
     }
-
+    
     /*     * ******************************************** */
 
     //                      Recommender
@@ -589,65 +620,11 @@ class Api
 
     /* selects specific book from the database */
 
-    public function getBook($bookId)
-    {
-        $bookId = mysql_real_escape_string($bookId);
+    /*     * ******************************************** */
 
-        //list all books in database
-        $sql2 = "SELECT * FROM book WHERE itemid = '$bookId' ";
+    //                      UPLOAD
+    /*     * ******************************************** */
 
-        $result = mysql_query($sql2);
-
-        $data = array();
-
-        while ($row = mysql_fetch_assoc($result))
-        {
-            $data = $row;
-
-            break;
-        }
-
-        $response = $this->apiResponse;
-
-        if (!empty($data))
-        {
-            $response['result'] = 'SUCCESS';
-            $response['messages'] = array('Data was retrieved successfully.');
-            $response['data'] = $data;
-        }
-        else
-        {
-            $response['result'] = 'SUCCESS';
-            $response['messages'] = array('There is no data to be displayed.');
-            $response['data'] = $data;
-        }
-
-        return $response;
-    }
-
-    public function getCurrentUserInfo()
-    {
-        $response = $this->apiResponse;
-        
-        if (isset($_SESSION['user_info']) && !empty($_SESSION['user_info']))
-        {
-            $response['result']     = 'SUCCESS';
-
-            $response['data']       = $_SESSION['user_info'];
-
-            $response['messages']   = array('Data was retrieved successfully.');
-        }
-        else
-        {
-            $response['result'] = 'FAILURE';
-
-            $response['data'] = array();
-
-            $response['messages'] = array('No user is logged in.');
-        }
-
-        return $response;
-    }
     
     public function addUpload($itemId, $bUserId, $saletype, $uploaddate, $uploadtime)
     {        
@@ -684,6 +661,53 @@ class Api
         }
         
         return $response;        
+    }
+    
+    /* selects all books in the database */
+
+    public function listItem($item)
+    {
+        $item = strtolower($item);
+        $item = mysql_real_escape_string($item);
+        
+        if($item=='book'||$item=='house'){
+            
+            //list all books in database
+            $sql2 = "SELECT * FROM item JOIN $item ON item.itemid = $item.itemid";
+
+            $result = mysql_query($sql2);
+                      
+            $data = array();
+
+            while ($row = mysql_fetch_assoc($result))
+            {
+                $data[] = $row;
+            }
+
+            $response = $this->apiResponse;
+
+            if (!empty($data))
+            {
+                $response['result'] = 'SUCCESS';
+                $response['messages'] = array('Data was retrieved successfully.');
+                $response['data'] = $data;
+            }
+            else
+            {
+                $response['result'] = 'FAILURE';
+                $response['messages'] = array('There is no data to be displayed.');
+                $response['data'] = $data;
+            }
+
+           
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('There is no data to be displayed.');
+            $response['data'] = $data;
+        }
+       return $response;
     }
 
 }
