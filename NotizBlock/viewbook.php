@@ -115,30 +115,32 @@ $askingPrice    = $response['data']['askingPrice'];
             
             <div style=" text-align:center;background:dimgrey; ">
                 
-                    <ul class="errorMessages">
+							<ul class="errorMessages">
 <?php
-                    foreach($errors as $error)
-                    {
+							foreach($errors as $error)
+							{
 ?>
-                        <li><?= $error; ?></li>
+							<li><?= $error; ?></li>
 <?php
-                    }
+							}
 ?>
-                    </ul>    
+							</ul>    
+				</div>
+			</div>
             
                 <table>
                     <tr>
                         <td>
                             <table class="viewDetails">
 
-                                <tr><td class="heading">Title: </td><td><?= $book['title'] ?></td></tr>
-                                <tr><td class="heading">Author: </td><td><?= $book['author'] ?></td></tr>
-                                <tr><td class="heading">Publisher: </td><td><?= $book['publisher'] ?></td></tr>
-                                <tr><td class="heading">Year: </td><td><?= $book['pubYear'] ?></td></tr>
-                                <tr><td class="heading">Edition: </td><td><?= $book['edition'] ?></td></tr>
-                                <tr><td class="heading">Subject Area: </td><td><?= $book['subarea'] ?></td></tr>
-                                <tr><td class="heading">Condition: </td><td><?= $book['cond'] ?></td></tr>
-                                <tr><td class="heading">Description: </td><td><?= $book['description'] ?></td></tr>
+                                <tr><td class="heading"><h3 style="color:#cd4007">Title:</h3></td><td style="color:#fff"><?= $book['title'] ?></td></tr>
+                                <tr><td class="heading" style="color:#cd4007">Author:</td><td style="color:#fff"><?= $book['author'] ?></td></tr>
+                                <tr><td class="heading" style="color:#cd4007">Publisher:</td><td style="color:#fff"><?= $book['publisher'] ?></td></tr>
+                                <tr><td class="heading" style="color:#cd4007">Year:</td><td style="color:#fff"><?= $book['pubYear'] ?></td></tr>
+                                <tr><td class="heading" style="color:#cd4007">Edition:</td><td style="color:#fff"><?= $book['edition'] ?></td></tr>
+                                <tr><td class="heading" style="color:#cd4007">Subject Area: </td><td style="color:#fff"><?= $book['subarea'] ?></td></tr>
+                                <tr><td class="heading" style="color:#cd4007">Condition: </td><td style="color:#fff"><?= $book['cond'] ?></td></tr>
+                                <tr><td class="heading" style="color:#cd4007">Description: </td><td style="color:#fff"><?= $book['description'] ?></td></tr>
 
                             </table>
                         </td>
@@ -166,7 +168,7 @@ $askingPrice    = $response['data']['askingPrice'];
                             <form method="POST">
                                 <table>
                                     <tr>
-                                        <td><fieldset><legend>Price:</legend>$<?= $askingPrice ?></fieldset></td>
+                                        <td><fieldset style="color:#fff"><legend style="color:#fff">Price:</legend>$<?= $askingPrice ?></fieldset></td>
                                     </tr>
                                     <tr>
                                         <td><input type="hidden" value="buyNow" name="buyNow" /><input type="submit"  value="Buy Now!" /></td>

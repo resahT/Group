@@ -689,7 +689,7 @@ class Api
                      JOIN upload ON item.itemid = upload.itemid
                      WHERE upload.uploadstate = 'AVAILABLE' ";
 
-            $result = mysql_query($sql2);       
+            $result = mysql_query($sql2);    
             $data = array();
 
             while ($row = mysql_fetch_assoc($result))
@@ -868,7 +868,7 @@ class Api
                                             FROM buy
                                             WHERE buy.bUserid = $bUserid)
                             AND 
-                            upload.state = 'AVAILABLE'
+                            upload.uploadstate = 'AVAILABLE'
 
                         )
 
@@ -886,7 +886,6 @@ class Api
         }
 //        die($sql);
         $result = mysql_query($sql);
-                      
         $data = array();
 
         while ($row = mysql_fetch_assoc($result))
