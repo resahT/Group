@@ -254,9 +254,40 @@ class Api
         
     }
 
-    public function edititem()
+    public function editItem($itemId, $category, $keyword, $image)
     {
+        $itemId     = mysql_real_escape_string($itemId);
+        $category   = mysql_real_escape_string($category);
+        $keyword    = mysql_real_escape_string($keyword);
+        $image      = mysql_real_escape_string($image);
         
+        $sql        = " UPDATE `notizblock`.`item` 
+                        SET 
+                            `category` = '$category',
+                            `keyword` = '$keyword' 
+                        WHERE `item`.`itemid` = $itemId";
+        
+        mysql_query($sql);
+                
+        $rowsAffected = mysql_affected_rows();
+
+        if ($rowsAffected == 1)
+        {
+            $response['result'] = 'SUCCESS';
+            $response['messages'] = array('The item was not updated successfully');
+        }
+        elseif ($rowsAffected == 0)
+        {
+            $response['result'] = 'SUCCESS';
+            $response['messages'] = array('The item was not updated.');
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('An unknown error has occurred.');
+        }
+
+        return $response;
     }
 
     /* remove item with a particual item id */
@@ -346,7 +377,7 @@ class Api
     }
 
     /* update book information */
-    public function editbook($itemid, $title, $author, $publisher, $published_date, $edition, $subjectarea, $condition, $saletype, $askingprice, $description)
+    public function bck_editbook($itemid, $title, $author, $publisher, $published_date, $edition, $subjectarea, $condition, $saletype, $askingprice, $description)
     {
         $itemid = mysql_real_escape_string($itemid);
         $title = mysql_real_escape_string($title);
@@ -363,6 +394,82 @@ class Api
         $sql = "update book ('$itemid','$title','$author','$publisher', '$published_date','$edition','$subjectarea','$condition', '$saletype', '$askingprice', '$description') where itemid= '$itemid'";
         $result = mysql_query($sql);
         return $result;
+    }
+    
+    public function editBook($itemId, $title, $author, $publisher, $saletype, $publishedDate, $edition, $subjectarea, $condition, $askingprice, $description, $bUserId, $category, $uploadtime, $keyword, $image)
+    {
+        $title = mysql_real_escape_string($title);
+        $author = mysql_real_escape_string($author);
+        $publisher = mysql_real_escape_string($publisher);
+
+        $saletype = mysql_real_escape_string($saletype);
+        $publishedDate = mysql_real_escape_string($publishedDate);
+
+        $edition = mysql_real_escape_string($edition);
+        $subjectarea = mysql_real_escape_string($subjectarea);
+        $condition = mysql_real_escape_string($condition);
+        $description = mysql_real_escape_string($description);
+
+        $saletype = mysql_real_escape_string($saletype);
+        $askingprice = mysql_real_escape_string($askingprice);
+
+        $bUserId = mysql_real_escape_string($bUserId); //mysql_real_escape_string($bUserId);
+        $category = mysql_real_escape_string($category);
+        $uploaddate = date('Y-m-d');
+        $uploadtime = date('Y-m-d H:i:s');
+        $keyword = mysql_real_escape_string($keyword);
+        $image = mysql_real_escape_string($image);
+
+        $api = new Api();
+        
+        $editItemResult = $api->editItem($itemId, $category, $keyword, $image);
+        
+        if($editItemResult['result'] == 'SUCCESS')
+        {
+//            $itemId = $editItemResult['data']['itemid'];
+            
+            $editUploadResult = $api->editUpload($itemId, $bUserId, $saletype, $askingPrice = 0, $uploaddate, $uploadtime); //assume the upload was added successfully, temporarily
+                        
+            $sql = "    UPDATE `notizblock`.`book` 
+                        SET 
+                            `title` = '$title',
+                            `author` = '$author',
+                            `publisher` = '$publisher',
+                            `pubYear` = '$publishedDate',
+                            `edition` = '$edition',
+                            `subarea` = '$subjectarea',
+                            `cond` = '$condition',
+                            `description` = '$description' 
+                        WHERE `book`.`itemid` = $itemId;";
+            
+            mysql_query($sql);
+            
+            $rowsAffected = mysql_affected_rows();
+        
+            $response = $this->apiResponse;
+
+            if ($rowsAffected == 1)
+            {
+                $response['result']     = 'SUCCESS';
+                $response['messages']   = array('Book was updated successfully.');
+            }
+            else
+            {
+                $response['result']     = 'FAILURE';
+                $response['messages']   = array('The book could not be updated');
+            }
+
+            return $response;
+        }
+        else
+        {
+            $response = $this->apiResponse;
+            
+            $response['result']     = 'FAILURE';
+            $response['messages']   = array('The item could not be updated.');
+        }
+        
+        return $response;
     }
 
     /* remove book with a specific id */
@@ -683,13 +790,14 @@ class Api
         if($item=='book'||$item=='house'){
             
             //list all books in database
-            $sql2 = "SELECT * 
+            $sql2 = "SELECT *
                      FROM item 
                      JOIN $item ON item.itemid = $item.itemid
                      JOIN upload ON item.itemid = upload.itemid
                      WHERE upload.uploadstate = 'AVAILABLE' ";
 
-            $result = mysql_query($sql2);       
+            $result = mysql_query($sql2);
+            
             $data = array();
 
             while ($row = mysql_fetch_assoc($result))
@@ -711,8 +819,6 @@ class Api
                 $response['messages'] = array('There is no data to be displayed.');
                 $response['data'] = $data;
             }
-
-           
         }
         else
         {
@@ -910,6 +1016,47 @@ class Api
         }
 
         return $response;
+    }
+    
+    public function editUpload($itemId, $bUserId, $saletype, $askingPrice, $uploaddate, $uploadtime)
+    {        
+        $itemId         = mysql_real_escape_string($itemId);
+        $bUserId        = mysql_real_escape_string($bUserId);
+        $askingPrice    = mysql_real_escape_string($askingPrice);
+        $saletype       = mysql_real_escape_string($saletype);
+        $uploaddate     = mysql_real_escape_string($uploaddate);
+        $uploadtime     = mysql_real_escape_string($uploadtime);
+                
+        $sql        = "  UPDATE `notizblock`.`upload` 
+                         SET `bUserid` = '$bUserId',
+                            `saleType` = '$saletype',
+                            `askingPrice` = '$askingPrice',
+                            `uploadDate` = '$uploaddate',
+                            `uploadTime` = '$uploadtime'
+                         WHERE `upload`.`itemid` = $itemId;";
+
+        mysql_query($sql);
+        
+        $rowsAffected = mysql_affected_rows();
+
+        if ($rowsAffected == 1)
+        {
+            $response['result'] = 'SUCCESS';
+            $response['messages'] = array('The upload was updated successfully');
+
+        }
+        elseif ($rowsAffected == 0)
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('The upload was not updated.');
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('An unknown error has occurred.');
+        }
+        
+        return $response;        
     }
 }
 

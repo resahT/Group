@@ -10,7 +10,7 @@ $api      = new Api();
 
 $errors   = array();
 
-$response       = $api->getItem($bookId,'book');
+$response       = $api->getItem($bookId, 'book');
 
 $userInfoResult = $api->getCurrentUserInfo();
 
@@ -84,9 +84,6 @@ else
 {
     //nothing to do here
 }
-
-
-
 
 $bidResponse    = $api->viewBidHistory(2, $bookId);
 
@@ -202,6 +199,13 @@ $askingPrice    = $response['data']['askingPrice'];
 ?>
                     
                 </table>
+<?php
+        }
+        
+        if(isset($bUserid) && $book['bUserid'] == $bUserid)
+        {
+?>
+                <a href="editbook.php?bookId=<?= $bookId ?>">Edit Book</a>
 <?php
         }
 ?>
