@@ -113,7 +113,7 @@ $askingPrice    = $response['data']['askingPrice'];
             
             <br/>
             
-            <div style="background: #fff;">
+            <div style=" text-align:center;background:dimgrey; ">
                 
                     <ul class="errorMessages">
 <?php
