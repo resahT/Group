@@ -85,16 +85,17 @@
 		<a class="trigger" href="#">steps</a>
 		
 		<div id="other">
-			<p>Checked out item-based recommendation algorithms
-			lkfkjbahjskhasjfasf djfgafjhuefhasf aoisuhv aisfs
-			askjfhafvui vhcu ashcausifhauif hufauifha siuahfiuafh
-			afhfuiash aiufhaufh fisufhasiuhfauihf iaufhiufhiuhafu</p>
+			<p>Go the the link below to check out all the cool
+			stuff we implemented on our website<br/><br/>
+			<a href="impsto.php">Implementation stories</a></p>
 			<div style="clear:both;"></div>
 		</div>
 		<a class="trigger2" href="#">info</a>
 		
 		<div id="developersPanel">
 			<p><img src="images/developers.png" alt="Welcome" hspace="10"/><br/>
+			<h4>Students of the Department of Computer Science at
+			The University of the West Indies</h4>
 			<h4>Tara Brown<br/></h4>
 			<h4>Jheanell McPherson<br/></h4>
 			<h4>Andrew Stoddart<br/></h4>

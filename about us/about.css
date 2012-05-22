@@ -1,10 +1,15 @@
 /*about us page*/
-body{margin: 0px; padding: 0px; background: #cd0000}
+body{margin:0px; 
+padding:0px; 
+background:#414141;
+
+background-image:url('images/450.gif');
+}
+
 
 a:focus {
 outline: none;
 }
-
 
 #contentWrap{
 	width:100%; 
@@ -50,24 +55,23 @@ opacity: .85;
 .step1 h2, .step1 h4{
 margin: 0 0 15px 0;
 padding: 0;
-color: #cccccc;
+color: #eb8f1e;;
 }
 
 
 .step2 h2, .step2 h4{
 margin: 0 0 15px 0;
 padding: 0;
-color: #cccccc;
+color: #eb8f1e;
 }
 
 
 .step3 h2, .step3 h4{
 margin: 0 0 15px 0;
 padding: 0;
-color: #cccccc;
+color: #eb8f1e;
 }
 
-}
 
 .steps, .steps a:visited{
 margin: 0;
@@ -86,6 +90,8 @@ border-bottom: 1px solid #ffffff;
 }
 
 #other {
+font-size: 16px;
+color:#eb8f1e;
 position: absolute;
 top: 280px;
 left: 0;
@@ -106,7 +112,17 @@ opacity: .85;
 #other p{
 margin: 0 0 15px 0;
 padding: 0;
-color: #cccccc;
+color: #eb8f1e;
+}
+
+#other a{
+color: bisque;
+text-decoration: none;
+}
+
+#other a:hover{
+color: white;
+text-decoration: underline;
 }
 
 a.trigger{
@@ -248,8 +264,6 @@ background:#222222 url(images/minus.png) 85% 55% no-repeat;
 
 }
 
-
-
 #aboutheader{
 	width:100%;
 	margin: 0px;
@@ -296,6 +310,79 @@ opacity: .85;
 #developersPanel h4{
 margin: 0 0 15px 0;
 padding: 0;
-color: #cccccc;
+color: #eb8f1e;;
 }
+
+#impstoWrap{
+width: 100%;
+margin: 0px;
+padding: 0px;
+float: left;
+background:#fff url(images/impsto.jpg) repeat-x;
+}
+
+#title{
+position: absolute;
+top:100px;
+left: 0;
+width:1365px;
+}
+
+#title h1{
+text-align: center;
+font-family: trebuchet MS, sans-serif;
+font-weight: bold;
+text-transform: uppercase;
+color: #eb8f1e;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 44px;
+padding: 0;
+
+}
+
+#cat1{
+position: absolute;
+top:200px;
+left: 40px;
+}
+
+#cat1info{
+font-size: 16px;
+color:#eb8f1e;
+position: absolute;
+bottom: 0px;
+left: 0;
+display: none;
+background: #bfbfbf;
+border:1px solid #111111;
+-moz-border-radius-topright: 20px;
+-webkit-border-top-right-radius: 20px;
+-moz-border-radius-bottomright: 20px;
+-webkit-border-bottom-right-radius: 20px;
+width: 100px;
+height: auto;
+padding: 30px 30px 30px 130px;
+filter: alpha(opacity=85);
+opacity: .85;
+}
+
+#catinfo p{
+margin: 0 0 15px 0;
+padding: 0;
+color: #eb8f1e;
+}
+
+#cat2{
+position: absolute;
+top:200px;
+left: 500px;
+}
+
+#cat3{
+position: absolute;
+top: 200px;
+left: 1000px;
+}
+
 

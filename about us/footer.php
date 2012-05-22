@@ -2,15 +2,14 @@
     <div id="footPanel">
         <div id="footNav">
             <ul>
-                <li><a href="#">Home</a></li>
+				<li><div class="blank"></div></li>
+				<li><div class="blank"></div></li>
+				<li><div class="blank"></div></li>
+				<li><div class="blank"></div></li>
+                <li><a href="aboutus.php">Home</a></li>
                 <li><div class="blank">|</div></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#">Implementation Stories</a></li>
                 <li><div class="blank">|</div></li>
-                <li><a href="#">Living Spaces</a></li>
-                <li><div class="blank">|</div></li>
-                <li><a href="#">Books</a></li>
-                <li><div class="blank">|</div></li>
-                <li><a href="#">Vendors</a></li>
             </ul>
         </div>
 

@@ -3,34 +3,42 @@
     
     <head>
         <?php include 'htmlhead.php'; ?>
-		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
-    </head>  	
-	<body>
-		<div id="topContentWrap">
-			<?php include 'header.php'; ?>
-			
-			<div id="livingSpacesPanel" onclick="viewhouse.php">
-				<h2>Living Spaces<h2>
-				<h3>Need a place to stay this semester?
-				Check out the living spaces around Mona
-				today!!</h3>
-				<div class="read"><a href="viewhouse.php">see more</a></div>
+        <script type="text/javascript" src="jquery.js"></script>
+    </head>    
+
+<body>
+	
+        <div id="topContentWrap">
+             <?php include 'header.php'; ?>
+             
+     
+			<div id="navigation">  
+				<img src="images/aboutus.png" alt="header" />
 			</div>
-			
-			<div id="bookPanel" href="viewbook.php">
-				<h2>Text Books</h2>
-				<h3>Get the Text books you need today!!
-				Old, New and Anywhere in between for the
-				lowest prices!!</h3>
-				<div class="read"><a href="viewbook.php">see more</a></div>
-			</div>
-			
-			<div id="indexpic">
-				<img src="images/ls.jpg" width="200" height="200" alt="image1" class="left"/>
-				<img src="images/bks2.png" width="200" height="200" alt="image2" class="right"/>
-				<img src="images/books.jpg" width="200" height="200" alt="image3" class="right"/>
-			</div>
-		</div>
-		<?php include 'footer.php'; ?>
-	</body>
+             
+			<div class="central">
+                <div id="livingSpacesPanel">
+					<h2>Living Spaces</h2>
+					<h3>Off- campus housing conveniently located in and around Mona!</h3>
+                    
+					<div class="read">
+						<a href="viewhouse.php">see more</a>
+					</div>
+			    </div>
+                    
+                   
+				<div id="bookPanel">
+					<h2>Books</h2>
+                  
+                    <h3>New & used text books for Computer Science and Physics students</h3>
+                    <div class="read"><a href="viewbook.php">see more</a></div>
+                    
+                    
+                </div>
+                </div>
+            </div>
+            <?php include 'footer.php'; ?>
+            
+        </div>
+    </body>
 </html>

@@ -1,29 +1,106 @@
 /*CSS Document*/
-body{margin:0px; padding:0px; background:#414141}
+body{margin:0px; 
+padding:0px; 
+background:#414141;
+
+background-image:url('images/450.gif');
+}
+
+
 #header{ width :100% ;
          color:  white;
          height: 19%;
          text-align: center;
          padding-bottom: 10px;
+         
+         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		line-height: 18px;
 }
+div.central{
+
+width:700px;
+margin:auto;
+background-color:rgba(0,0,0,0.4);
+height:500px;
+
+//-webkit-column-count:2; /* Safari and Chrome */
+//column-count:2;
+
+border: 10px solid rgba(0,0,0,0.2);
+}
+
+#navigation{
+
+width:900px;
+margin:auto;
+}
+#navigation img{
+
+position:relative;
+left:-270px;
+}
+
+nav a{
+
+text-decoration:none;
+color:white;
+background-color:rgba(0,0,0,0.3);
+padding:25px;
+padding-bottom:10px;
+border:0px solid;
+border-radius:4px;
+margin-right:20px;
+}
+
+nav a:hover{
+background-color:rgb(254,151,5);
+color:black;
+}
+div.options{
+
+
+background-color:rgb(254,151,5);
+padding:100px;
+height:200px;
+
+width:250px;
+margin:50px;
+}
+
 #loginposition { 
     position:absolute;
     visibility:show; 
-    left: 1000px; 
-    top: 20px;
+    right: 100px; 
+    top: 0px;
     z-index:2; 
+    
+    text-decoration:none;
+color:white;
+background-color:rgba(50,180,65,0.5);
+padding:25px;
+padding-bottom:10px;
+border:0px solid;
+border-radius:4px;
+margin-right:20px;
+    
 } 
+#loginposition:visited{color:white;}
+#loginposition:hover{
+background-color:rgb(50,180,65);
+}
 
 /*Top Panels*/
 #topContentWrap{
-    width:100%; 
+    width:100%;
+    height:100%; 
     margin:0px; 
     padding:0px; 
     float:left; 
-    background:#fff url(images/brick.jpg) repeat-x
+
 }
 #topContentWrap{
-    bodyheight: 1000px
+    bodyheight: 1000px;
 }
 #topContent{
     width:928px;
@@ -57,47 +134,23 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 
 #livingSpacesPanel{
-	top: 0px;
     width:216px; 
-    height:725px;
+    height:715px;
     margin:0px; 
-    padding:0; 
+    padding:0px; 
     float:left; 
-	background:#cd4007 url(images/go.png) 85% 55% no-repeat;
-	background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
-	background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
-	background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
-	background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
-	background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
-
-	background-image: -webkit-gradient(	
-	linear,
-	left bottom,
-	left top,
-	color-stop(0, rgb(255,255,255)),
-	color-stop(0.72, rgb(205,63,7))
-	);
-
+    background:#cd4007 url(images/ls.jpg) no-repeat -77px -494px
 }
 
-#livingSpacesPanel:hover{
-	top:0px;
-	width:216px;
-	height:725px;
-	margin:0px;
-	padding: 4px;
-	float: left;
-	background:#cd4008 url(images/go.png) 85% 55% no-repeat;
-}
 
-#house{
+//#house{
 	width:47px; 
 	height:110px; 
 	margin:0px; 
 	padding:0 0 0 169px;
 	float:left
 }
-#house a{
+//#house a{
 	width:47px; 
 	height:36px;
 	margin:0px; 
@@ -110,29 +163,30 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	line-height:13px; 
 	text-align:center; 
 	text-decoration:none; 
-	background:url(images/homeBg.gif) no-repeat
+	//background:url(images/homeBg.gif) no-repeat
 }
-#house a:hover{
+//#house a:hover{
 	height:36px; 
 	padding:74px 0 0 0; 
-	background:url(images/homeBg.gif) no-repeat -48px 0
+	//background:url(images/homeBg.gif) no-repeat -48px 0
 }
 
 /*LS Panel*/
 #livingSpacesPanel h2{
-	margin:199px 0 0 0; 
+	//width:170px;
+	//margin:199px 0 0 0; 
 	padding:0 0 0 24px; 
 	float:left; 
 	font-family:Arial;
 	font-size:26px;
 	color:#400505; 
-	line-height:30px;
+	//line-height:30px;
 	font-weight:normal
 }
 #livingSpacesPanel h3{
-	width:170px; 
+	//width:170px; 
 	margin:8px 0 0 0;
-	padding:0 0 0 24px;
+	padding:10px;
 	float:left;
 	font-family:Arial;
 	font-size:12px;
@@ -140,7 +194,7 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	line-height:19px;
 	font-weight:bold
 }
-#livingSpacesPanel p{
+//#livingSpacesPanel p{
 	width:170px; 
 	margin:20px 0 0 0;
 	padding:0 0 0 24px;
@@ -152,10 +206,12 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 #livingSpacesPanel p a{
 	color:#f8d85e;
-	background:#9f3105;
+	//background:#9f3105;
 	text-decoration:none
 }
-#livingSpacesPanel p a:hover{background:#812a08}
+#livingSpacesPanel p a:hover{//background:#812a08}
+
+
 #livingSpacesPanel .read{
 	width:62px; 
 	height:23px; 
@@ -178,46 +234,51 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	background:url(images/buttons.jpg) no-repeat
 }
 #livingSpacesPanel .read a:hover{color:#cd4007}
+
+
+#livingSpacesPanel{
+
+background-color:rgba(254,151,5,0.8);
+width:300px;
+height:200px;
+
+
+margin:25px;
+margin-top:150px;
+border:0px solid;
+border-radius:8px;
+margin-bottom:200px;
+}
+
+#livingSpacesPanel:hover {
+//background-color:rgb(30,30,30);
+background-color:rgb(254,151,5);
+}
+
 #livingSpacesExtend{
+	background-color:rgba(254,151,5, 0.5);
 	color:#cd4007;
 	height:120px;
 	display:none;
 }
 
 #bookPanel{
-	top: 0px;
-    width:216px; 
-    height:725px;
-    margin:0px; 
-    padding:0px; 
-    float:left; 
-	border-left:#f3f1d2 solid 1px;
-	background:#f7a47a url(images/go.png) 85% 55% no-repeat;
-	background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
-	background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
-	background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
-	background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
-	background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
+	
+	
+	background-color:rgba(254,151,5,0.8);
+width:300px;
+height:200px;
 
-	background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0, rgb(255,255,255)),
-	color-stop(0.62, rgb(247,164,122))
-	);
 
+margin:25px;
+margin-top:150px;
+border:0px solid;
+border-radius:8px;
+margin-bottom:200px;
+float:right;
 }
 
-#bookPanel:hover{
-	top:0px;
-	width:216px;
-	height:725px;
-	margin:0px;
-	padding: 4px;
-	float: left;
-	background:#f7a47a url(images/go.png) 85% 55% no-repeat;
-}
+#bookPanel:hover{background-color:rgb(254,151,5);}
 
 #book{
 	width:47px;
@@ -249,10 +310,10 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 
 /*Book Panel*/
 #bookPanel h2{
-	width:170px; 
-	margin:199px 0 0 0;
-	padding:0 0 0 24px;
-	float:left;
+	//width:170px; 
+	//margin:199px 0 0 0;
+	//padding:0 0 0 24px;
+	//float:left;
 	font-family:Arial; 
 	font-size:26px;
 	color:#400505; 
@@ -260,10 +321,10 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	font-weight:normal
 }
 #bookPanel h3{
-	width:170px; 
-	margin:8px 0 0 0; 
-	padding:0 0 0 24px;
-	float:left;
+	//width:170px; 
+	//margin:8px 0 0 0; 
+	//padding:0 0 0 24px;
+	//float:left;
 	font-family:Arial;
 	font-size:12px;
 	color:#400505;
@@ -679,24 +740,6 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	padding:0px; 
 	float:left
 }
-
-#indexpic{
-	top: 0px;
-	width: 600px;
-	height: 500px;
-	margin:0px;
-	padding: 20px;
-	float: right;
-}
-
-.left{
-	float:left;
-}
-
-.right{
-	float: right;
-}
-
 #footWrap{
 	width:100%; 
 	margin:0px;
@@ -879,9 +922,9 @@ height:800px;
 
 div#uprofcol2{
 width:400px;
-/*background-color: green;*/
+//background-color: green;
 height:800px;
-/*display:inline;*/
+//display:inline;
 }
 
 div#utility{
@@ -890,45 +933,7 @@ margin:auto;
 border: 0px solid red;
 border-radius: 9px;
 background-color: rgba(254,151,5,0.3);
-height:100px;
+//height:100px;
 color:black;
 font-size:12pt;
-}
-
-.errorMessages
-{
-    color: red;
-    font-weight: bold;
-    list-style-type: none;
-}
-
-.bookList
-{
-    border-collapse: collapse;
-}
-
-.bookList td
-{
-    padding: 10px;
-}
-
-.bookList thead
-{
-    font-weight: bold;
-    background-color: #ffffff;
-}
-
-.bookList .even
-{
-    background-color: #c9c9c9;
-}
-
-.bookList .odd
-{
-    background-color: #a9a9a9;
-}
-
-.viewDetails .heading
-{
-    font-weight: bold;
 }
