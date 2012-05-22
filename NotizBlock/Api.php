@@ -826,7 +826,89 @@ class Api
         return $response;
     }
     
-    
+    public function getRecommendedItems($bUserid, $itemtable, $currentItem = null)
+    {
+        $currentItem    = mysql_real_escape_string($currentItem);
+        $bUserid        = mysql_real_escape_string($bUserid);
+        
+        $itemtable      = strtolower($itemtable);
+        
+        if($itemtable == 'book')
+        {                    
+            //The sql query will select items that 
+            //  1) have similar subject areas as recently viewed items
+            //  2) have similar keywords as recently viewed items
+            //  3) have not been bought by the user
+            //
+            //more intelligence may be added
+            
+            
+            $sql = "    SELECT * FROM item 
+                        JOIN $itemtable on item.itemid = $itemtable.itemid 
+                        JOIN upload on upload.itemid = $itemtable.itemid 
+                        
+                        WHERE 
+                        (
+                            subarea IN (SELECT subarea 
+                                        FROM itemsviewed 
+                                        JOIN book ON itemsviewed.itemid = book.itemid 
+                                        WHERE itemsviewed.bUserid = $bUserid
+                                        ORDER BY itemsviewedid DESC)
+                            OR
+                            keyword IN (SELECT keyword 
+                                        FROM itemsviewed 
+                                        JOIN book ON itemsviewed.itemid = book.itemid 
+                                        WHERE itemsviewed.bUserid = $bUserid
+                                        ORDER BY itemsviewedid DESC )
+                        )
+                        AND
+                        (
+                            item.itemid NOT IN (SELECT itemid
+                                            FROM buy
+                                            WHERE buy.bUserid = $bUserid)
+                            AND 
+                            upload.state = 'AVAILABLE'
 
+                        )
+
+                        LIMIT 10";
+            
+        }
+        else
+        {
+            //The query below should be modified to do something similar to 
+            //what the above does
+            $sql = "    SELECT * FROM item 
+                        JOIN $itemtable on item.itemid = $itemtable.itemid 
+                        JOIN upload on upload.itemid = $itemtable.itemid  
+                        LIMIT 10";
+        }
+//        die($sql);
+        $result = mysql_query($sql);
+                      
+        $data = array();
+
+        while ($row = mysql_fetch_assoc($result))
+        {
+            $data[] = $row;
+        }
+        
+        $response = $this->apiResponse;
+
+        if (!empty($data))
+        {
+            $response['result']     = 'SUCCESS';
+            $response['messages']   = array('Recommended items identified successfully.');
+            $response['data']       = $data;
+        }
+        else
+        {
+            $response['result']     = 'FAILURE';
+            $response['messages']   = array('No recommended items could be found');
+            $response['data']       = array();
+        }
+
+        return $response;
+    }
 }
 

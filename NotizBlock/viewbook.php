@@ -14,11 +14,25 @@ $response       = $api->getItem($bookId,'book');
 
 $userInfoResult = $api->getCurrentUserInfo();
 
+//add a log of the item that is being viewed
 if($userInfoResult['result'] == 'SUCCESS')
 {
     $bUserid            = $userInfoResult['data']['bUserid'];
     
     $viewedItemResult   = $api->addItemsViewed($bookId, $bUserid);
+}
+
+//get recommended items
+$recommendedItems = array();
+
+if($userInfoResult['result'] == 'SUCCESS')
+{    
+    $recommededItemsResult = $api->getRecommendedItems($bUserid, 'book', $bookId);
+    
+    if($recommededItemsResult['result'] == 'SUCCESS')
+    {
+        $recommendedItems = $recommededItemsResult['data'];
+    }
 }
 
 if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
@@ -166,9 +180,27 @@ $askingPrice    = $response['data']['askingPrice'];
                     </tr>
                     
                 </table>
+<?php
+        if(!empty($recommendedItems))
+        {
+?>
+                <h3>We think you may like the following books:</h3>
                 
-                
-                
+                <table>
+                    
+<?php
+                        foreach($recommendedItems as $item)
+                        {
+?>
+                            <tr><td><a href="viewbook.php?bookId=<?= $item['itemid'] ?>"> <?= $item['title'] . ' by ' . $item['author'] ?></a></td></tr>
+<?php                        
+                        }
+?>
+                    
+                </table>
+<?php
+        }
+?>
             </div>
 
             <br/>
