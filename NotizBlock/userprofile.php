@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+$uname=$_SESSION['transfer'];
 $con = mysql_connect("localhost","root","");
 if (!$con)
   {
@@ -7,10 +10,10 @@ if (!$con)
 
 mysql_select_db("notizblock", $con);
 
-$result = mysql_query("SELECT * FROM basicUser WHERE fname=''");
+$result = mysql_query("SELECT * FROM basicUser WHERE username='".$uname."'");
 $row = mysql_fetch_array($result);
 
- session_start();
+ 
  $_SESSION['id'] = $row['bUserid'];
  $_SESSION['fname'] = $row['fname'];
  $_SESSION['lname'] = $row['lname'];
