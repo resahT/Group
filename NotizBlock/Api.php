@@ -70,7 +70,7 @@ class Api
 
     function __destruct()
     {
-        mysql_close($this->connection);
+        @mysql_close($this->connection);
     }
 
     public function login($username, $password)
