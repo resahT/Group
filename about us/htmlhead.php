@@ -1,6 +1,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>NotizBlock</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
+	<link href="styles2.css" rel="stylesheet" type="text/css"/>
     <link href="forms.css" rel="stylesheet" type="text/css" />
     <link href="navigation.css" rel="stylesheet" type="text/css" />
 	<link href="decogrids-12.css" rel="stylesheet" type="text/css" />

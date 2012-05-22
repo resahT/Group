@@ -188,6 +188,28 @@ border:1px solid #444444;
 display: block;
 }
 
+a.trigger4{
+position: absolute;
+text-decoration: none;
+top: 200px; right: 0;
+font-size: 16px;
+letter-spacing:-1px;
+font-family: verdana, helvetica, arial, sans-serif;
+color:#fff;
+padding: 20px 15px 20px 40px;
+font-weight: 700;
+background:#333333 url(images/plus.png) 15% 55% no-repeat;
+border:1px solid #444444;
+-moz-border-radius-topleft: 20px;
+-webkit-border-top-left-radius: 20px;
+-moz-border-radius-bottomleft: 20px;
+-webkit-border-bottom-left-radius: 20px;
+-moz-border-radius-bottomright: 0px;
+-webkit-border-bottom-right-radius: 0px;
+display: block;
+}
+
+
 a.trigger:hover{
 position: absolute;
 text-decoration: none;
@@ -251,6 +273,28 @@ border:1px solid #444444;
 display: block;
 }
 
+a.trigger4:hover{
+position: absolute;
+text-decoration: none;
+top: 200px; right: 0;
+font-size: 16px;
+letter-spacing:-1px;
+font-family: verdana, helvetica, arial, sans-serif;
+color:#fff;
+padding: 20px 20px 20px 40px;
+font-weight: 700;
+background:#333333 url(images/plus.png) 15% 55% no-repeat;
+border:1px solid #444444;
+-moz-border-radius-topleft: 20px;
+-webkit-border-top-left-radius: 20px;
+-moz-border-radius-bottomleft: 20px;
+-webkit-border-bottom-left-radius: 20px;
+-moz-border-radius-bottomright: 0px;
+-webkit-border-bottom-right-radius: 0px;
+display: block;
+
+}
+
 a.active.trigger {
 background:#222222 url(images/minus.png) 85% 55% no-repeat;
 }
@@ -261,7 +305,10 @@ background:#222222 url(images/minus.png) 85% 55% no-repeat;
 
 a.active.trigger3{
 background:#222222 url(images/minus.png) 85% 55% no-repeat;
+}
 
+a.active.trigger3{
+background:#222222 url(images/minus.png) 85% 55% no-repeat;
 }
 
 #aboutheader{
@@ -318,7 +365,7 @@ width: 100%;
 margin: 0px;
 padding: 0px;
 float: left;
-background:#fff url(images/impsto.jpg) repeat-x;
+background:#fff url(images/450.gif) repeat-x;
 }
 
 #title{
@@ -344,7 +391,20 @@ padding: 0;
 #cat1{
 position: absolute;
 top:200px;
+width: 400px;
+height: 700px;
 left: 40px;
+background: #000 url(images/250.gif) repeat-x;
+border:1px solid #111111;
+-moz-border-radius-topright: 20px;
+-webkit-border-top-right-radius: 20px;
+-moz-border-radius-bottomright: 20px;
+-webkit-border-bottom-right-radius: 20px;
+width: 300px;
+height: auto;
+padding: 10px 50px 10px 20px;
+filter: alpha(opacity=85);
+opacity: .85;
 }
 
 #cat1info{
@@ -367,22 +427,90 @@ filter: alpha(opacity=85);
 opacity: .85;
 }
 
-#catinfo p{
-margin: 0 0 15px 0;
-padding: 0;
+.cat1info h1{
+text-align: center;
+font-family: trebuchet MS, sans-serif;
+font-weight: bold;
+text-transform: uppercase;
 color: #eb8f1e;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 20px;
+padding: 0;
+}
+
+.cat1info h4{
+color: #1fd9d9;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 15px;
+padding: 0;
+}
+
+.cat1info h3, .cat1info h2{
+color: #812a08;
 }
 
 #cat2{
 position: absolute;
 top:200px;
+width:400px;
+height:700;
 left: 500px;
+background: #000 url(images/250.gif) repeat-x;
+border:1px solid #111111;
+-moz-border-radius-topright: 20px;
+-webkit-border-top-right-radius: 20px;
+-moz-border-radius-bottomright: 20px;
+-webkit-border-bottom-right-radius: 20px;
+width: 300px;
+height: auto;
+padding: 10px 30px 30px 20px;
+filter: alpha(opacity=85);
+opacity: .85;
+}
+
+.cat2info h1{
+text-align: center;
+font-family: trebuchet MS, sans-serif;
+font-weight: bold;
+text-transform: uppercase;
+color: #eb8f1e;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 20px;
+padding: 0;
+}
+
+.cat2info h4{
+color: #1fd9d9;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 15px;
+padding: 0;
+}
+
+.cat2info h3, .cat2info h2{
+color: #812a08;
 }
 
 #cat3{
 position: absolute;
-top: 200px;
-left: 1000px;
+top: 180px;
+right: 0;
+display: none;
+background: #000000;
+color:#eb8f1e;
+border:1px solid #111111;
+-moz-border-radius-topright: 20px;
+-webkit-border-top-right-radius: 20px;
+-moz-border-radius-bottomright: 20px;
+-webkit-border-bottom-right-radius: 20px;
+width: 400px;
+height: auto;
+padding: 30px 30px 30px 160px;
+filter: alpha(opacity=85);
+opacity: .85;
 }
 
 
