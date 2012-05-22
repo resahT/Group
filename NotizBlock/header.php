@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php @session_start() ?>
 
 <div id="header"> 
     <div style=" border-bottom-style:groove; border-bottom-width:thick; left: 0px; z-index: 999; width: 100%;height: 100px;text-align: center;"">

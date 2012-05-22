@@ -264,14 +264,14 @@ FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE C
 
 /* Alter scripts */
 
-ALTER TABLE `upload` ADD `askingPrice` DECIMAL(10,2) NOT NULL AFTER `saleType`
-ALTER TABLE `upload` ADD `state` VARCHAR( 15 ) NOT NULL DEFAULT 'AVAILABLE' AFTER `uploadTime` 
+ALTER TABLE `upload` ADD `askingPrice` DECIMAL(10,2) NOT NULL AFTER `saleType`;
 
+ALTER TABLE `upload` ADD `state` VARCHAR( 15 ) NOT NULL DEFAULT 'AVAILABLE' AFTER `uploadTime`;
 
 CREATE TABLE IF NOT EXISTS `itemsviewed` (
   `itemsviewedid` int(11) NOT NULL AUTO_INCREMENT,
   `bUserid` int(11) NOT NULL,
-  `itemid` int(11) NOT NULL,,
+  `itemid` int(11) NOT NULL,
   `dateViewed` datetime NOT NULL,
   PRIMARY KEY (`itemsviewedid`),
   FOREIGN KEY(itemid) REFERENCES item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
