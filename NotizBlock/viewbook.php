@@ -12,24 +12,40 @@ $errors   = array();
 
 $response       = $api->getItem($bookId,'book');
 
+$userInfoResult = $api->getCurrentUserInfo();
+
+if($userInfoResult['result'] == 'SUCCESS')
+{
+    $bUserid            = $userInfoResult['data']['bUserid'];
+    
+    $viewedItemResult   = $api->addItemsViewed($bookId, $bUserid);
+}
+
 if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 {    
     if(isset($_REQUEST['buyNow']) && $_REQUEST['buyNow'] == 'buyNow')
     {       
         $result         = $api->getCurrentUserInfo();
         
-        $bUserid        = $result['data']['bUserid'];
-        
-        $buyResult      = $api->buyItem($bUserid, $bookId, 'book', $response['data']['askingPrice']);
-        
-        if($buyResult['result'] == 'SUCCESS')
-        {
-            header("Location: listbooks.php?status=itemPurchased");
-            die();
+        if($result['result'] == 'SUCCESS')
+        {        
+            $bUserid        = $result['data']['bUserid'];
+
+            $buyResult      = $api->buyItem($bUserid, $bookId, 'book', $response['data']['askingPrice']);
+
+            if($buyResult['result'] == 'SUCCESS')
+            {
+                header("Location: listbooks.php?status=itemPurchased");
+                die();
+            }
+            else
+            {
+                $errors[] = 'Item could not be purchased.';
+            }
         }
         else
         {
-            $errors[] = 'Item could not be purchased.';
+            $errors[] = 'Cannot purchase item because you are not logged in.';
         }
     }
     else

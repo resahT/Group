@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS bids;
 DROP TABLE IF EXISTS buy;
 DROP TABLE IF EXISTS item;
 DROP TABLE IF EXISTS basicUser;
+DROP TABLE IF EXISTS itemsviewed;
 
 CREATE TABLE basicUser
 (bUserid		int         NOT NULL    AUTO_INCREMENT,
@@ -265,3 +266,14 @@ FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE C
 
 ALTER TABLE `upload` ADD `askingPrice` DECIMAL(10,2) NOT NULL AFTER `saleType`
 ALTER TABLE `upload` ADD `state` VARCHAR( 15 ) NOT NULL DEFAULT 'AVAILABLE' AFTER `uploadTime` 
+
+
+CREATE TABLE IF NOT EXISTS `itemsviewed` (
+  `itemsviewedid` int(11) NOT NULL AUTO_INCREMENT,
+  `bUserid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,,
+  `dateViewed` datetime NOT NULL,
+  PRIMARY KEY (`itemsviewedid`),
+  FOREIGN KEY(itemid) REFERENCES item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

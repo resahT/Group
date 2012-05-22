@@ -790,6 +790,37 @@ class Api
         
         return $response;
     }
+    
+    public function addItemsViewed($itemid, $bUserid)
+    {
+        $itemid     = mysql_real_escape_string($itemid);
+        $bUserid    = mysql_real_escape_string($bUserid);
+        
+        $dateViewed    = date('Y-m-d H:i:s');
+
+        $sql = "INSERT INTO `notizblock`.`itemsviewed` 
+                        (`itemsviewedid`, `bUserid`, `itemid`, `dateViewed`) 
+                VALUES (NULL, '$bUserid', '$itemid', '$dateViewed');";
+        
+        mysql_query($sql);
+
+        $rowsAffected = mysql_affected_rows();
+        
+        $response = $this->apiResponse;
+
+        if ($rowsAffected == 1)
+        {
+            $response['result']     = 'SUCCESS';
+            $response['messages']   = array('Item viewed was added successfully.');
+        }
+        else
+        {
+            $response['result']     = 'FAILURE';
+            $response['messages']   = array('The viewed item could not be added');
+        }
+
+        return $response;
+    }
 
 }
 

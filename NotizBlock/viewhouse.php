@@ -10,6 +10,15 @@ $api      = new Api();
 
 $errors   = array();
 
+$userInfoResult = $api->getCurrentUserInfo();
+
+if($userInfoResult['result'] == 'SUCCESS')
+{
+    $bUserid            = $userInfoResult['data']['bUserid'];
+    
+    $viewedItemResult   = $api->addItemsViewed($houseId, $bUserid);
+}
+
 if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 {    
     $result = $api->getCurrentUserInfo();
