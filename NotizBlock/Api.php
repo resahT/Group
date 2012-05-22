@@ -978,7 +978,7 @@ class Api
 
                         )
 
-                        LIMIT 10";
+                        LIMIT 20";
             
             
             
@@ -1000,6 +1000,22 @@ class Api
         while ($row = @mysql_fetch_assoc($result))
         {
             $data[] = $row;
+        }
+        
+        if(is_array($data) && !empty($data))
+        {
+            $dataBck = $data;
+            
+            try
+            {                
+                shuffle($data);
+                $data = array_slice($data, 0, 9); 
+            }
+            catch(Exception $ex)
+            {
+                $data = $dataBck;
+            }
+            
         }
         
         $response = $this->apiResponse;
