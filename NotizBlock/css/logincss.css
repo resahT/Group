@@ -1,8 +1,31 @@
 /*  LOGIN -------------------------------------------------------------------------------- */	
+body{margin:0px; 
+padding:0px; 
+background:#414141;
+
+background-image:url('images/450.gif');
+}
 
 #login-bg	{
-	background: url(../images/login/loginback.jpg) no-repeat;
+	margin:0px; 
+	padding:0px; 
+	background:#414141;
+	background-image:url('images/450.gif');
 	}
+	
+div.central{
+
+width:700px;
+margin:auto;
+background-color:rgba(0,0,0,0.4);
+height:300px;
+
+//-webkit-column-count:2; /* Safari and Chrome */
+//column-count:2;
+
+border: 10px solid rgba(0,0,0,0.2);
+}
+
  
 #login-holder	{
 	margin: 0px auto 0 auto;
@@ -28,7 +51,7 @@
 	width: 508px;
 	}
 #login-inner	{
-	color: #161616;
+	color: #cd4007;
 	font-family: Tahoma;
 	font-size: 13px;
 	line-height: 12px;
@@ -36,7 +59,7 @@
 	width: 310px;
 	}
 #login-inner label	{
-	color: #161616;
+	color: #cd4007;
 	cursor: pointer;
 	font-family: Tahoma;
 	font-weight: bold;

@@ -59,7 +59,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
         <?php include 'header.php'; ?>
         
         <!-- Start: login-holder -->
-        <div id="login-holder">
+        <div class="central">
 
           
                 <!-- start logo -->
@@ -71,7 +71,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
                 <div class="clear"></div>
 
                 <!--  start loginbox ................................................................................. -->
-                <div id="loginbox">
+                <!--<div id="loginbox">-->
                     
                     
                     
@@ -115,7 +115,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
                 </form>
                 <div class="clear"></div>
                 <a href="" class="forgot-pwd">Forgot Password?</a>
-        </div>
+        <!--</div>-->
         <!--  end loginbox -->
 
                 <!--  start forgotbox ................................................................................... -->

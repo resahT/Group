@@ -42,36 +42,41 @@ else
                     <br />
 
                     <table class="bookList">
-                        <thead>
+                        <thead >
                             <tr>
-                                <td>Title</td>
-                                <td>Author</td>
-                                <td>Publisher</td>
-                                <td>Year</td>
-                                <td>Edition</td>
-                                <td>Subject Area</td>
-                                <td>Condition</td>
-                                <td>Description</td>
+                                <td style="font-size:large">Books</td>
+                                
                             </tr>
                         </thead>
 
                         <tbody>
-    <?php                    
+    <?php                   
+                            $totalBooks = count($books);
                             $counter = 0;
-
-                            foreach($books as $book)
+                                                        
+                            for($i = 0; $i < $totalBooks; $i++)
                             {
+                                
                                 $rowType = $counter % 2 == 0 ? 'even' : 'odd';
+                                
     ?>
                                 <tr class="<?= $rowType ?>">
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['title'] ?></a></td>
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['author'] ?></a></td>
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['publisher'] ?></a></td>
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['pubYear'] ?></a></td>
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['edition'] ?></a></td>
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['subarea'] ?></a></td>
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['cond'] ?></a></td>
-                                    <td><a href="viewbook.php?bookId=<?= $book['itemid'] ?>"><?= $book['description'] ?></a></td>
+<?php
+                                    for($r = 0; $r < 3 && $i < $totalBooks; $i++, $r++)
+                                    {
+                                        $book = $books[$i];
+?>
+                                        <td style="text-align: center; padding: 10px;">
+                                            <a href="viewbook.php?bookId=<?= $book['itemid'] ?>">
+                                                <img style="width: 200px; height: 200px; border: 1px solid #ccc" src="<?= $book['image'] != '' ? $book['image'] : 'images/books.jpg' ?>" alt="<?= $book['title'] ?>" height="42" width="42" /> 
+                                                <br />
+                                                <?= $book['title'] ?> by <?= $book['author'] ?>
+                                            </a>
+                                        </td>
+<?php
+                                    }
+?>
+                                    
                                 </tr>
         <?php                   
                                 $counter++;

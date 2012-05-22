@@ -56,24 +56,39 @@ else
 
                         <tbody>
     <?php                    
+                            
+                            $totalHouses = count($houses);
                             $counter = 0;
-
-                            foreach($houses as $house)
+                                                        
+                            for($i = 0; $i < $totalHouses; $i++)
                             {
+                                
                                 $rowType = $counter % 2 == 0 ? 'even' : 'odd';
+                                
     ?>
                                 <tr class="<?= $rowType ?>">
-                                    <td><a href="viewhouse.php?houseId=<?= $house['itemid'] ?>"><?= $house['image'] ?></a></td>
-                                    <td><a href="viewhouse.php?houseId=<?= $house['itemid'] ?>"><?= $house['bedrooms'] ?></a></td>
-                                    <td><a href="viewhouse.php?houseId=<?= $house['itemid'] ?>"><?= $house['bathrooms'] ?></a></td>
-                                    <td><a href="viewhouse.php?houseId=<?= $house['itemid'] ?>"><?= $house['facilities'] ?></a></td>
-                                    <td><a href="viewhouse.php?houseId=<?= $house['itemid'] ?>"><?= $house['locatedNear'] ?></a></td>
-                                    <td><a href="viewhouse.php?houseId=<?= $house['itemid'] ?>"><?= $house['description'] ?></a></td>
+<?php
+                                    for($r = 0; $r < 3 && $i < $totalHouses; $i++, $r++)
+                                    {
+                                        $house = $houses[$i];
+?>
+                                        <td style="text-align: center; padding: 10px;">
+                                            <a href="viewhouse.php?houseId=<?= $house['itemid'] ?>">
+                                                <img style="width: 200px; height: 200px; border: 1px solid #ccc" src="<?= $house['image'] != '' ? $house['image'] : 'images/paint.png' ?>" alt="<?= $book['title'] ?>" height="42" width="42" /> 
+                                                <br />
+                                                <?= $house['description'] ?>
+                                            </a>
+                                        </td>
+<?php
+                                    }
+?>
+                                    
                                 </tr>
         <?php                   
                                 $counter++;
                             }
         ?>                    
+
 
                         </tbody>
                     </table>
