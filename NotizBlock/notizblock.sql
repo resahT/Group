@@ -257,3 +257,11 @@ PRIMARY KEY(reviewNum),
 FOREIGN KEY(itemid) REFERENCES item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
 FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
    
+
+
+
+
+/* Alter scripts */
+
+ALTER TABLE `upload` ADD `askingPrice` DECIMAL(10,2) NOT NULL AFTER `saleType`
+ALTER TABLE `upload` ADD `state` VARCHAR( 15 ) NOT NULL DEFAULT 'AVAILABLE' AFTER `uploadTime` 

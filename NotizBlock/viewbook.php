@@ -10,21 +10,44 @@ $api      = new Api();
 
 $errors   = array();
 
+$response       = $api->getItem($bookId,'book');
+
 if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 {    
-    $result = $api->getCurrentUserInfo();
-    
-    if($result['result'] == 'SUCCESS')
-    {
-        $newBidAmount   = $_REQUEST['newBidAmount'];
+    if(isset($_REQUEST['buyNow']) && $_REQUEST['buyNow'] == 'buyNow')
+    {       
+        $result         = $api->getCurrentUserInfo();
         
         $bUserid        = $result['data']['bUserid'];
         
-        $response       = $api->addBid($bookId, $bUserid, $newBidAmount);        
+        $buyResult      = $api->buyItem($bUserid, $bookId, 'book', $response['data']['askingPrice']);
+        
+        if($buyResult['result'] == 'SUCCESS')
+        {
+            header("Location: listbooks.php?status=itemPurchased");
+            die();
+        }
+        else
+        {
+            $errors[] = 'Item could not be purchased.';
+        }
     }
     else
     {
-        $errors[] = 'Unable to add bid because you are not logged in.';
+        $result = $api->getCurrentUserInfo();
+
+        if($result['result'] == 'SUCCESS')
+        {
+            $newBidAmount   = $_REQUEST['newBidAmount'];
+
+            $bUserid        = $result['data']['bUserid'];
+
+            $addBidResponse       = $api->addBid($bookId, $bUserid, $newBidAmount);        
+        }
+        else
+        {
+            $errors[] = 'Unable to add bid because you are not logged in.';
+        }
     }
 }
 else
@@ -32,18 +55,20 @@ else
     //nothing to do here
 }
 
-$books          = array();
 
-$response       = $api->getItem($bookId,'book');
+
 
 $bidResponse    = $api->viewBidHistory(2, $bookId);
 
 $maxBidResponse = $api->getMaxBidAmount($bookId);
 
-$maxBidAmount   = $maxBidResponse['data']['maxBidAmount'];
+$maxBidAmount   = $maxBidResponse['result'] == 'SUCCESS' ? $maxBidResponse['data']['maxBidAmount'] : 0;
 
 $book           = $response['data'];
 
+$askingPrice    = $response['data']['askingPrice'];
+
+    
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -89,6 +114,10 @@ $book           = $response['data'];
                         </td>
                         
                         <td>
+<?php 
+                        if(strtoupper($book['saleType']) == 'BIDDING')
+                        {
+?>                       
                             <form method="POST">
                                 <table>
                                     <tr>
@@ -99,6 +128,24 @@ $book           = $response['data'];
                                     </tr>
                                 </table>
                             </form>
+<?php
+                        }
+                        else
+                        {
+?>
+                            <form method="POST">
+                                <table>
+                                    <tr>
+                                        <td><fieldset><legend>Price:</legend>$<?= $askingPrice ?></fieldset></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="hidden" value="buyNow" name="buyNow" /><input type="submit"  value="Buy Now!" /></td>
+                                    </tr>
+                                </table>
+                            </form>
+<?php
+                        }
+?>
                         </td>
                     </tr>
                     

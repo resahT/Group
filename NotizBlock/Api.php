@@ -382,13 +382,17 @@ class Api
 
     
     
-        public function getItem($itemId, $itemtable)
+    public function getItem($itemId, $itemtable)
     {
         $itemId = mysql_real_escape_string(strtolower($itemId));
         $itemtable = mysql_real_escape_string(strtolower($itemtable));
         
         /*get an item with an id form a table*/
-        $sql2 = "SELECT * FROM item JOIN $itemtable on item.itemid= $itemtable.itemid WHERE item.itemid = $itemId ";
+        $sql2 = "   SELECT * FROM item 
+                    JOIN $itemtable on item.itemid = $itemtable.itemid 
+                    JOIN upload on upload.itemid = $itemtable.itemid 
+                    WHERE item.itemid = $itemId ";
+        
         $result = mysql_query($sql2);
         
         $data = array();
@@ -673,7 +677,11 @@ class Api
         if($item=='book'||$item=='house'){
             
             //list all books in database
-            $sql2 = "SELECT * FROM item JOIN $item ON item.itemid = $item.itemid";
+            $sql2 = "SELECT * 
+                     FROM item 
+                     JOIN $item ON item.itemid = $item.itemid
+                     JOIN upload ON item.itemid = upload.itemid
+                     WHERE upload.state = 'AVAILABLE' ";
 
             $result = mysql_query($sql2);
                       
@@ -707,7 +715,80 @@ class Api
             $response['messages'] = array('There is no data to be displayed.');
             $response['data'] = $data;
         }
-       return $response;
+        
+        return $response;
+    }
+    
+    public function changeUploadState($itemId, $state = 'SOLD')
+    {
+        $itemId             = mysql_real_escape_string($itemId);
+        $state              = mysql_real_escape_string($state);
+        
+        $sql                = " UPDATE `notizblock`.`upload` 
+                                SET `state` = '$state' 
+                                WHERE `upload`.`itemid` = '$itemId' ";
+        
+        mysql_query($sql);
+        
+        $rowsAffected = mysql_affected_rows();
+
+        if ($rowsAffected == 1)
+        {
+            $response['result'] = 'SUCCESS';
+            $response['messages'] = array('The the state was changed successfully.');
+        }
+        elseif ($rowsAffected == 0)
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('The state was not changed.');
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('An unknown error has occurred.');
+        }
+        
+        return $response;        
+    }
+    
+    public function buyItem($bUserid, $itemId, $itemType, $askingPrice)
+    {
+        $bUserid            = mysql_real_escape_string($bUserid);
+        $itemId             = mysql_real_escape_string($itemId);
+        $itemType           = mysql_real_escape_string($itemType);
+        $askingPrice        = mysql_real_escape_string($askingPrice);
+        
+        $buyDate            = date('Y-m-d');
+        
+        $sql                = " INSERT INTO `notizblock`.`buy`
+                                (`purchaseid`, `itemid`, `bUserid`, `itemPrice`, `buyDate`, `buyTime`) 
+                                VALUES  (NULL, '$itemId', '$bUserid', '$askingPrice', '$buyDate', CURRENT_TIMESTAMP);";
+        
+        mysql_query($sql);
+        
+        $rowsAffected = mysql_affected_rows();
+        
+        if ($rowsAffected == 1)
+        {
+            
+            $this->changeUploadState($itemId, 'SOLD');
+            
+            $response['result'] = 'SUCCESS';
+            $response['messages'] = array('The the purchase was made successfully.',
+                'key = ' . mysql_insert_id());
+        }
+        elseif ($rowsAffected == 0)
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('The purchase was not made.');
+        }
+        else
+        {
+            $response['result'] = 'FAILURE';
+            $response['messages'] = array('An unknown error has occurred.');
+        }
+        
+        return $response;
     }
 
 }
