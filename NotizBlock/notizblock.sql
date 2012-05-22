@@ -49,7 +49,7 @@ INSERT INTO basicUser VALUES(23, 'Nicolette', 'Bisoon', 'Nickyboo', 'b1s00n', 'c
 
 
 CREATE TABLE item
-(itemid			int				NOT NULL	AUTO_INCREMENT,
+(itemid			int                     NOT NULL	AUTO_INCREMENT,
  category		varchar(15)		NOT NULL,
  keyword		varchar(30)		NOT NULL,
  image			varchar(50),  
@@ -156,51 +156,54 @@ INSERT INTO house VALUES (152,3,2,'shared','Hope Pastures','');
 INSERT INTO house VALUES (155,5,3,'shared','Garden Boulevard','');
  
 CREATE TABLE upload
-(itemid			int				NOT NULL,
+(itemid			int			NOT NULL,
  bUserid		int     		NOT NULL,
  saleType		varchar(15)		NOT NULL,
+ askingPrice             DECIMAL(10,2)           NOT NULL,
  uploadDate		date			NOT NULL,
  uploadTime		timestamp		NOT NULL,
+ uploadstate                  VARCHAR( 15 )           NOT NULL ,             
+
  PRIMARY KEY(itemid),
  FOREIGN KEY(itemid) REFERENCES item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
  FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE);
  
- INSERT INTO upload VALUES('120','2','bidding','2012/06/01','09:45:30');
- INSERT INTO upload VALUES('121','1','bidding','2012/06/01','10:12:27');
- INSERT INTO upload VALUES('122','23','buy now','2012/06/01','12:38:12');
- INSERT INTO upload VALUES('123','21','buy now','2012/06/01','12:45:15');
- INSERT INTO upload VALUES('124','12','bidding','2012/06/01','13:12:11');
- INSERT INTO upload VALUES('125','5','bidding','2012/06/01','13:20:17');
- INSERT INTO upload VALUES('126','10','buy now','2012/06/01','13:32:15');
- INSERT INTO upload VALUES('127','17','bidding','2012/06/01','16:15:23');
- INSERT INTO upload VALUES('128','5','buy now','2012/06/01','17:50:45');
- INSERT INTO upload VALUES('129','3','buy now','2012/06/02','01:20:50');
- INSERT INTO upload VALUES('130','20','bidding','2012/06/03','07:23:22');
- INSERT INTO upload VALUES('131','3','buy now','2012/06/03','08:16:12');
- INSERT INTO upload VALUES('132','20','bidding','2012/06/04','09:10:00');
- INSERT INTO upload VALUES('133','15','bidding','2012/06/04','07:23:22');
- INSERT INTO upload VALUES('134','20','bidding','2012/06/04','07:23:22');
- INSERT INTO upload VALUES('135','1','bidding','2012/06/04','07:23:22');
- INSERT INTO upload VALUES('136','2','buy now','2012/06/04','07:23:22');
- INSERT INTO upload VALUES('137','5','buy now','2012/06/05','07:23:22');
- INSERT INTO upload VALUES('138','15','bidding','2012/06/05','07:23:22');
- INSERT INTO upload VALUES('139','21','bidding','2012/06/07','07:23:22');
- INSERT INTO upload VALUES('140','12','buy now','2012/06/07','07:23:22');
- INSERT INTO upload VALUES('141','12','buy now','2012/06/07','07:23:22');
- INSERT INTO upload VALUES('142','8','buy now','2012/06/08','07:23:22');
- INSERT INTO upload VALUES('143','17','bidding','2012/06/09','07:23:22');
- INSERT INTO upload VALUES('144','20','bidding','2012/06/10','07:23:22');
- INSERT INTO upload VALUES('145','23','bidding','2012/06/11','07:23:22');
- INSERT INTO upload VALUES('146','21','buy now','2012/06/12','07:23:22');
- INSERT INTO upload VALUES('147','12','buy now','2012/06/13','07:23:22');
- INSERT INTO upload VALUES('148','1','buy now','2012/06/13','07:23:22');
- INSERT INTO upload VALUES('149','3','bidding','2012/06/13','07:23:22');
- INSERT INTO upload VALUES('150','8','bidding','2012/06/13','07:23:22');
- INSERT INTO upload VALUES('151','4','bidding','2012/06/13','07:23:22');
- INSERT INTO upload VALUES('152','4','bidding','2012/06/13','07:23:22');
- INSERT INTO upload VALUES('153','15','bidding','2012/06/13','07:23:22');
- INSERT INTO upload VALUES('154','12','bidding','2012/06/14','07:23:22');
- INSERT INTO upload VALUES('155','17','buy now','2012/06/14','07:23:22');
+ INSERT INTO upload VALUES('120','2','bidding',500.00,'2012/06/01','09:45:30','AVAILABLE');
+ INSERT INTO upload VALUES('121','1','bidding',500.00,'2012/06/01','10:12:27','AVAILABLE');
+ INSERT INTO upload VALUES('122','23','buy now',500.00,'2012/06/01','12:38:12','AVAILABLE');
+ INSERT INTO upload VALUES('123','21','buy now',500.00,'2012/06/01','12:45:15','AVAILABLE');
+ INSERT INTO upload VALUES('124','12','bidding',500.00,'2012/06/01','13:12:11','AVAILABLE');
+ INSERT INTO upload VALUES('125','5','bidding',500.00,'2012/06/01','13:20:17','AVAILABLE');
+ INSERT INTO upload VALUES('126','10','buy now',500.00,'2012/06/01','13:32:15','AVAILABLE');
+ INSERT INTO upload VALUES('127','17','bidding',500.00,'2012/06/01','16:15:23','AVAILABLE');
+ INSERT INTO upload VALUES('128','5','buy now',500.00,'2012/06/01','17:50:45','AVAILABLE');
+ INSERT INTO upload VALUES('129','3','buy now',500.00,'2012/06/02','01:20:50','AVAILABLE');
+ INSERT INTO upload VALUES('130','20','bidding',500.00,'2012/06/03','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('131','3','buy now',500.00,'2012/06/03','08:16:12','AVAILABLE');
+ INSERT INTO upload VALUES('132','20','bidding',500.00,'2012/06/04','09:10:00','AVAILABLE');
+ INSERT INTO upload VALUES('133','15','bidding',500.00,'2012/06/04','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('134','20','bidding',500.00,'2012/06/04','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('135','1','bidding',500.00,'2012/06/04','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('136','2','buy now',500.00,'2012/06/04','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('137','5','buy now',500.00,'2012/06/05','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('138','15','bidding',500.00,'2012/06/05','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('139','21','bidding',500.00,'2012/06/07','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('140','12','buy now',500.00,'2012/06/07','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('141','12','buy now',500.00,'2012/06/07','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('142','8','buy now',500.00,'2012/06/08','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('143','17','bidding',500.00,'2012/06/09','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('144','20','bidding',500.00,'2012/06/10','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('145','23','bidding',500.00,'2012/06/11','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('146','21','buy now',500.00,'2012/06/12','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('147','12','buy now',500.00,'2012/06/13','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('148','1','buy now',500.00,'2012/06/13','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('149','3','bidding',500.00,'2012/06/13','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('150','8','bidding',500.00,'2012/06/13','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('151','4','bidding',500.00,'2012/06/13','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('152','4','bidding',500.00,'2012/06/13','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('153','15','bidding',500.00,'2012/06/13','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('154','12','bidding',500.00,'2012/06/14','07:23:22','AVAILABLE');
+ INSERT INTO upload VALUES('155','17','buy now',500.00,'2012/06/14','07:23:22','AVAILABLE');
  
  
 CREATE TABLE bids
@@ -260,20 +263,12 @@ FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE C
    
 
 
-
-
-/* Alter scripts */
-
-ALTER TABLE `upload` ADD `askingPrice` DECIMAL(10,2) NOT NULL AFTER `saleType`;
-
-ALTER TABLE `upload` ADD `state` VARCHAR( 15 ) NOT NULL DEFAULT 'AVAILABLE' AFTER `uploadTime`;
-
-CREATE TABLE IF NOT EXISTS `itemsviewed` (
-  `itemsviewedid` int(11) NOT NULL AUTO_INCREMENT,
-  `bUserid` int(11) NOT NULL,
-  `itemid` int(11) NOT NULL,
-  `dateViewed` datetime NOT NULL,
-  PRIMARY KEY (`itemsviewedid`),
+CREATE TABLE itemsviewed (
+  itemsviewedid int(11) NOT NULL AUTO_INCREMENT,
+  bUserid int(11) NOT NULL,
+  itemid int(11) NOT NULL,
+  dateViewed datetime NOT NULL,
+  PRIMARY KEY (itemsviewedid),
   FOREIGN KEY(itemid) REFERENCES item(itemid) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY(bUserid) REFERENCES basicUser(bUserid) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

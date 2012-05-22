@@ -687,10 +687,9 @@ class Api
                      FROM item 
                      JOIN $item ON item.itemid = $item.itemid
                      JOIN upload ON item.itemid = upload.itemid
-                     WHERE upload.state = 'AVAILABLE' ";
+                     WHERE upload.uploadstate = 'AVAILABLE' ";
 
-            $result = mysql_query($sql2);
-                      
+            $result = mysql_query($sql2);       
             $data = array();
 
             while ($row = mysql_fetch_assoc($result))
