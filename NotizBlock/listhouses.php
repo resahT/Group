@@ -44,12 +44,7 @@ else
                     <table class="bookList">
                         <thead>
                             <tr>
-                                <td>Image</td>
-                                <td>Bedroom</td>
-                                <td>Bathroom</td>
-                                <td>Facilities</td>
-                                <td>Location</td>
-                                <td>Description</td>
+                                <th>HOUSE</th>
                                 
                             </tr>
                         </thead>
@@ -68,15 +63,15 @@ else
     ?>
                                 <tr class="<?= $rowType ?>">
 <?php
-                                    for($r = 0; $r < 3 && $i < $totalHouses; $i++, $r++)
+                                    for($r = 0; $r < 5 && $i < $totalHouses; $i++, $r++)
                                     {
                                         $house = $houses[$i];
 ?>
                                         <td style="text-align: center; padding: 10px;">
                                             <a href="viewhouse.php?houseId=<?= $house['itemid'] ?>">
-                                                <img style="width: 200px; height: 200px; border: 1px solid #ccc" src="<?= $house['image'] != '' ? $house['image'] : 'images/paint.png' ?>" alt="<?= $book['title'] ?>" height="42" width="42" /> 
-                                                <br />
-                                                <?= $house['description'] ?>
+                                                <img style="width: 150px; height: 150px; border: 1px solid #ccc" src="<?= $house['image'] != '' ? $house['image'] : 'images/paint.png' ?>" alt="<?= $book['title'] ?>" height="42" width="42" /> 
+                                                <br /><br />
+                                                <?= $house['description'] ?> <br /> <?= $house['askingPrice'] ?>
                                             </a>
                                         </td>
 <?php
