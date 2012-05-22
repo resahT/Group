@@ -6,6 +6,14 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="about.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".trigger4").click(function(){
+					$("#cat3").toggle("fast");
+					$(this).toggleClass("active");
+					return false;
+				});
+		</script>
 	</head>
 	
 	<body>
@@ -14,6 +22,7 @@
 				
 				<h1>..::Implementation Stories::..</h1>
 			</div>
+				
 					<div id="cat1">
 						<div class="cat1info">
 							<h1>What the problem was??</h1>
@@ -37,7 +46,7 @@
 		
 					<div id="cat2">
 						<div class="cat2info">
-							<h1>What we did about it</h1><br/>
+							<h1>What we did about it</h1>
 							<h2>Our idea</h2>
 							<h4>If books are so expensive, why not make
 							used books more availabe, there are tons of people
@@ -57,10 +66,12 @@
 							stay, all you have to do is Register NOW!!</h4>
 						</div>
 					</div>
-			<div id="cat3">
-				<img src="images/circles.png" alt="Welcome" hspace="10"/>
-			</div>
 		</div>
+		<div id="cat3">
+			<img src="images/puzzle.png" alt="pic"/>
+			<h1>tara</h1>
+		</div>
+		<a class="trigger4" href="#">info</a>
 	</body>
 </html>
 
