@@ -21,8 +21,8 @@
       
         <nav>
 			<a href="index.php">Notizblock</a>       
-			<a href="viewbook.php">Books</a> 
-			<a href="viewhouse.php">Houses</a> 
+			<a href="listbooks.php">Books</a> 
+			<a href="listhouses.php">Houses</a> 
 			<a href="register.php">Register</a>
 		</nav>
     <br />
