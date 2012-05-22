@@ -9,17 +9,21 @@ class Api
       login($username, $password)
       logout()
       registerUser($firstName, $lastName,$password,$email,$phone,$personalinfo)
-      listBooks()
+      listItem()
       viewBidHistory()
       getMaxBid()
       addBid($itemid, $buserid, $bidamount)
       getCurrentUserInfo()
+        
 
       addBook($title, $author,$publisher,$saletype,$published_date,$edition,$subjectarea,$condition,$askingprice, $description,$bUserId)
       addItem($category, $keyword, $image)
       addUpload($itemId, $bUserId, $saletype, $uploaddate, $uploadtime)
+      
+      addItemsViewed($itemid, $bUserid)
+      buyItem($bUserid, $itemId, $itemType, $askingPrice)
+      changeUploadState($itemId, $state = 'SOLD)
      
-      $category,$uploadtime,$keyword,$image)
       getownerBooks($ownerid)
       
 
@@ -821,6 +825,8 @@ class Api
 
         return $response;
     }
+    
+    
 
 }
 
