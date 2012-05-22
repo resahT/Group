@@ -34,7 +34,16 @@
                     <div class="read"><a href="viewbook.php">see more</a></div>
                 </div>
                 </div>
+            
+            <?php include 'Api.php'; ?>
+            
+            <center>            
+                <?php include 'recommender.php'; ?>
+            </center>
+            
             </div>
+    
+    
             <?php include 'footer.php'; ?>
             
         </div>
