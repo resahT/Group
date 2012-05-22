@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS basicUser;
 DROP TABLE IF EXISTS itemsviewed;
 
 CREATE TABLE basicUser
-(bUserid		int         NOT NULL    AUTO_INCREMENT,
+(bUserid		int         	NOT NULL    AUTO_INCREMENT,
  fname			varchar(50)		NOT NULL,
  lname			varchar(50)		NOT NULL,
  username		varchar(50)		NOT NULL,
@@ -17,8 +17,8 @@ CREATE TABLE basicUser
  dept			varchar(50)		NOT NULL,
  email			varchar(30)		NOT NULL,
  phone			varchar(10)		NOT NULL,
- dateofRegistry         date			NOT NULL,
- personalinfo           varchar(50),
+ dateofRegistry date			NOT NULL,
+ personalinfo   varchar(50),
  uimage			varchar(50),
  PRIMARY KEY(bUserid));
 
@@ -49,7 +49,7 @@ INSERT INTO basicUser VALUES(23, 'Nicolette', 'Bisoon', 'Nickyboo', 'b1s00n', 'c
 
 
 CREATE TABLE item
-(itemid			int			NOT NULL	AUTO_INCREMENT,
+(itemid			int				NOT NULL	AUTO_INCREMENT,
  category		varchar(15)		NOT NULL,
  keyword		varchar(30)		NOT NULL,
  image			varchar(50),  
@@ -95,11 +95,11 @@ INSERT INTO item VALUES ('155','house','mini-cluster','');
 
 
 CREATE TABLE book
-(itemid			int			NOT NULL,
+(itemid			int				NOT NULL,
  title			varchar(50)		NOT NULL,
  author			varchar(50)		NOT NULL,
  publisher		varchar(50)		NOT NULL,
- pubYear		int			NOT NULL,
+ pubYear		int				NOT NULL,
  edition		varchar(20)		NOT NULL,
  subarea		varchar(20)		NOT NULL,
  cond			varchar(15)		NOT NULL,
@@ -156,7 +156,7 @@ INSERT INTO house VALUES (152,3,2,'shared','Hope Pastures','');
 INSERT INTO house VALUES (155,5,3,'shared','Garden Boulevard','');
  
 CREATE TABLE upload
-(itemid			int			NOT NULL,
+(itemid			int				NOT NULL,
  bUserid		int     		NOT NULL,
  saleType		varchar(15)		NOT NULL,
  uploadDate		date			NOT NULL,

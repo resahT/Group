@@ -680,65 +680,21 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	float:left
 }
 
-#slideshow
-{
-	position: relative;
-	height:500px;
-	width:700px;
-	float:right;
-	margin:0;
-	padding:0;
+#indexpic{
+	top: 0px;
+	width: 600px;
+	height: 500px;
+	margin:0px;
+	padding: 20px;
+	float: right;
 }
- 
-#slides
-{
-	height:300px;
-	position:relative;
+
+.left{
+	float:left;
 }
- 
-.slide
-{
-	height: 300px;
-	width: 400px;
-	overflow: hidden;
-	position:absolute;
-	background: #000;
-	color:#fff;
-}
- 
-#slides-controls
-{
-	width:80px;
-	background-color: #fff;
-	height:20px;
-	margin-left:auto;
-	margin-right:auto;
-	padding:5px;
-}
- 
-#slides-controls a
-{
-	margin: 5px;
-	width:8px;
-	height:8px;
-	border-radius: 4px;
-	-moz-border-radius:4px;
-	-webkit-border-radius: 4px;
-	-o-border-radius:4px;
-	background:#F60;
-	border:1px solid #fff;
-	text-indent:-9000px;
-	display:block;
-	overflow:hidden;
-	float:left
-}
- 
-#slides-controls a:hover { background:#F30 }
- 
-#slides-controls a.highlight
-{
-	background:#fff;
-	border:1px solid #F30
+
+.right{
+	float: right;
 }
 
 #footWrap{
