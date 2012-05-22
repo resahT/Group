@@ -177,8 +177,10 @@ $askingPrice = $response['data']['askingPrice'];
             </tr>
 
         </table>
+            
+            
 <?php
-if (!empty($recommendedItems))
+if (false && !empty($recommendedItems))
 {
     ?>
             <h3>We think you may like the following books:</h3>
@@ -205,9 +207,14 @@ if (!empty($recommendedItems))
             <?php
         }
         ?>
+            <center>            
+                <?php include 'recommender.php'; ?>
+            </center>
         </div>
 
         <br/>
+        
+        
 
         <?php include 'footer.php'; ?>
         
