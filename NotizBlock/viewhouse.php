@@ -67,7 +67,7 @@ $house           = $response['data'];
             
             <br/>
             
-            <div style="background: #fff;">
+            <div style="background:dimgrey;">
                 
                     <ul class="errorMessages">
 <?php

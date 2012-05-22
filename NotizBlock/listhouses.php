@@ -70,8 +70,8 @@ else
                                         <td style="text-align: center; padding: 10px;">
                                             <a href="viewhouse.php?houseId=<?= $house['itemid'] ?>">
                                                 <img style="width: 150px; height: 150px; border: 1px solid #ccc" src="<?= $house['image'] != '' ? $house['image'] : 'images/paint.png' ?>" alt="<?= $book['title'] ?>" height="42" width="42" /> 
-                                                <br /><br />
-                                                <?= $house['description'] ?> <br /> <?= $house['askingPrice'] ?>
+                                                <br />
+                                                <?= $house['locatedNear'] ?> <br /> <?= $house['askingPrice'] ?>
                                             </a>
                                         </td>
 <?php

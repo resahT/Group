@@ -44,7 +44,7 @@ else
                     <table class="bookList">
                         <thead >
                             <tr>
-                                <td style="font-size:large">Books</td>
+                                <td style="text-align:center;font-weight:bolder; color: white">Books</td>
                                 
                             </tr>
                         </thead>
@@ -71,6 +71,8 @@ else
                                                 <img style="width: 150px; height: 150px; border: 1px solid #ccc" src="<?= $book['image'] != '' ? $book['image'] : 'images/books.jpg' ?>" alt="<?= $book['title'] ?>" height="42" width="42" /> 
                                                 <br />
                                                 <?= $book['title'] ?> by <?= $book['author'] ?>
+                                                <br/>
+                                                <?= $book['askingPrice'] ?> via <?= $book['saleType'] ?>
                                             </a>
                                         </td>
 <?php
@@ -91,6 +93,8 @@ else
             </center>
             
             <br/>
+            
+            <?php include 'recommender.php'; ?>
             
             <?php include 'footer.php'; ?>
         </div>

@@ -1,12 +1,23 @@
 <?php @session_start() ?>
 
+
+
+
+
+
+
+
+
+
 <div id="header"> 
 
         <?php
             if (isset($_SESSION['user_info'])){
                 $userinfo = $_SESSION['user_info'];
         ?>        
-                <a id="loginposition" href=" " style="text-align:right"> <?php echo"You are logged in as: ".$userinfo['username'] ?></a>
+                <a id="loginposition" href="logout.php" style="text-align:right">Logout</a> 
+				
+				<a href ="userprofile.php"><?php echo"You are logged in as: ".$userinfo['username'] ?></a>
         <?php      
             }           
             else{

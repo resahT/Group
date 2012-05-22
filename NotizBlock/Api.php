@@ -974,11 +974,13 @@ class Api
                                             FROM buy
                                             WHERE buy.bUserid = $bUserid)
                             AND 
-                            upload.state = 'AVAILABLE'
+                            upload.uploadstate = 'AVAILABLE'
 
                         )
 
                         LIMIT 10";
+            
+            
             
         }
         else
@@ -990,12 +992,12 @@ class Api
                         JOIN upload on upload.itemid = $itemtable.itemid  
                         LIMIT 10";
         }
-//        die($sql);
+        
         $result = mysql_query($sql);
-                      
+        
         $data = array();
 
-        while ($row = mysql_fetch_assoc($result))
+        while ($row = @mysql_fetch_assoc($result))
         {
             $data[] = $row;
         }
