@@ -7,7 +7,7 @@ if (!$con)
 
 mysql_select_db("notizblock", $con);
 
-$result = mysql_query("SELECT * FROM basicUser WHERE fnme=''");
+$result = mysql_query("SELECT * FROM basicUser WHERE fname=''");
 $row = mysql_fetch_array($result);
 
  session_start();
