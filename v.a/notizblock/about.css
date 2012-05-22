@@ -1,0 +1,64 @@
+/*about us page*/
+body{margin: 0px; padding: 0px;}
+
+#contentWrap{
+	width:100%; 
+    margin:0px; 
+    padding:0px; 
+    float:left; 
+    background:#fff url(images/abk.jpg) repeat-x;
+}
+
+#contentWrap a{
+	margin: 20px;
+	padding: 10px;
+	float: right;
+	float: right;
+	color: bisque;
+	text-decoration: none;
+}
+
+#contentWrap a:hover{
+	color: white;
+	text-decoration: underline;
+}
+
+
+#aboutheader{
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	background: #fff url(images/about.jpg) repeat-x;
+}
+
+#aboutheader p{
+	font-family:Arial;
+	font-size: 20px;
+	color:#eb8f1e;
+}
+
+#welcomePanel{
+	font-family:Arial;
+	font-size: 16px;
+	color:#eb8f1e;
+	float:right;
+	width:500px;
+	height: 500px;
+	padding: 20px 50px 0px 50px;
+    margin:0px 10px 0px 10px;
+}
+
+#developersPanel{
+	font-family:Arial;
+	font-size: 16px;
+	color:#eb8f1e;
+	float:right;
+	width:500px;
+	height: 500px;
+	padding: 50px 50px 0px 50px;
+    margin:0px 10px 0px 10px;
+
+}
+
+
