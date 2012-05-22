@@ -131,7 +131,7 @@ $askingPrice    = $response['data']['askingPrice'];
                         <td>
                             <table class="viewDetails">
 
-                                <tr><td class="heading">Title: </td><td><?= $book['title'] ?></td></tr>
+                                <tr><td class="heading"><h3 style="color:#cd4007">Title:</h3></td><td><?= $book['title'] ?></td></tr>
                                 <tr><td class="heading">Author: </td><td><?= $book['author'] ?></td></tr>
                                 <tr><td class="heading">Publisher: </td><td><?= $book['publisher'] ?></td></tr>
                                 <tr><td class="heading">Year: </td><td><?= $book['pubYear'] ?></td></tr>

@@ -318,7 +318,7 @@ width: 100%;
 margin: 0px;
 padding: 0px;
 float: left;
-background:#fff url(images/impsto.jpg) repeat-x;
+background:#fff url(images/450.gif) repeat-x;
 }
 
 #title{
@@ -344,6 +344,8 @@ padding: 0;
 #cat1{
 position: absolute;
 top:200px;
+width: 400px;
+height: 700px;
 left: 40px;
 }
 
@@ -367,21 +369,67 @@ filter: alpha(opacity=85);
 opacity: .85;
 }
 
-#catinfo p{
-margin: 0 0 15px 0;
-padding: 0;
+.cat1info h1{
+text-align: center;
+font-family: trebuchet MS, sans-serif;
+font-weight: bold;
+text-transform: uppercase;
 color: #eb8f1e;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 20px;
+padding: 0;
+}
+
+.cat1info h4{
+color: #1fd9d9;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 15px;
+padding: 0;
+}
+
+.cat1info h3, .cat1info h2{
+color: #812a08;
 }
 
 #cat2{
 position: absolute;
 top:200px;
+width:400px;
+height:700;
 left: 500px;
+}
+
+.cat2info h1{
+text-align: center;
+font-family: trebuchet MS, sans-serif;
+font-weight: bold;
+text-transform: uppercase;
+color: #eb8f1e;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 20px;
+padding: 0;
+}
+
+.cat2info h4{
+color: #1fd9d9;
+letter-spacing: 0pt;
+word-spacing: 2ptl
+font-size: 15px;
+padding: 0;
+}
+
+.cat2info h3, .cat2info h2{
+color: #812a08;
 }
 
 #cat3{
 position: absolute;
 top: 200px;
+width: 400px;
+height: 700px;
 left: 1000px;
 }
 
