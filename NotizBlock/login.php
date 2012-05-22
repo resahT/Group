@@ -21,6 +21,8 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
     {
         header("Location: index.php");
 		$_SESSION['transfer']=$username;
+		
+		$_SESSION['transfer']=$username;
     }
     else
     {    
