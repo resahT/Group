@@ -32,8 +32,6 @@
                   
                     <h3>New & used text books for Computer Science and Physics students</h3>
                     <div class="read"><a href="viewbook.php">see more</a></div>
-                    
-                    
                 </div>
                 </div>
             </div>
