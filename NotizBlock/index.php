@@ -22,7 +22,7 @@
 					<h3>Off- campus housing conveniently located in and around Mona!</h3>
                     
 					<div class="read">
-						<a href="viewhouse.php">see more</a>
+						<a href="listhouses.php">see more</a>
 					</div>
 			    </div>
                     
@@ -31,7 +31,13 @@
 					<h2>Books</h2>
                   
                     <h3>New & used text books for Computer Science and Physics students</h3>
+<<<<<<< HEAD
                     <div class="read"><a href="viewbook.php">see more</a></div>
+=======
+                    <div class="read"><a href="listbooks.php">see more</a></div>
+                    
+                    
+>>>>>>> ff81dc2b56744b1790788478ba03b7bbea78ff8d
                 </div>
                 </div>
             </div>
