@@ -7,6 +7,8 @@ background-image:url('images/450.gif');
 }
 
 
+
+
 #header{ width :100% ;
          color:  white;
          height: 19%;
@@ -23,10 +25,6 @@ width:700px;
 margin:auto;
 background-color:rgba(0,0,0,0.4);
 height:500px;
-
-//-webkit-column-count:2; /* Safari and Chrome */
-//column-count:2;
-
 border: 10px solid rgba(0,0,0,0.2);
 }
 
@@ -38,7 +36,7 @@ margin:auto;
 #navigation img{
 
 position:relative;
-left:120px;
+left:-270px;
 }
 
 nav a{
@@ -71,7 +69,7 @@ margin:50px;
 #loginposition { 
     position:absolute;
     visibility:show; 
-    right: 100px; 
+    right: 10px; 
     top: 0px;
     z-index:2; 
     
@@ -143,33 +141,6 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 
 
-//#house{
-	width:47px; 
-	height:110px; 
-	margin:0px; 
-	padding:0 0 0 169px;
-	float:left
-}
-//#house a{
-	width:47px; 
-	height:36px;
-	margin:0px; 
-	padding:56px 0 0 0; 
-	float:left; 
-	font-family:Arial; 
-	font-size:12px; 
-	font-weight:bold; 
-	color:#646464; 
-	line-height:13px; 
-	text-align:center; 
-	text-decoration:none; 
-	//background:url(images/homeBg.gif) no-repeat
-}
-//#house a:hover{
-	height:36px; 
-	padding:74px 0 0 0; 
-	//background:url(images/homeBg.gif) no-repeat -48px 0
-}
 
 /*LS Panel*/
 #livingSpacesPanel h2{
@@ -194,16 +165,7 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	line-height:19px;
 	font-weight:bold
 }
-//#livingSpacesPanel p{
-	width:170px; 
-	margin:20px 0 0 0;
-	padding:0 0 0 24px;
-	float:left; 
-	font-family:Arial;
-	font-size:12px;
-	color:#f8d85e; 
-	line-height:19px
-}
+
 #livingSpacesPanel p a{
 	color:#f8d85e;
 	//background:#9f3105;
@@ -255,11 +217,21 @@ margin-bottom:200px;
 background-color:rgb(254,151,5);
 }
 
+#livingSpacesExtend{
+	background-color:rgba(254,151,5, 0.5);
+	color:#cd4007;
+	height:120px;
+	display:none;
+}
 
 #bookPanel{
-background-color:rgba(254,151,5,0.8);
+	
+	
+	background-color:rgba(254,151,5,0.8);
 width:300px;
 height:200px;
+
+
 margin:25px;
 margin-top:150px;
 border:0px solid;
@@ -300,24 +272,24 @@ float:right;
 
 /*Book Panel*/
 #bookPanel h2{
-	//width:170px;
-	//margin:199px 0 0 0; 
-	padding:0 0 0 24px; 
-	float:left; 
-	font-family:Arial;
+	//width:170px; 
+	//margin:199px 0 0 0;
+	//padding:0 0 0 24px;
+	//float:left;
+	font-family:Arial; 
 	font-size:26px;
 	color:#400505; 
-	//line-height:30px;
+	line-height:30px;
 	font-weight:normal
 }
 #bookPanel h3{
 	//width:170px; 
-	margin:8px 0 0 0;
-	padding:10px;
-	float:left;
+	//margin:8px 0 0 0; 
+	//padding:0 0 0 24px;
+	//float:left;
 	font-family:Arial;
 	font-size:12px;
-	color:#ffe996; 
+	color:#400505;
 	line-height:19px;
 	font-weight:bold
 }
@@ -769,13 +741,13 @@ float:right;
 	float:left; 
 	font-family:Arial;
 	font-size:11px; 
-	color:#d5d5d5;
+	color:#cccccc;
 	line-height:10px
 }
 #footNav ul li a{
 	font-family:Arial;
 	font-size:14px;
-	color:#1d1d1d;
+	color:#cccccc;
 	line-height:15px; 
 	text-decoration:none;
 	margin:0px;
@@ -926,4 +898,21 @@ background-color: rgba(254,151,5,0.3);
 //height:100px;
 color:black;
 font-size:12pt;
+}
+
+
+input.text{width: 221px;
+	background: transparent url('bg.jpg') no-repeat;
+	color : #747862;
+	height:20px;
+	border:0;
+	padding:4px 8px;
+	margin-bottom:0px;}
+	
+	
+.footer{
+position:absolute;
+
+bottom:100px;
+
 }
