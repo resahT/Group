@@ -4,5 +4,4 @@
     <link href="forms.css" rel="stylesheet" type="text/css" />
     <link href="navigation.css" rel="stylesheet" type="text/css" />
 	<link href="decogrids-12.css" rel="stylesheet" type="text/css" />
-	<link href="about.css" rel="stylesheet" type="text.css/>
     <link rel="icon" href="images/icon.ico" />

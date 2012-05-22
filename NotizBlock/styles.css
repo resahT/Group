@@ -57,12 +57,37 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 
 #livingSpacesPanel{
+	top: 0px;
     width:216px; 
-    height:715px;
+    height:725px;
     margin:0px; 
-    padding:0px; 
+    padding:0; 
     float:left; 
-    background:#cd4007 url(images/ls.jpg) no-repeat -77px -494px
+	background:#cd4007 url(images/go.png) 85% 55% no-repeat;
+	background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
+	background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
+	background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
+	background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
+	background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(205,63,7) 72%);
+
+	background-image: -webkit-gradient(	
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.72, rgb(205,63,7))
+	);
+
+}
+
+#livingSpacesPanel:hover{
+	top:0px;
+	width:216px;
+	height:725px;
+	margin:0px;
+	padding: 4px;
+	float: left;
+	background:#cd4008 url(images/go.png) 85% 55% no-repeat;
 }
 
 #house{
@@ -95,7 +120,6 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 
 /*LS Panel*/
 #livingSpacesPanel h2{
-	width:170px;
 	margin:199px 0 0 0; 
 	padding:0 0 0 24px; 
 	float:left; 
@@ -161,14 +185,40 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 }
 
 #bookPanel{
-	width:216px;
-	height:715px;
-	margin:0px;
-	padding:0px;
-	float:left;
+	top: 0px;
+    width:216px; 
+    height:725px;
+    margin:0px; 
+    padding:0px; 
+    float:left; 
 	border-left:#f3f1d2 solid 1px;
-	background:#f7a474 url(images/books.jpg) no-repeat -294px -494px
+	background:#f7a47a url(images/go.png) 85% 55% no-repeat;
+	background-image: linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
+	background-image: -o-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
+	background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
+	background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
+	background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 0%, rgb(247,164,122) 62%);
+
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.62, rgb(247,164,122))
+	);
+
 }
+
+#bookPanel:hover{
+	top:0px;
+	width:216px;
+	height:725px;
+	margin:0px;
+	padding: 4px;
+	float: left;
+	background:#f7a47a url(images/go.png) 85% 55% no-repeat;
+}
+
 #book{
 	width:47px;
 	height:110px;
@@ -629,6 +679,68 @@ background:#fa9d77 url(images/reg.png) no-repet -77px -494px
 	padding:0px; 
 	float:left
 }
+
+#slideshow
+{
+	position: relative;
+	height:500px;
+	width:700px;
+	float:right;
+	margin:0;
+	padding:0;
+}
+ 
+#slides
+{
+	height:300px;
+	position:relative;
+}
+ 
+.slide
+{
+	height: 300px;
+	width: 400px;
+	overflow: hidden;
+	position:absolute;
+	background: #000;
+	color:#fff;
+}
+ 
+#slides-controls
+{
+	width:80px;
+	background-color: #fff;
+	height:20px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:5px;
+}
+ 
+#slides-controls a
+{
+	margin: 5px;
+	width:8px;
+	height:8px;
+	border-radius: 4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius:4px;
+	background:#F60;
+	border:1px solid #fff;
+	text-indent:-9000px;
+	display:block;
+	overflow:hidden;
+	float:left
+}
+ 
+#slides-controls a:hover { background:#F30 }
+ 
+#slides-controls a.highlight
+{
+	background:#fff;
+	border:1px solid #F30
+}
+
 #footWrap{
 	width:100%; 
 	margin:0px;

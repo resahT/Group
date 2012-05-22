@@ -2,9 +2,8 @@
     <div id="footPanel">
         <div id="footNav">
             <ul>
+				<li><div class="blank"></div></li>
                 <li><a href="#">Home</a></li>
-                <li><div class="blank">|</div></li>
-                <li><a href="#">About Us</a></li>
                 <li><div class="blank">|</div></li>
                 <li><a href="#">Living Spaces</a></li>
                 <li><div class="blank">|</div></li>
