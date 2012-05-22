@@ -268,7 +268,6 @@ ALTER TABLE `upload` ADD `askingPrice` DECIMAL(10,2) NOT NULL AFTER `saleType`;
 
 ALTER TABLE `upload` ADD `state` VARCHAR( 15 ) NOT NULL DEFAULT 'AVAILABLE' AFTER `uploadTime`;
 
-
 CREATE TABLE IF NOT EXISTS `itemsviewed` (
   `itemsviewedid` int(11) NOT NULL AUTO_INCREMENT,
   `bUserid` int(11) NOT NULL,
