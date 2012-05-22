@@ -62,7 +62,7 @@ else
     ?>
                                 <tr class="<?= $rowType ?>">
 <?php
-                                    for($r = 0; $r < 3; $i++, $r++)
+                                    for($r = 0; $r < 3 && $i < $totalBooks; $i++, $r++)
                                     {
                                         $book = $books[$i];
 ?>
