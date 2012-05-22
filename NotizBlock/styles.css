@@ -38,7 +38,7 @@ margin:auto;
 #navigation img{
 
 position:relative;
-left:-270px;
+left:120px;
 }
 
 nav a{
@@ -255,21 +255,11 @@ margin-bottom:200px;
 background-color:rgb(254,151,5);
 }
 
-#livingSpacesExtend{
-	background-color:rgba(254,151,5, 0.5);
-	color:#cd4007;
-	height:120px;
-	display:none;
-}
 
 #bookPanel{
-	
-	
-	background-color:rgba(254,151,5,0.8);
+background-color:rgba(254,151,5,0.8);
 width:300px;
 height:200px;
-
-
 margin:25px;
 margin-top:150px;
 border:0px solid;
@@ -310,24 +300,24 @@ float:right;
 
 /*Book Panel*/
 #bookPanel h2{
-	//width:170px; 
-	//margin:199px 0 0 0;
-	//padding:0 0 0 24px;
-	//float:left;
-	font-family:Arial; 
+	//width:170px;
+	//margin:199px 0 0 0; 
+	padding:0 0 0 24px; 
+	float:left; 
+	font-family:Arial;
 	font-size:26px;
 	color:#400505; 
-	line-height:30px;
+	//line-height:30px;
 	font-weight:normal
 }
 #bookPanel h3{
 	//width:170px; 
-	//margin:8px 0 0 0; 
-	//padding:0 0 0 24px;
-	//float:left;
+	margin:8px 0 0 0;
+	padding:10px;
+	float:left;
 	font-family:Arial;
 	font-size:12px;
-	color:#400505;
+	color:#ffe996; 
 	line-height:19px;
 	font-weight:bold
 }
